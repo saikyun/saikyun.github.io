@@ -11,13 +11,13 @@
 <p>The following three counter machine models have the same computational power since the instructions of one model can be derived from those of another:</p>
 </blockquote>
 <blockquote>
-<p>INC(r), DEC(r), JZ(r, z) - Minsky (1961, 1967), Lambek (1961)</p>
+<p>INC(r), DEC(r), JZ(r, z) — Minsky (1961, 1967), Lambek (1961)</p>
 </blockquote>
 <blockquote>
-<p>CLR(r), INC(r), JE(rj, rk, z) - Ershov (1958), Peter (1958)</p>
+<p>CLR(r), INC(r), JE(rj, rk, z) — Ershov (1958), Peter (1958)</p>
 </blockquote>
 <blockquote>
-<p>INC(r), CPY(rj, rk), JE(rj, rk, z) - Elgot-Robinson (1964), Minsky (1967)</p>
+<p>INC(r), CPY(rj, rk), JE(rj, rk, z) — Elgot-Robinson (1964), Minsky (1967)</p>
 </blockquote>
 <p>With this knowledge, I made a assembly editor and interpreter using termux. It was pretty fun, and it really fulfilled the minimalist language that I envisioned. It was pretty cool that you see how the registers changed when you ran the program too.</p>
 <p>Next step was obviously to make this compile to arm assembly. Arm is the simple one, right? <a href="https://developer.arm.com/documentation/dui0068/b/ARM-Instruction-Reference">Oh boy</a>. I read a bit, and felt that I understand some, but it was far from my naive 3-instruction view of the world. And even if I understood enough, I realized I'd be super platform dependent, which doesn't feel very appealing.</p>
@@ -36,31 +36,3 @@
 hello world
 </code></pre>
 <p>What I did was pull together examples from the projects mentioned above, and managed to run a program printing <code>hello world</code> in both the browser and on my macbook, using wasmtime. It's not much, but it's still cool to be able to hand write assembly code and have it do stuff and run on multiple platforms. :)</p>
-
-<hr />
-
-<h1>Thought loops</h1>
-<p>Inspired by <a href="https://bjoreman.com">Fredrik Björeman</a> I decided to create my own blog. In his podcast <a href="https://kodsnack.se/508/">Kodsnack</a> he and <a href="https://6510.nu/@krig">Kristoffer</a> talks about getting stuff out without thinking too much.</p>
-<p>I felt this very hard, as I've been stuck in some thought loops lately. If I were to describe it as shortly as I could, this would be my attempt:</p>
-<ol>
-<li>
-<p>I want to be able to create graphical applications and games, that can run on as many platforms as possible, with live coding capabilities</p>
-</li>
-<li>
-<p>To fulfill this, I created <a href="http://github.com/saikyun/freja">Freja</a>, a code editor that can be modified withing itself, and therefore create GUIs and games without ever closing the applications</p>
-<p>2.1. Well, that was the idea anyway, but I still have problems like ending up in an infinite loop and needing to restart</p>
-<p>2.2. The bigger issue however, is that the GUI lib I wrote doesn't work well enough. Tons of tiny bugs that pop up whenever I try to create new GUI</p>
-<p>2.3. I also don't quite agree with the language I use, <a href="https://janet-lang.org">Janet</a>, which is a super cozy lisp, but has some other ideas about live coding / redefining functions during runtime, which are not hopeless to overcome, but often a bit in the way. This is in no way the fault of the language, it just has slightly different goals than I have.</p>
-</li>
-<li>
-<p>Despair</p>
-</li>
-<li>
-<p>I've tried Unity and Godot, and while I dislike the former (extremely sluggish, and the minor point that C# feels like a nice, safe car but sooo boring -- where is my meta programming!?), I can withstand the latter. It's snappy and nice, has basic hot reload, but I personally feel the OOPiness (specifically no interfaces and tons of inheritance) makes for a less cozy environment for me.</p>
-</li>
-<li>
-<p>Now I'm standing here, wondering what to do with my situation. I feel like I don't have a cozy place to code, but I'm not sure I'm ready to rewrite the GUI library. I'm also thinking about writing it in C, a language which I've gotten a lot more love for, since learning that hot reloading DLLs is surprisingly viable. But C lacks some things I want (multiple dispatch, dynamic arrays). I've tried to remedy this with macros, but it still feels a bit icky. Like I'm trying to make the language be something it's not.</p>
-</li>
-</ol>
-<p>So here I am. I've experimented a lot, e.g. making C more dynamic (changing structs during runtime), compiling lisp to C, playing around with type unification. But I have no clue where to go.</p>
-<p>#100DaysToOffload</p>

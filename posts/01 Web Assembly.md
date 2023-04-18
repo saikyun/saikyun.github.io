@@ -1,0 +1,52 @@
+# Web Assembly
+
+Yesterday I posted my first blog on [Kodsnack](http://kodsnack.se)'s slack channel, and got some feedback on my woes about programming.
+
+Some said that zig and r*** might be good languages to look at, and I argued a bit about how they appear to me as languages that doesn't have the same goals in mind as me. I think being able to (compile and) execute goals with <200ms delay is important, since I find it pleasant when working on things like animations and layouts. Needing to wait even a second while modifying an animation feels painful to me.
+
+I want to be clear and say that I do think zig and rust are interesting (and probably good) languages, and it's a difference in priorities and aesthetics, not in some objective "good"ness. So if you do enjoy zig / rust, please keep rocking on. :)
+
+I also got some kind words about [Freja](https://github.com/saikyun/freja), which I really appreciate.
+
+The last thing that came up was the subject of WASM. Being interested in both web and games, I've been curious about WASM since it's inception. I still remember playing some Quake or DOOM demo in the browser, and it seemed kind of magical. I never did anything with it though, since at the time I was busy writing web apps in node and play League of Legends.
+
+Last summer I started wondering if assembly is a good target for live coding, since it's very flexible (just swap out the byte code right?). It seemed very tricky to write a multi platform compiler though.
+
+When camping with my family, I started reading about [uxn](https://100r.co/site/uxn.html), and [pen & paper computing](https://wiki.xxiivv.com/site/paper_computing.html)).
+
+In the paper prototyping site, they mention that you can compute using a really small instruction set:
+
+> The following three counter machine models have the same computational power since the instructions of one model can be derived from those of another:
+
+> INC(r), DEC(r), JZ(r, z) - Minsky (1961, 1967), Lambek (1961)
+
+> CLR(r), INC(r), JE(rj, rk, z) - Ershov (1958), Peter (1958)
+
+> INC(r), CPY(rj, rk), JE(rj, rk, z) - Elgot-Robinson (1964), Minsky (1967)
+
+With this knowledge, I made a assembly editor and interpreter using termux. It was pretty fun, and it really fulfilled the minimalist language that I envisioned. It was pretty cool that you see how the registers changed when you ran the program too.
+
+Next step was obviously to make this compile to arm assembly. Arm is the simple one, right? [Oh boy](https://developer.arm.com/documentation/dui0068/b/ARM-Instruction-Reference). I read a bit, and felt that I understand some, but it was far from my naive 3-instruction view of the world. And even if I understood enough, I realized I'd be super platform dependent, which doesn't feel very appealing.
+
+I haven't touched or thought very much about assembly since then.
+
+## Back to WASM
+
+With this in mind, the mention of [web assembly](https://webassembly.org) came at an interesting time for me. I now knew that assembly computing could be pretty enjoyable, and I also had built up a need for a simple way to play around with assembly, but that was more flexible than uxn. While I think uxn is cool, I'm not sure I want the restrictions.
+
+WASM seems pretty diverse to me, with a bunch of different projects going on. For my goals, this combination appealed to me:
+
+* [wasmtime](https://github.com/bytecodealliance/wasmtime) -- wasm runtime for desktops
+* [wabt](https://github.com/WebAssembly/wabt) -- tons of tools, including wat2wasm: compile wasm text files (.wat) to binary (.wasm)
+* [wasi](https://wasi.dev) -- system interface for WASM (think libc)
+* [browser_wasi_shim](https://github.com/bjorn3/browser_wasi_shim) -- wasi interface for browser
+
+I've just started (like 2 hours ago), but so far I managed to create a little example repo that I feel happy about. Check it out [here](https://github.com/saikyun/wasm-wasi-hello-world).
+
+```
+wasmtime hello-world-wasi.wat
+hello world
+```
+
+What I did was pull together examples from the projects mentioned above, and managed to run a program printing `hello world` in both the browser and on my macbook, using wasmtime. It's not much, but it's still cool to be able to hand write assembly code and have it do stuff and run on multiple platforms. :)
+
