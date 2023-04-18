@@ -2,7 +2,7 @@
 
 Yesterday I posted my first blog on [Kodsnack](http://kodsnack.se)'s slack channel, and got some feedback on my woes about programming.
 
-Some said that zig and r*** might be good languages to look at, and I argued a bit about how they appear to me as languages that doesn't have the same goals in mind as me. I think being able to (compile and) execute goals with <200ms delay is important, since I find it pleasant when working on things like animations and layouts. Needing to wait even a second while modifying an animation feels painful to me.
+Some said that zig and r*** might be good languages to look at, and I argued a bit about how they appear to me as languages that doesn't have the same goals in mind as me. I think being able to (compile and) execute code with <200ms delay is important, since I find it pleasant when working on things like animations and layouts. Needing to wait even a second while modifying an animation feels painful to me.
 
 I want to be clear and say that I do think zig and rust are interesting (and probably good) languages, and it's a difference in priorities and aesthetics, not in some objective "good"ness. So if you do enjoy zig / rust, please keep rocking on. :)
 
