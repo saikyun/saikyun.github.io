@@ -50,3 +50,4 @@ hello world
 
 What I did was pull together examples from the projects mentioned above, and managed to run a program printing `hello world` in both the browser and on my macbook, using wasmtime. It's not much, but it's still cool to be able to hand write assembly code and have it do stuff and run on multiple platforms. :)
 
+#100DaysToOffload

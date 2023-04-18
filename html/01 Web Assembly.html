@@ -11,13 +11,13 @@
 <p>The following three counter machine models have the same computational power since the instructions of one model can be derived from those of another:</p>
 </blockquote>
 <blockquote>
-<p>INC(r), DEC(r), JZ(r, z) — Minsky (1961, 1967), Lambek (1961)</p>
+<p>INC(r), DEC(r), JZ(r, z) - Minsky (1961, 1967), Lambek (1961)</p>
 </blockquote>
 <blockquote>
-<p>CLR(r), INC(r), JE(rj, rk, z) — Ershov (1958), Peter (1958)</p>
+<p>CLR(r), INC(r), JE(rj, rk, z) - Ershov (1958), Peter (1958)</p>
 </blockquote>
 <blockquote>
-<p>INC(r), CPY(rj, rk), JE(rj, rk, z) — Elgot-Robinson (1964), Minsky (1967)</p>
+<p>INC(r), CPY(rj, rk), JE(rj, rk, z) - Elgot-Robinson (1964), Minsky (1967)</p>
 </blockquote>
 <p>With this knowledge, I made a assembly editor and interpreter using termux. It was pretty fun, and it really fulfilled the minimalist language that I envisioned. It was pretty cool that you see how the registers changed when you ran the program too.</p>
 <p>Next step was obviously to make this compile to arm assembly. Arm is the simple one, right? <a href="https://developer.arm.com/documentation/dui0068/b/ARM-Instruction-Reference">Oh boy</a>. I read a bit, and felt that I understand some, but it was far from my naive 3-instruction view of the world. And even if I understood enough, I realized I'd be super platform dependent, which doesn't feel very appealing.</p>
@@ -36,3 +36,4 @@
 hello world
 </code></pre>
 <p>What I did was pull together examples from the projects mentioned above, and managed to run a program printing <code>hello world</code> in both the browser and on my macbook, using wasmtime. It's not much, but it's still cool to be able to hand write assembly code and have it do stuff and run on multiple platforms. :)</p>
+<p>#100DaysToOffload</p>
