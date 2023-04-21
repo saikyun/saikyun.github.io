@@ -1,48 +1,140 @@
-Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>. :)
-
-<hr />
-
-<h1>Making a Lisp in C</h1>
-<p>Today I started working on a lisp in c. I want the lisp to compile to C. I've tried it before, but the first time I got stuck on figuring out what types things should be (assuming I don't want to fill out all the types all the time in lisp). Since then I've done some basic work on <a href="https://github.com/saikyun/unification/tree/10b19ae798b508127fb54fa68ed218c99bdd23f4">unification</a> / type inference. When I tried my first lisp in c, I only found research papers about unification, which I had trouble understanding. I wasn't sure how to learn how to read them either, and ended up listening to <a href="https://en.wikipedia.org/wiki/Tractatus_Logico-Philosophicus">Tractatus Logico-Philosophicus</a>. It didn't work very well in audiobook form, and it definitely did not help me understand how to read science papers with strange symbols.</p>
-<p>Since then, a friend showed me https://eli.thegreenplace.net/2018/unification/ which talked my language a lot better. So I was able to do the basic stuff, finally.</p>
-<p>I did start on <a href="https://github.com/saikyun/lisp-to-c">another lisp in c</a> after writing that unification stuff. While I did manage to compile some C from lisp, I got a bit stuck trying to figure out how enable macros (i.e. running lisp while still being in the compilation phase). At least I think that's what happened. I started some work on doing both <code>eval</code> and <code>compile</code>, i.e. an interpreter <em>and</em> a compiler. But it seemed like I would have to write a lot of the same code over and over again.</p>
-<p>What I've figured out now is that I somehow want to be able to:</p>
-<ol>
-<li>Compile lisp code to C</li>
-<li>Evaluate lisp code while in the compilation phase, using the same code as step 1. does</li>
-</ol>
-<p>This seemed tricky, since I didn't know of a way to get <code>eval</code> for C. Then I remembered that my friend told me about <a href="https://bellard.org/tcc/">tcc</a>. tcc is a tiny c compiler, that is easy to build and bundle with your project. Even in the 2nd iteration, I figured I'd use tcc to generate dlls to facilitate live coding. What I didn't realize back then, but figured out now when reading the docs, is that you can <em>use tcc as a library</em>, and <em>compile functions to memory</em>.</p>
-<p><a href="https://github.com/saikyun/libtcc-example">I tried that.</a> It's very awesome. Suddenly you have eval in C.</p>
-<p>This means that if I encounter a macro during compilation, I can call some libtcc functions, and get some results, and then use those results when continuing compilation. Pretty cool!</p>
-<p>I'm also guessing it'll make live coding ever so slightly faster, since I won't have to start a separate process, compile a dll/so to disk, <code>dlload</code> that dll, e.t.c.</p>
-<h2>Third time's the charm</h2>
-<p>So now I'm starting again, this time using only C, and trying to make sure everything works with tcc. Sadly I had some <a href="https://lists.nongnu.org/archive/html/tinycc-devel/2023-04/msg00029.html">problems building binaries</a> on my macbook air m2, but <code>tcc -run</code> does work. So hopefully it can be sorted out.</p>
-<p>Ofc what I probably &quot;should&quot; do is either use llvm, or go all the way and just interact with assembly directly, but both those have their problems.</p>
-<p>First off, llvm just seems to have slower compile times overall than tcc. Of course it then wins hugely during runtime, but that's not important for <code>eval</code>. My language should be able to AOT compile as well, and then I'd use clang / gcc / cl. But when coding, I figure tcc will speed up development a lot.</p>
-<p>Doing something with assembly, instead of having the middle step of C, appeals to me a lot, but I know next to nothing about assembly, while I can do basic stuff in C. And even if I were to learn some sort of assembly, I would be tied hard to whatever platform I decided to learn. With tcc it seems feasibly to build/eval on all desktop platforms, and maybe the browser and phones.</p>
-<p>And since my language will build to C in the end, I figure that when you're done coding and want to build binaries, it should be possible to build them for all manners of platforms, including consoles. You lose <code>eval</code>, but while it's a bit boring to lose it, it's not as crucial as it is while developing.</p>
-<p>So far I've built the <a href="https://app.slack.com/client/T024SRSB2/C011CD5P1S6">tokenizer</a>. Not much to look at yet. But hopefully it won't be too long until I can call some C functions using my lisp. :)</p>
+<a href="#tired"><h1 id="tired">Tired</h1></a>
+<p>Yesterday I had seemingly endless amounts of energy. And today I feel very tired. If this had been a regular workday,
+  I would have been whipping myself over the lack of productivity. Luckily, I'm currently on paid leave, so I don't have
+  to worry so much.</p>
+<p>Until I start thinking about how I will soon die, of course.</p>
+<p>In the face of that, tired days can really feel like a waste. I think I've come up with a spell that helps though.
+  What I've thought is something like this:</p>
+<ul>
+  <li>
+    <p>If you try to get good at something -- let's say drawing -- and it takes ten years, but you die after five, is it
+      meaningful?</p>
+  </li>
+  <li>
+    <p>If it is not, then you should probably not be drawing. I mean, even if you didn't die, you might get injured, or
+      you might get tired of drawing, or your life changes in such a way that you can't spend as much time on drawing.
+    </p>
+  </li>
+  <li>
+    <p>Therefore, it must be meaningful, even if we don't get good at it.</p>
+  </li>
+  <li>
+    <p>In that case, what happens if you spend half as much time on drawing per week, and it would take 20 years to get
+      good at it? The numbers are different, but the equation is the same, right? You might die after 5 or 10, it
+      doesn't matter really. Even if you die after 1 day, it must still be meaningful.</p>
+  </li>
+</ul>
+<p>With this in mind, it doesn't matter if you are tired one day, because the striving toward getting good at drawing is
+  worth it anyway.</p>
+<p>And if it isn't, you should probably quit.</p>
 <p>#100DaysToOffload</p>
 
+<p>Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>. :)</p>
+
 <hr />
 
-<h1>Coding with ChatGPT</h1>
-<p>After I played around with wasm yesterday, I talked to a friend. He got me inspired to try some <a href="https://openai.com/blog/chatgpt">ChatGPT</a> coding. I started out making a lisp parser in rust. It turned out pretty well, after some massage and asking it to change things. For example, it used <code>&amp;str</code> without explicit lifetimes, which Rust didn't like. I could tell it to add the explicit lifetimes though, but now the code looked disgusting.</p>
-<p>I bought the premium version and tried gpt4, and it instead used <code>String</code> (which seems sensible, and looks a lot nicer), but now it did tokenizing and parsing at the same time, which makes the code raise my upper lip in disgust.</p>
-<p>It's a very different feeling from hand coding things. Like pushing a river. You can affect it, but it's hard to control, and sometimes you get chaotic whirls that the compiler and I don't like.</p>
-<p>After the lisp parser, &quot;we&quot; made the evaluator. At first it had a big <code>match</code> where it would put functions like <code>+</code> as a case. But I wanted it instead to look up symbols in an environment, and have certain symbols be added to the environment by default. I asked it to do this, and it actually rewrote the code. That was pretty cool! Still some manual labour on top, but it's the sort of change that can feel hard to switch to, when you've already coded in a different style.</p>
-<p>I should mention that from nothing to evaluator took about an hour. I think that's faster than I could have written it by hand, and it's definitely faster than it would have taken me to write it in Rust, since I'm a bit rusty.</p>
+<a href="#making-a-lisp-in-c"><h1 id="making-a-lisp-in-c">Making a Lisp in C</h1></a>
+<p>Today I started working on a lisp in c. I want the lisp to compile to C. I've tried it before, but the first time I
+  got stuck on figuring out what types things should be (assuming I don't want to fill out all the types all the time in
+  lisp). Since then I've done some basic work on <a
+    href="https://github.com/saikyun/unification/tree/10b19ae798b508127fb54fa68ed218c99bdd23f4">unification</a> / type
+  inference. When I tried my first lisp in c, I only found research papers about unification, which I had trouble
+  understanding. I wasn't sure how to learn how to read them either, and ended up listening to <a
+    href="https://en.wikipedia.org/wiki/Tractatus_Logico-Philosophicus">Tractatus Logico-Philosophicus</a>. It didn't
+  work very well in audiobook form, and it definitely did not help me understand how to read science papers with strange
+  symbols.</p>
+<p>Since then, a friend showed me https://eli.thegreenplace.net/2018/unification/ which talked my language a lot better.
+  So I was able to do the basic stuff, finally.</p>
+<p>I did start on <a href="https://github.com/saikyun/lisp-to-c">another lisp in c</a> after writing that unification
+  stuff. While I did manage to compile some C from lisp, I got a bit stuck trying to figure out how enable macros (i.e.
+  running lisp while still being in the compilation phase). At least I think that's what happened. I started some work
+  on doing both <code>eval</code> and <code>compile</code>, i.e. an interpreter <em>and</em> a compiler. But it seemed
+  like I would have to write a lot of the same code over and over again.</p>
+<p>What I've figured out now is that I somehow want to be able to:</p>
+<ol>
+  <li>Compile lisp code to C</li>
+  <li>Evaluate lisp code while in the compilation phase, using the same code as step 1. does</li>
+</ol>
+<p>This seemed tricky, since I didn't know of a way to get <code>eval</code> for C. Then I remembered that my friend
+  told me about <a href="https://bellard.org/tcc/">tcc</a>. tcc is a tiny c compiler, that is easy to build and bundle
+  with your project. Even in the 2nd iteration, I figured I'd use tcc to generate dlls to facilitate live coding. What I
+  didn't realize back then, but figured out now when reading the docs, is that you can <em>use tcc as a library</em>,
+  and <em>compile functions to memory</em>.</p>
+<p><a href="https://github.com/saikyun/libtcc-example">I tried that.</a> It's very awesome. Suddenly you have eval in C.
+</p>
+<p>This means that if I encounter a macro during compilation, I can call some libtcc functions, and get some results,
+  and then use those results when continuing compilation. Pretty cool!</p>
+<p>I'm also guessing it'll make live coding ever so slightly faster, since I won't have to start a separate process,
+  compile a dll/so to disk, <code>dlload</code> that dll, e.t.c.</p>
+<h2>Third time's the charm</h2>
+<p>So now I'm starting again, this time using only C, and trying to make sure everything works with tcc. Sadly I had
+  some <a href="https://lists.nongnu.org/archive/html/tinycc-devel/2023-04/msg00029.html">problems building binaries</a>
+  on my macbook air m2, but <code>tcc -run</code> does work. So hopefully it can be sorted out.</p>
+<p>Ofc what I probably &quot;should&quot; do is either use llvm, or go all the way and just interact with assembly
+  directly, but both those have their problems.</p>
+<p>First off, llvm just seems to have slower compile times overall than tcc. Of course it then wins hugely during
+  runtime, but that's not important for <code>eval</code>. My language should be able to AOT compile as well, and then
+  I'd use clang / gcc / cl. But when coding, I figure tcc will speed up development a lot.</p>
+<p>Doing something with assembly, instead of having the middle step of C, appeals to me a lot, but I know next to
+  nothing about assembly, while I can do basic stuff in C. And even if I were to learn some sort of assembly, I would be
+  tied hard to whatever platform I decided to learn. With tcc it seems feasibly to build/eval on all desktop platforms,
+  and maybe the browser and phones.</p>
+<p>And since my language will build to C in the end, I figure that when you're done coding and want to build binaries,
+  it should be possible to build them for all manners of platforms, including consoles. You lose <code>eval</code>, but
+  while it's a bit boring to lose it, it's not as crucial as it is while developing.</p>
+<p>So far I've built the <a href="https://app.slack.com/client/T024SRSB2/C011CD5P1S6">tokenizer</a>. Not much to look at
+  yet. But hopefully it won't be too long until I can call some C functions using my lisp. :)</p>
+<p>#100DaysToOffload</p>
+
+<p>Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>. :)</p>
+
+<hr />
+
+<a href="#coding-with-chatgpt"><h1 id="coding-with-chatgpt">Coding with ChatGPT</h1></a>
+<p>After I played around with wasm yesterday, I talked to a friend. He got me inspired to try some <a
+    href="https://openai.com/blog/chatgpt">ChatGPT</a> coding. I started out making a lisp parser in rust. It turned out
+  pretty well, after some massage and asking it to change things. For example, it used <code>&amp;str</code> without
+  explicit lifetimes, which Rust didn't like. I could tell it to add the explicit lifetimes though, but now the code
+  looked disgusting.</p>
+<p>I bought the premium version and tried gpt4, and it instead used <code>String</code> (which seems sensible, and looks
+  a lot nicer), but now it did tokenizing and parsing at the same time, which makes the code raise my upper lip in
+  disgust.</p>
+<p>It's a very different feeling from hand coding things. Like pushing a river. You can affect it, but it's hard to
+  control, and sometimes you get chaotic whirls that the compiler and I don't like.</p>
+<p>After the lisp parser, &quot;we&quot; made the evaluator. At first it had a big <code>match</code> where it would put
+  functions like <code>+</code> as a case. But I wanted it instead to look up symbols in an environment, and have
+  certain symbols be added to the environment by default. I asked it to do this, and it actually rewrote the code. That
+  was pretty cool! Still some manual labour on top, but it's the sort of change that can feel hard to switch to, when
+  you've already coded in a different style.</p>
+<p>I should mention that from nothing to evaluator took about an hour. I think that's faster than I could have written
+  it by hand, and it's definitely faster than it would have taken me to write it in Rust, since I'm a bit rusty.</p>
 <pre><code>cargo run
     Finished dev [unoptimized + debuginfo] target(s) in 0.01s
      Running `target/debug/lisp`
 List([Symbol(&quot;+&quot;), Number(1.0), List([Symbol(&quot;*&quot;), Number(2.0), Number(3.0)])])
 Result: 7
 </code></pre>
-<p>I tried some other stuff, like generating example Clojure code to use as a test, something to implement in my own lisp. It was kind of hilarious, because it missed a closing parens. Even AI can't write lisp. :') <a href="http://danmidwood.com/content/2014/11/21/animated-paredit.html">Paredit</a> ftw. If you haven't checked out structural programming at all, I recommend just looking at those beautiful gifs.</p>
-<p>One thing ChatGPT has over me is how quickly it can switch between different tasks. Despite me feeling tired, I felt that I could get a momentum boost by seeing it's code, wether it was correct or not. It's like giving me a space where it already has filled out the little calls that I might have forgotten (how did I split a string with a regex in Clojure again?). It was also nice to get some Rust examples, since I haven't used it in 6 years.</p>
-<p>After that, I tried making a card game using TypeScript. I started out having it give me examples using canvas (e.g. a function that renders playing cards), but I quickly felt that I wanted some abstractions over loading sprites and handling user input. Maybe that was wrong, but that was how I felt.</p>
-<p>This is where I felt chatgpt became very annoying to use. I tried to have it give me examples for using PixiJS, then Phaser, then P5. And over and over again it resulted in strange typescript errors. I'm sure there might have been configuration somewhere that's strange, or I was using old examples or something. But overall it felt really unpleasant, and took way too much time. It might have more to do with the TypeScript + npm + webpack/parceljl/??? combination that easily leads to a silly amount of things that can go wrong.</p>
-<p>After getting over the hurdle of getting something to draw a rectangle on the screen (which ended up being easiest with p5), &quot;we&quot; started adding things like a deck, hands of cards, a play zone etc. It felt all right, but I felt a lot less helped than when it wrote the parser. My guess is that the parser is more well defined, and it's the sort of thing that's easy to get wrong as a human, while coding game mechanics has more to do with positioning things on the screen and moving things between different collections.</p>
+<p>I tried some other stuff, like generating example Clojure code to use as a test, something to implement in my own
+  lisp. It was kind of hilarious, because it missed a closing parens. Even AI can't write lisp. :') <a
+    href="http://danmidwood.com/content/2014/11/21/animated-paredit.html">Paredit</a> ftw. If you haven't checked out
+  structural programming at all, I recommend just looking at those beautiful gifs.</p>
+<p>One thing ChatGPT has over me is how quickly it can switch between different tasks. Despite me feeling tired, I felt
+  that I could get a momentum boost by seeing it's code, wether it was correct or not. It's like giving me a space where
+  it already has filled out the little calls that I might have forgotten (how did I split a string with a regex in
+  Clojure again?). It was also nice to get some Rust examples, since I haven't used it in 6 years.</p>
+<p>After that, I tried making a card game using TypeScript. I started out having it give me examples using canvas (e.g.
+  a function that renders playing cards), but I quickly felt that I wanted some abstractions over loading sprites and
+  handling user input. Maybe that was wrong, but that was how I felt.</p>
+<p>This is where I felt chatgpt became very annoying to use. I tried to have it give me examples for using PixiJS, then
+  Phaser, then P5. And over and over again it resulted in strange typescript errors. I'm sure there might have been
+  configuration somewhere that's strange, or I was using old examples or something. But overall it felt really
+  unpleasant, and took way too much time. It might have more to do with the TypeScript + npm + webpack/parceljl/???
+  combination that easily leads to a silly amount of things that can go wrong.</p>
+<p>After getting over the hurdle of getting something to draw a rectangle on the screen (which ended up being easiest
+  with p5), &quot;we&quot; started adding things like a deck, hands of cards, a play zone etc. It felt all right, but I
+  felt a lot less helped than when it wrote the parser. My guess is that the parser is more well defined, and it's the
+  sort of thing that's easy to get wrong as a human, while coding game mechanics has more to do with positioning things
+  on the screen and moving things between different collections.</p>
 <p>Another point for ChatGPT was asking for math with natural language:</p>
 <pre><code>Can you give me an easing function in javascript, that starts out slow, then fast, then slow in the middle, then fast again?
 </code></pre>
@@ -55,76 +147,127 @@ function easeInOutQuad(t, b, c, d) {
   return -c/2 * (t*(t-2) - 1) + b;
 }
 </code></pre>
-<p>This is the sort of code I could figure out, but it takes me a long time and I don't enjoy it. I believe asking it for help with vector math can come in handy as well.</p>
-<p>The most important thing I learned, is that I enjoy coding a lot more than doing code reviews. So I'll probably keep hand coding for as long as I can. :)</p>
+<p>This is the sort of code I could figure out, but it takes me a long time and I don't enjoy it. I believe asking it
+  for help with vector math can come in handy as well.</p>
+<p>The most important thing I learned, is that I enjoy coding a lot more than doing code reviews. So I'll probably keep
+  hand coding for as long as I can. :)</p>
 <p>#100DaysToOffload</p>
+
+<p>Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>. :)</p>
 
 <hr />
 
-<h1>Web Assembly</h1>
-<p>Yesterday I posted my first blog on <a href="http://kodsnack.se">Kodsnack</a>'s slack channel, and got some feedback on my woes about programming.</p>
-<p>Some said that zig and r*** might be good languages to look at, and I argued a bit about how they appear to me as languages that doesn't have the same goals in mind as me. I think being able to (compile and) execute code with &lt;200ms delay is important, since I find it pleasant when working on things like animations and layouts. Needing to wait even a second while modifying an animation feels painful to me.</p>
-<p>I want to be clear and say that I do think zig and rust are interesting (and probably good) languages, and it's a difference in priorities and aesthetics, not in some objective &quot;good&quot;ness. So if you do enjoy zig / rust, please keep rocking on. :)</p>
+<a href="#web-assembly"><h1 id="web-assembly">Web Assembly</h1></a>
+<p>Yesterday I posted my first blog on <a href="http://kodsnack.se">Kodsnack</a>'s slack channel, and got some feedback
+  on my woes about programming.</p>
+<p>Some said that zig and r*** might be good languages to look at, and I argued a bit about how they appear to me as
+  languages that doesn't have the same goals in mind as me. I think being able to (compile and) execute code with
+  &lt;200ms delay is important, since I find it pleasant when working on things like animations and layouts. Needing to
+  wait even a second while modifying an animation feels painful to me.</p>
+<p>I want to be clear and say that I do think zig and rust are interesting (and probably good) languages, and it's a
+  difference in priorities and aesthetics, not in some objective &quot;good&quot;ness. So if you do enjoy zig / rust,
+  please keep rocking on. :)</p>
 <p>I also got some kind words about <a href="https://github.com/saikyun/freja">Freja</a>, which I really appreciate.</p>
-<p>The last thing that came up was the subject of WASM. Being interested in both web and games, I've been curious about WASM since it's inception. I still remember playing some Quake or DOOM demo in the browser, and it seemed kind of magical. I never did anything with it though, since at the time I was busy writing web apps in node and play League of Legends.</p>
-<p>Last summer I started wondering if assembly is a good target for live coding, since it's very flexible (just swap out the byte code right?). It seemed very tricky to write a multi platform compiler though.</p>
-<p>When camping with my family, I started reading about <a href="https://100r.co/site/uxn.html">uxn</a>, and <a href="https://wiki.xxiivv.com/site/paper_computing.html">pen &amp; paper computing</a>).</p>
+<p>The last thing that came up was the subject of WASM. Being interested in both web and games, I've been curious about
+  WASM since it's inception. I still remember playing some Quake or DOOM demo in the browser, and it seemed kind of
+  magical. I never did anything with it though, since at the time I was busy writing web apps in node and play League of
+  Legends.</p>
+<p>Last summer I started wondering if assembly is a good target for live coding, since it's very flexible (just swap out
+  the byte code right?). It seemed very tricky to write a multi platform compiler though.</p>
+<p>When camping with my family, I started reading about <a href="https://100r.co/site/uxn.html">uxn</a>, and <a
+    href="https://wiki.xxiivv.com/site/paper_computing.html">pen &amp; paper computing</a>).</p>
 <p>In the paper prototyping site, they mention that you can compute using a really small instruction set:</p>
 <blockquote>
-<p>The following three counter machine models have the same computational power since the instructions of one model can be derived from those of another:</p>
+  <p>The following three counter machine models have the same computational power since the instructions of one model
+    can be derived from those of another:</p>
 </blockquote>
 <blockquote>
-<p>INC(r), DEC(r), JZ(r, z) - Minsky (1961, 1967), Lambek (1961)</p>
+  <p>INC(r), DEC(r), JZ(r, z) - Minsky (1961, 1967), Lambek (1961)</p>
 </blockquote>
 <blockquote>
-<p>CLR(r), INC(r), JE(rj, rk, z) - Ershov (1958), Peter (1958)</p>
+  <p>CLR(r), INC(r), JE(rj, rk, z) - Ershov (1958), Peter (1958)</p>
 </blockquote>
 <blockquote>
-<p>INC(r), CPY(rj, rk), JE(rj, rk, z) - Elgot-Robinson (1964), Minsky (1967)</p>
+  <p>INC(r), CPY(rj, rk), JE(rj, rk, z) - Elgot-Robinson (1964), Minsky (1967)</p>
 </blockquote>
-<p>With this knowledge, I made a assembly editor and interpreter using termux. It was pretty fun, and it really fulfilled the minimalist language that I envisioned. It was pretty cool that you see how the registers changed when you ran the program too.</p>
-<p>Next step was obviously to make this compile to arm assembly. Arm is the simple one, right? <a href="https://developer.arm.com/documentation/dui0068/b/ARM-Instruction-Reference">Oh boy</a>. I read a bit, and felt that I understand some, but it was far from my naive 3-instruction view of the world. And even if I understood enough, I realized I'd be super platform dependent, which doesn't feel very appealing.</p>
+<p>With this knowledge, I made a assembly editor and interpreter using termux. It was pretty fun, and it really
+  fulfilled the minimalist language that I envisioned. It was pretty cool that you see how the registers changed when
+  you ran the program too.</p>
+<p>Next step was obviously to make this compile to arm assembly. Arm is the simple one, right? <a
+    href="https://developer.arm.com/documentation/dui0068/b/ARM-Instruction-Reference">Oh boy</a>. I read a bit, and
+  felt that I understand some, but it was far from my naive 3-instruction view of the world. And even if I understood
+  enough, I realized I'd be super platform dependent, which doesn't feel very appealing.</p>
 <p>I haven't touched or thought very much about assembly since then.</p>
 <h2>Back to WASM</h2>
-<p>With this in mind, the mention of <a href="https://webassembly.org">web assembly</a> came at an interesting time for me. I now knew that assembly computing could be pretty enjoyable, and I also had built up a need for a simple way to play around with assembly, but that was more flexible than uxn. While I think uxn is cool, I'm not sure I want the restrictions.</p>
-<p>WASM seems pretty diverse to me, with a bunch of different projects going on. For my goals, this combination appealed to me:</p>
+<p>With this in mind, the mention of <a href="https://webassembly.org">web assembly</a> came at an interesting time for
+  me. I now knew that assembly computing could be pretty enjoyable, and I also had built up a need for a simple way to
+  play around with assembly, but that was more flexible than uxn. While I think uxn is cool, I'm not sure I want the
+  restrictions.</p>
+<p>WASM seems pretty diverse to me, with a bunch of different projects going on. For my goals, this combination appealed
+  to me:</p>
 <ul>
-<li><a href="https://github.com/bytecodealliance/wasmtime">wasmtime</a> -- wasm runtime for desktops</li>
-<li><a href="https://github.com/WebAssembly/wabt">wabt</a> -- tons of tools, including wat2wasm: compile wasm text files (.wat) to binary (.wasm)</li>
-<li><a href="https://wasi.dev">wasi</a> -- system interface for WASM (think libc)</li>
-<li><a href="https://github.com/bjorn3/browser_wasi_shim">browser_wasi_shim</a> -- wasi interface for browser</li>
+  <li><a href="https://github.com/bytecodealliance/wasmtime">wasmtime</a> -- wasm runtime for desktops</li>
+  <li><a href="https://github.com/WebAssembly/wabt">wabt</a> -- tons of tools, including wat2wasm: compile wasm text
+    files (.wat) to binary (.wasm)</li>
+  <li><a href="https://wasi.dev">wasi</a> -- system interface for WASM (think libc)</li>
+  <li><a href="https://github.com/bjorn3/browser_wasi_shim">browser_wasi_shim</a> -- wasi interface for browser</li>
 </ul>
-<p>I've just started (like 2 hours ago), but so far I managed to create a little example repo that I feel happy about. Check it out <a href="https://github.com/saikyun/wasm-wasi-hello-world">here</a>.</p>
+<p>I've just started (like 2 hours ago), but so far I managed to create a little example repo that I feel happy about.
+  Check it out <a href="https://github.com/saikyun/wasm-wasi-hello-world">here</a>.</p>
 <pre><code>wasmtime hello-world-wasi.wat
 hello world
 </code></pre>
-<p>What I did was pull together examples from the projects mentioned above, and managed to run a program printing <code>hello world</code> in both the browser and on my macbook, using wasmtime. It's not much, but it's still cool to be able to hand write assembly code and have it do stuff and run on multiple platforms. :)</p>
+<p>What I did was pull together examples from the projects mentioned above, and managed to run a program printing
+  <code>hello world</code> in both the browser and on my macbook, using wasmtime. It's not much, but it's still cool to
+  be able to hand write assembly code and have it do stuff and run on multiple platforms. :)</p>
 <p>#100DaysToOffload</p>
+
+<p>Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>. :)</p>
 
 <hr />
 
-<h1>Thought loops</h1>
-<p>Inspired by <a href="https://bjoreman.com">Fredrik Björeman</a> I decided to create my own blog. In his podcast <a href="https://kodsnack.se/508/">Kodsnack</a> he and <a href="https://6510.nu/@krig">Kristoffer</a> talks about getting stuff out without thinking too much.</p>
-<p>I felt this very hard, as I've been stuck in some thought loops lately. If I were to describe it as shortly as I could, this would be my attempt:</p>
+<a href="#thought-loops"></a><h1 id="thought-loops">Thought loops</h1></a>
+<p>Inspired by <a href="https://bjoreman.com">Fredrik Björeman</a> I decided to create my own blog. In his podcast <a
+    href="https://kodsnack.se/508/">Kodsnack</a> he and <a href="https://6510.nu/@krig">Kristoffer</a> talks about
+  getting stuff out without thinking too much.</p>
+<p>I felt this very hard, as I've been stuck in some thought loops lately. If I were to describe it as shortly as I
+  could, this would be my attempt:</p>
 <ol>
-<li>
-<p>I want to be able to create graphical applications and games, that can run on as many platforms as possible, with live coding capabilities</p>
-</li>
-<li>
-<p>To fulfill this, I created <a href="http://github.com/saikyun/freja">Freja</a>, a code editor that can be modified withing itself, and therefore create GUIs and games without ever closing the applications</p>
-<p>2.1. Well, that was the idea anyway, but I still have problems like ending up in an infinite loop and needing to restart</p>
-<p>2.2. The bigger issue however, is that the GUI lib I wrote doesn't work well enough. Tons of tiny bugs that pop up whenever I try to create new GUI</p>
-<p>2.3. I also don't quite agree with the language I use, <a href="https://janet-lang.org">Janet</a>, which is a super cozy lisp, but has some other ideas about live coding / redefining functions during runtime, which are not hopeless to overcome, but often a bit in the way. This is in no way the fault of the language, it just has slightly different goals than I have.</p>
-</li>
-<li>
-<p>Despair</p>
-</li>
-<li>
-<p>I've tried Unity and Godot, and while I dislike the former (extremely sluggish, and the minor point that C# feels like a nice, safe car but sooo boring -- where is my meta programming!?), I can withstand the latter. It's snappy and nice, has basic hot reload, but I personally feel the OOPiness (specifically no interfaces and tons of inheritance) makes for a less cozy environment for me.</p>
-</li>
-<li>
-<p>Now I'm standing here, wondering what to do with my situation. I feel like I don't have a cozy place to code, but I'm not sure I'm ready to rewrite the GUI library. I'm also thinking about writing it in C, a language which I've gotten a lot more love for, since learning that hot reloading DLLs is surprisingly viable. But C lacks some things I want (multiple dispatch, dynamic arrays). I've tried to remedy this with macros, but it still feels a bit icky. Like I'm trying to make the language be something it's not.</p>
-</li>
+  <li>
+    <p>I want to be able to create graphical applications and games, that can run on as many platforms as possible, with
+      live coding capabilities</p>
+  </li>
+  <li>
+    <p>To fulfill this, I created <a href="http://github.com/saikyun/freja">Freja</a>, a code editor that can be
+      modified withing itself, and therefore create GUIs and games without ever closing the applications</p>
+    <p>2.1. Well, that was the idea anyway, but I still have problems like ending up in an infinite loop and needing to
+      restart</p>
+    <p>2.2. The bigger issue however, is that the GUI lib I wrote doesn't work well enough. Tons of tiny bugs that pop
+      up whenever I try to create new GUI</p>
+    <p>2.3. I also don't quite agree with the language I use, <a href="https://janet-lang.org">Janet</a>, which is a
+      super cozy lisp, but has some other ideas about live coding / redefining functions during runtime, which are not
+      hopeless to overcome, but often a bit in the way. This is in no way the fault of the language, it just has
+      slightly different goals than I have.</p>
+  </li>
+  <li>
+    <p>Despair</p>
+  </li>
+  <li>
+    <p>I've tried Unity and Godot, and while I dislike the former (extremely sluggish, and the minor point that C# feels
+      like a nice, safe car but sooo boring -- where is my meta programming!?), I can withstand the latter. It's snappy
+      and nice, has basic hot reload, but I personally feel the OOPiness (specifically no interfaces and tons of
+      inheritance) makes for a less cozy environment for me.</p>
+  </li>
+  <li>
+    <p>Now I'm standing here, wondering what to do with my situation. I feel like I don't have a cozy place to code, but
+      I'm not sure I'm ready to rewrite the GUI library. I'm also thinking about writing it in C, a language which I've
+      gotten a lot more love for, since learning that hot reloading DLLs is surprisingly viable. But C lacks some things
+      I want (multiple dispatch, dynamic arrays). I've tried to remedy this with macros, but it still feels a bit icky.
+      Like I'm trying to make the language be something it's not.</p>
+  </li>
 </ol>
-<p>So here I am. I've experimented a lot, e.g. making C more dynamic (changing structs during runtime), compiling lisp to C, playing around with type unification. But I have no clue where to go.</p>
+<p>So here I am. I've experimented a lot, e.g. making C more dynamic (changing structs during runtime), compiling lisp
+  to C, playing around with type unification. But I have no clue where to go.</p>
 <p>#100DaysToOffload</p>
+
+<p>Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>. :)</p>
