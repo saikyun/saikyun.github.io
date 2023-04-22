@@ -6,6 +6,4 @@ Sometimes I feel like I spend too little time with my son. At the same time, I t
 
 Also I spent two hours watching this fascinating lecture about [performance in programming](https://www.youtube.com/watch?v=Ge3aKEmZcqY).
 
-Yeah.
-
 _#100DaysToOffload - Please say hi on [mastodon.social/@saikyun](https://mastodon.social/@saikyun). :)_
