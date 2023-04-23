@@ -1,0 +1,27 @@
+# [Rest Day](#rest-day)
+
+Today it is sunday.
+
+For a while, I tried having a rule that I shouldn't code on sundays. I had this feeling that I was tiring myself out, and not giving myself enough time to recover. Sundays felt very boring, and I was often tired. Implementing this rule, it felt worse. Now I had nothing meaningful to do. And since I was tired, I had a hard time coming up with things to do. But over time, I started to appreciate this tired feeling.
+
+As long as I don't fight against it, it's not dangerous. It's just there. And since I'm not allowed to code, there's not really that much actually hard things to do. I can clean the kitchen even if I feel sluggish. I can watch youtube with my son.
+
+After getting laid off though, I felt pressure to create a game quickly, and tried to spend as much time as possible on it, including sundays. In the beginning, it was pretty easy. I got some sort of energy rush after being laid off. But then it went as with most projects, after three weeks or so, the hype died down. Me and my family got a long bout of colds and infections in the middle of it as well, so it wasn't really feasible to struggle so hard to create something quickly. My wife also commented on that I didn't seem as happy, now that I was working on sundays as well again.
+
+(In case you're wondering, it was supposed to be a hexagonal, [berlin interpretation roguelike](http://www.roguebasin.com/index.php/Berlin_Interpretation) with [trains](https://youtu.be/urL6ZFOXbCA). I played a bit of [Caves of Qud](https://www.cavesofqud.com) which inspired me to try to create something with less graphics and more code. However, I quickly ended up having to draw a lot, which meant I spent a lot of time not making fun gameplay. I think this helped kill my motivation.)
+
+After letting myself just enjoy empty days, rather than forcing myself to produce, I've felt that I've started to recover from my last job. I think I was more stressed than I realized, and since I experienced burn out (with sleeplessness and extreme difficulties concentrating) at my last job, I imagine I'm more stress sensitive than most.
+
+I've recently managed to jog often as well. I've been wanting to jog for about ten years, ever since reading Murakami's ["What I Talk About When I Talk About Running"](https://www.goodreads.com/book/show/2195464.What_I_Talk_About_When_I_Talk_About_Running). I never found a way to do it sustainably though. In the beginning, I just tried running for about 10 minutes straight, then increasing by 1-2 minutes every day. I think I lasted two weeks, then I started getting a lot of pain (I think in my knee, but I can't quite remember). I tried taking a short break, but it felt like no matter how long my break was, the pain instantly came back. Knowing myself as a 22-year old, I don't think I had the patience to wait weeks or months, and try again. So I quit, for many years. I've tried from time to time after that, but due to my [EDS](https://en.wikipedia.org/wiki/Ehlers–Danlos_syndromes) various parts of my body are very sensitive, e.g. knees, feet and my back.
+
+But this year, I think I finally found a combination of things that actually work. I'm using [Hoka shoes](https://cdn.sportshop.com/catalog/product/580/580/1/0/109747_1.jpg) which have bizarrely large soles (I tried [flat shoes with very little soles](https://runon.se/images/thumbs/000/0003907_joe-nimble-w-nimbletoes-addict-road-blackout-dam.jpeg) before that but it didn't work for me). I'm also doing the "Run/Walk/Run" thing, which for me meant in the beginning to stretch, walk for 5 minutes, do 10x 20s jog, 40s walk, walk for 5 minutes. Now I'm up to 22x 30s jog, 30s walk, and I've managed to keep it up even after getting sick, which is incredibly motivating for me, because getting sick tends to break all my forming habits.
+
+I think this newfound ability to jog has helped me a lot in my recovery. I sleep well, despite now being completely sleep medication free. I also don't get as sensitive to days when I sleep worse. So overall my mood is better.
+
+Then I ended up listening to the Kodsnack episode mentioned [in my first blog post](#thought-loops). And they said people should just start blogging. So I did! And all of a sudden my brain started connecting things again, I could think more clearly, and deeper than I have been able to for a while. So of course I start coding again. My motivation got an extreme boost, and now I feel like I have the capability to pull through. What's best is that I have no illusion of being able to make money of a niche programming language (well, I guess [one can hope](https://ziglang.org/news/announcing-zig-software-foundation/), but there isn't as much buzz as with games). I believe this helps me feel that this is more of a hobby than a job.
+
+Still though, I don't want to risk my newfound energy. Therefore I resolve to not code on sundays. That way, I will at least have one restful day. And I'm also going to try not to write about code on sundays. I can write about my feelings about code, but not get into technical stuff.
+
+Hope you'll also enjoy a restful sunday. :) My and my wife gonna get to watch my son's first dance performance, so I know I will!
+
+_#100DaysToOffload - Please say hi on [mastodon.social/@saikyun](https://mastodon.social/@saikyun). :)_
