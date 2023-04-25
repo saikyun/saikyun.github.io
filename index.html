@@ -1,3 +1,19 @@
+<h1 id="getting-used-to-bad-things"><a href="#getting-used-to-bad-things">Getting used to bad things</a></h1>
+<p>I think there are more people than me who are good at getting used to bad things.</p>
+<p>I used to code lisp in emacs, and what's amazing about it, is that you can use <a href="http://danmidwood.com/content/2014/11/21/animated-paredit.html">Paredit</a> (and other structural editing tools, like those built into emacs) which let's you treat the code like a branching road where you can move towns and lakes around, rather than erase individual characters. The most obvious example in my mind are languages where <code>,</code> separates &quot;things&quot;, e.g.:</p>
+<pre><code>int sum(int curr, int acc)
+</code></pre>
+<p>In this situation, if you want to switch the place of <code>int curr</code> and <code>int acc</code>, you have to do this awkward dance of selecting <code>acc</code>, cutting it, moving the cursor to <code>curr</code>, paste it, select <code>curr</code>, cut it, move the cursor back to where <code>acc</code> used to be, paste. If there were no <code>,</code>, at least you could just select and cut the whole <code>int acc</code>, move the cursor to right after <code>(</code>, and paste, hit space, and remove the trailing space at the end. There are many variants on this, and if you're anything like me, you notice when these awkward things happen. And there's not really a clean solution.</p>
+<p><a href="https://calva.io/images/paredit/transpose.gif">That's not true in lisp.</a></p>
+<p>You just do a single command, <code>transpose-sexp</code> (preferably bound to a hotkey). And when you want to move multiple expressions that are in the same block, let's say you have code like this: <code>(curr :int acc :int)</code>, then at least you can stand in the middle, hit <code>Ctrl+K</code> which cuts until right before the closing <code>)</code>, then move to the beginning of the expression, then paste. At least you don't have to fiddle with selecting single characters.</p>
+<p>But I've gotten used to not having it, after sitting in C-based languages for more than a year. And it's very sad.</p>
+<p>Of course there are a lot worse things to get used to, like depression, abuse and plastic accumulating in our nature.</p>
+<p>Still though, I wonder if there's a connection. If you allow yourself to get used to one thing that you can affect, but don't. Do you get better at getting used to bad things?</p>
+<p><em>#100DaysToOffload - Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>. :)</em></p>
+
+
+<hr />
+
 <h1 id="productivity"><a href="#productivity">Productivity</a></h1>
 <p>I wanted to name this Tired, but I already made that post, so let's do something else.</p>
 <p>During the weekend, I listened to 90% of the second episode of <a href="https://synk.fm/podcast/2-en-snurra-varje-dag/">Synk</a>. In this episode, Fredrik and Martin talks about productivity and productivity tools (like papers and pens and Obsidian). I don't care about productivity, I just wanted to listen to them talk about something that isn't game development, because I've spent the last 5 years of my life listening to game development podcasts.</p>
