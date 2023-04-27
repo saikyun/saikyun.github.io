@@ -1,9 +1,9 @@
 # [Day 4 on GTD](#day-4-on-gtd)
 
-Since starting to note everything down, as per Orthodox GTD Dogma, I'm realizing I have way more obligations than I realized. In a single day I noted over 20 things for my inbox plus email plus texts. And I don't even have a job!
+Since starting to note everything down, as per Orthodox GTD Dogma, I'm realizing I have way more obligations than I thought. In a single day I noted over 20 things for my inbox plus email plus texts. And I don't even have a job!
 
 A sample of things in my inbox:
-* Dinosaurs (for the RPG session I'm planning for my son & wife, we recently made character for the [Handbok för Superhjältar](https://handbokforsuperhjaltar.se/butik/spel/rollspel/handbok-for-superhjaltar-rollspelet/) role playing game)
+* Dinosaurs (for the RPG session I'm planning for my son & wife, we recently made characters for the [Handbok för Superhjältar](https://handbokforsuperhjaltar.se/butik/spel/rollspel/handbok-for-superhjaltar-rollspelet/) role playing game)
 * Check Twitter
 * Remove rug from balcony
 * Contact son's friend's mom to plan playdate
