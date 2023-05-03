@@ -10,22 +10,22 @@ When I last left of, I had almost fulfilled the goal of compiling
 
 ```
 (defn fac [n]
-    (if (<= n 1)
-    1
-    (* n (fac (- n 1)))))
+  (if (<= n 1)
+  1
+  (* n (fac (- n 1)))))
 ```
 
 to
 
 ```
 int fac(n) {
-    int res;
-    if (n <= 1) {
-        res = 1;
-    } else {
-        res = (n * fac(n - 1));
-    }
-    return res;
+  int res;
+  if (n <= 1) {
+      res = 1;
+  } else {
+      res = (n * fac(n - 1));
+  }
+  return res;
 }
 ```
 
