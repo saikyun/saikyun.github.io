@@ -1,22 +1,22 @@
-<h1 id="compiling-lisp-to-c"><a href="#compiling-lisp-to-c">Compiling Lisp to C</a></h1>
+<h1><a href="#compiling-lisp-to-c">Compiling Lisp to C</a></h1>
 <p>Today I got some time to work a bit more on the compiler. It's been a two week break, mostly because of focusing on GTD stuff, having meetings with work people last week, my wife going to Stockholm for a couple of days, my wife being sick, me trying to actually do the stuff I wrote in my Orthodox GTD Journal.</p>
 <p>I'm pretty happy though, because my home is surprisingly clean, and I finally ordered a portable laptop stand that I've been wanting for years. I've also bought a Planck EZ from a nice guy / super star (perhaps most famous for his <a href="https://www.youtube.com/watch?v=Fy0aCDmgnxg">shorts video</a>). When it has arrived I'll proudly take a photo of my glorious set up. Did I mention I bought wooden wrist support as well?</p>
 <p>So, with all that sort of figured out, I finally felt the peace of mind to sit down with my lisp again.</p>
 <p>When I last left of, I had almost fulfilled the goal of compiling</p>
 <pre><code>(defn fac [n]
-    (if (&lt;= n 1)
-    1
-    (* n (fac (- n 1)))))
+  (if (&lt;= n 1)
+  1
+  (* n (fac (- n 1)))))
 </code></pre>
 <p>to</p>
 <pre><code>int fac(n) {
-    int res;
-    if (n &lt;= 1) {
-        res = 1;
-    } else {
-        res = (n * fac(n - 1));
-    }
-    return res;
+  int res;
+  if (n &lt;= 1) {
+      res = 1;
+  } else {
+      res = (n * fac(n - 1));
+  }
+  return res;
 }
 </code></pre>
 <p>The stuff that was missing was:</p>
