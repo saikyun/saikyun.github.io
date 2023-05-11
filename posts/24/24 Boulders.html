@@ -1,0 +1,14 @@
+<h1 id="boulders"><a href="#boulders">Boulders</a></h1>
+<video controls><source src="/posts/24/boulders.mov"></video>
+<p>Somehow I managed to get a game of some sort working in my lisp. :D You can move around, collect money, and most importantly: die.</p>
+<p>There are some interesting quirks. For example, you can only use <code>if</code> as the last expression in a <code>defn</code>, or inside <code>while</code>. If you do it inside a <code>while</code> though, you can only use <code>if</code> as a statement, and not an expression. Hm.</p>
+<pre><code>(var lul :int 0)
+(while (&lt; lul 1)
+  (if (&amp;&amp; (== 0 (in map to))
+      (&lt; to (* mapw maph)))
+    (do (printf &quot;YOU DIED\n&quot;)
+        (set dead 1)))
+(set lul 1))
+</code></pre>
+<p>So there's some of this littered around.</p>
+<p>What's nice is that now I have an example program, stored in git. So now I can go through various pain points (and I've written some down in <a href="https://github.com/saikyun/vajer/blob/main/QnA.md#todo-this-code-breaks-because-of-if-wanting-to-set-a-parents-defns-return-value">QnA.md</a>). Then over time I can compare my progress to this initial program, and see how much cleaner newer versions of vajer will be. :)</p>
