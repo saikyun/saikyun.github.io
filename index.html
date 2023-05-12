@@ -61,11 +61,11 @@
     <p>The most succesful situation I've had was when I described an interface for a Wave Manager in a game. It was meant to keep track of the number of enemies, and when the next wave of enemies should spawn after all enemies in the current wave had died.</p>
     <p>So I would write something like:</p>
     <pre><code class="language-c#">// 1. count number of enemies
-    // 2. if count is zero, start a timer
-    // 3. if timer is complete, call SpawnNextWave
-    void CheckNewWaveStart() {
-    
-    }
+// 2. if count is zero, start a timer
+// 3. if timer is complete, call SpawnNextWave
+void CheckNewWaveStart() {
+
+}
     </code></pre>
     <p>And then I'd do the same for <code>SpawnNextWave</code>, and for the next function that popped up, etc etc.</p>
     <p>Then I said that he should implement the functions, while I work on another related but not super dependent interface.</p>
