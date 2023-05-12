@@ -1,0 +1,36 @@
+<h1 id="zoom-in-teaching"><a href="#zoom-in-teaching">Zoom In Teaching</a></h1>
+<p>I just read <a href="https://underjord.io/complex-systems-all-the-way-down.html">this blogpost by lawik</a>. lawki is a fellow Kodsnackare who apparently has a really cool blog.</p>
+<p>I've heard that it's good content to take someone else's stuff and comment on it, so I figured I'd do that.</p>
+<p>lawik describes how one can zoom into problems infinitely. Like in the following paragraph.</p>
+<blockquote>
+<p>When a student asks me “What are your thoughts on MongoDB?” the answer is only simple if I lie. I know some people like it. I have heard enough to distrust it. The answer “Just use Postgres” isn’t exactly right, “It’s probably fine” feels dishonest and if I add “but I’d never choose it for anything” that’s hardly helpful. There is enormous context and choosing what to bring into a learning person’s world is genuinely difficult.</p>
+</blockquote>
+<p>I've done a little bit of teaching myself, and have struggled with similar problems. I myself love diving into weird little details, like how Axl's crouching kick can avoid Sol's massive overhead Bandit Bringer in Guilty Gear Xrd. Or how in Clojure you can access private functions, like <code>clojure.core/into1</code> with the invocation <code>@#'clojure.core/into1</code>.</p>
+<p>These are things obviously not relevant to a beginner, but on the scale of &quot;this is how you call a function&quot; and &quot;this is how you modify core functions&quot; one always have to come up with an answer to: &quot;do I explain this, make some vague analogue up, or ignore it?&quot;.</p>
+<p>It doesn't help that you often have to do this while solving your own problems as well.</p>
+<p>For me, the two things that have helped me teach others are:</p>
+<ol>
+<li>Dedicate time to teaching</li>
+<li>Teaching in a workplace setting means working together</li>
+</ol>
+<p>The most succesful situation I've had was when I described an interface for a Wave Manager in a game. It was meant to keep track of the number of enemies, and when the next wave of enemies should spawn after all enemies in the current wave had died.</p>
+<p>So I would write something like:</p>
+<pre><code class="language-c#">// 1. count number of enemies
+// 2. if count is zero, start a timer
+// 3. if timer is complete, call SpawnNextWave
+void CheckNewWaveStart() {
+
+}
+</code></pre>
+<p>And then I'd do the same for <code>SpawnNextWave</code>, and for the next function that popped up, etc etc.</p>
+<p>Then I said that he should implement the functions, while I work on another related but not super dependent interface.</p>
+<p>After doing that for an afternoon, he said it was the best work day he had had so far. So it worked great!</p>
+<p>I think what was helpful about this was:</p>
+<ol>
+<li>His focus was more clear. He was not supposed to design an overarching structure, but was instead supposed to solve more zoomed-in problems.</li>
+<li>He was contributing. It was stuff that was crucial for the game to work.</li>
+<li>I could work on other things, related but not dependent, so I wasn't as slowed down as I would have been if we worked on the exact same thing or wildly different things. This helped my productivity and lessened context-switching.</li>
+</ol>
+<p>I have more things to say about the blog post, but this already turned out pretty long, so that's it for today.</p>
+<p>Thanks lawik for sharing your thoughts.</p>
+<p><em>#100DaysToOffload - Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>. :)</em></p>
