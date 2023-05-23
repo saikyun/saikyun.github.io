@@ -60,13 +60,13 @@
     <p>Because it couldn't deal with void. Also it could <em>only</em> deal with ints.</p>
     <p>Now that's fixed! The same function now looks like this:</p>
     <pre><code>(defn move_up
-      [map :char*
-       mapw :int
-       maph :int] :void
-      (var rrr :char* (strchr map 0))
-      (var pos :int (- rrr map))
-      (if (&gt;= (- pos mapw) 0)
-        (move map pos (- pos mapw))))
+  [map :char*
+    mapw :int
+    maph :int] :void
+  (var rrr :char* (strchr map 0))
+  (var pos :int (- rrr map))
+  (if (&gt;= (- pos mapw) 0)
+    (move map pos (- pos mapw))))
     </code></pre>
     <p>Now that I look at it, it seems some other things changed, but the important one is that I don't need :int return type on the function, and the if doesn't need the do-block and returning an int!</p>
     <p><em>#100DaysToOffload - Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>. :)</em></p>
