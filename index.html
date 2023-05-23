@@ -43,6 +43,37 @@
 
 <body>
   <div class="container">
+    <h1 id="less-wonky-if-in-vajer"><a href="#less-wonky-if-in-vajer">Less wonky if in Vajer</a></h1>
+    <p>Last time I wrote about Vajer, I had to write if like this:</p>
+    <pre><code>(defn move-up
+  [map :char*
+    mapw :int
+    maph :int] :int
+  (var pos :int (- (strchr map 0) map))
+  (if (&gt;= (- pos mapw) 0)
+    (do
+      (put map pos 1)
+      (put map (- pos mapw) 0)
+      0))
+)
+    </code></pre>
+    <p>Because it couldn't deal with void. Also it could <em>only</em> deal with ints.</p>
+    <p>Now that's fixed! The same function now looks like this:</p>
+    <pre><code>(defn move_up
+      [map :char*
+       mapw :int
+       maph :int] :void
+      (var rrr :char* (strchr map 0))
+      (var pos :int (- rrr map))
+      (if (&gt;= (- pos mapw) 0)
+        (move map pos (- pos mapw))))
+    </code></pre>
+    <p>Now that I look at it, it seems some other things changed, but the important one is that I don't need :int return type on the function, and the if doesn't need the do-block and returning an int!</p>
+    <p><em>#100DaysToOffload - Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>. :)</em></p>
+
+    
+    <hr />
+
     <h1 id="would-you-hire-yourself"><a href="#would-you-hire-yourself">Would You Hire Yourself?</a></h1>
     <p>As is usually the case when I am tired but get time to lay still in bed all morning (not that common with a 6 year old son), my mind starts visiting interesting places.</p>
     <p>When I am stressed, it's sadly mostly about work. But lately, it seems that those processes have slowed down. Perhaps because I got fired from the last job I was stressed at. My current work feels more manageable, and I'm able to exercise 5 times per week.</p>
