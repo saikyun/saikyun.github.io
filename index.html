@@ -43,6 +43,52 @@
 
 <body>
   <div class="container">
+    <h1 id="type-inference-in-vajer"><a href="#type-inference-in-vajer">Type inference in Vajer</a></h1>
+    <p>Type inferencing in <a href="https://github.com/saikyun/vajer">Vajer</a> works now!</p>
+    <p>This means code like this:</p>
+    <pre><code class="language-clojure">(defn move_up
+  [map mapw maph]
+  (var pos (get_pos map mapw maph 0))
+  (if (&gt;= (- pos mapw) 0)
+    (move map pos (- pos mapw))))
+</code></pre>
+    <p>Is compiled to</p>
+    <pre><code class="language-c">void move_up(int* map, int mapw, int maph) {
+  int gensym54;
+  gensym54 = get_pos(map, mapw, maph, 0);
+
+  int pos = gensym54;
+
+  int gensym56;
+  int gensym57;
+  gensym57 = (pos - mapw);
+
+  gensym56 = (gensym57 &gt;= 0);
+
+  if (gensym56) {
+    int gensym59;
+    gensym59 = (pos - mapw);
+
+    move(map, pos, gensym59);
+
+  }
+
+}
+</code></pre>
+    <p>!!!</p>
+    <p>It's of course hideously untested and the error messages are terrible, but it's really cool that I can now run
+      compile and run my game, with code that looks <a
+        href="https://github.com/saikyun/vajer/blob/main/lisp/sdl-test.lisp">quite a lot like lisp</a>! :D</p>
+    <video controls>
+      <source src="/posts/29/playing.mov">
+    </video>
+    <p><em>#100DaysToOffload - Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>.
+        :)</em></p>
+
+
+    <hr />
+
+
     <h1 id="less-wonky-if-in-vajer"><a href="#less-wonky-if-in-vajer">Less wonky if in Vajer</a></h1>
     <p>Last time I wrote about Vajer, I had to write if like this:</p>
     <pre><code>(defn move-up
@@ -68,72 +114,137 @@
   (if (&gt;= (- pos mapw) 0)
     (move map pos (- pos mapw))))
     </code></pre>
-    <p>Now that I look at it, it seems some other things changed, but the important one is that I don't need :int return type on the function, and the if doesn't need the do-block and returning an int!</p>
-    <p><em>#100DaysToOffload - Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>. :)</em></p>
+    <p>Now that I look at it, it seems some other things changed, but the important one is that I don't need :int return
+      type on the function, and the if doesn't need the do-block and returning an int!</p>
+    <p><em>#100DaysToOffload - Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>.
+        :)</em></p>
 
-    
+
     <hr />
 
     <h1 id="would-you-hire-yourself"><a href="#would-you-hire-yourself">Would You Hire Yourself?</a></h1>
-    <p>As is usually the case when I am tired but get time to lay still in bed all morning (not that common with a 6 year old son), my mind starts visiting interesting places.</p>
-    <p>When I am stressed, it's sadly mostly about work. But lately, it seems that those processes have slowed down. Perhaps because I got fired from the last job I was stressed at. My current work feels more manageable, and I'm able to exercise 5 times per week.</p>
-    <p>This morning, one of the interesting things that popped up was the question &quot;would I hire myself?&quot;. Something struck a chord when I &quot;heard&quot; this, and I think it's sort of an interesting question to explore.</p>
-    <p>Since the economy was rough in the last company I worked for, I got the &quot;ephiphany&quot; of: for every crown you get paid, you should earn your company two crowns. If you can't do that, you're probably not working in an economically sustainable way.</p>
-    <p>Since then (a full two months ago) I've started to ask myself this before considering working with someone: will I bring more than I cost?</p>
-    <p>I think the way I'm working right now, that's definitely true. I believe I am adding a lot toward the goals of the company, which are also things people are willing to pay for.</p>
-    <p>The &quot;would I hire myself?&quot; question is a bit broader though. Because with that framing, one gets a bit of company culture, morality and personality traits into the mix.</p>
-    <p>I've struggled a lot with reporting time, because if you judge me by &quot;how well do I sit in front of a computer 40 hours per week and have the job's code open in my editor?&quot; I'm a terrible programmer. I have a kid who gets sick often, I'm a feminist which means I want to share household work (and there are hints that <a href="https://link.springer.com/article/10.1007/s10508-022-02397-2">this is good for the relationship</a> as well (which seems kind of obvious but also seems like many men don't bother)) some of which includes dropping off my son at preschool and making sure dinner is ready. So if the above criteria is how I'd hire me, I would say no. Never. I'd just hire someone fresh out of college (or still in), give them 50% of what I ask for, and they could chug along merrily with all of their youthful energy and boundless time.</p>
-    <p>So what I've done then, though not stated explicitly, is something like asking myself, &quot;ok, so in what situation <em>would</em> I hire myself in?&quot;. What I came up with is something like this:</p>
+    <p>As is usually the case when I am tired but get time to lay still in bed all morning (not that common with a 6
+      year old son), my mind starts visiting interesting places.</p>
+    <p>When I am stressed, it's sadly mostly about work. But lately, it seems that those processes have slowed down.
+      Perhaps because I got fired from the last job I was stressed at. My current work feels more manageable, and I'm
+      able to exercise 5 times per week.</p>
+    <p>This morning, one of the interesting things that popped up was the question &quot;would I hire myself?&quot;.
+      Something struck a chord when I &quot;heard&quot; this, and I think it's sort of an interesting question to
+      explore.</p>
+    <p>Since the economy was rough in the last company I worked for, I got the &quot;ephiphany&quot; of: for every crown
+      you get paid, you should earn your company two crowns. If you can't do that, you're probably not working in an
+      economically sustainable way.</p>
+    <p>Since then (a full two months ago) I've started to ask myself this before considering working with someone: will
+      I bring more than I cost?</p>
+    <p>I think the way I'm working right now, that's definitely true. I believe I am adding a lot toward the goals of
+      the company, which are also things people are willing to pay for.</p>
+    <p>The &quot;would I hire myself?&quot; question is a bit broader though. Because with that framing, one gets a bit
+      of company culture, morality and personality traits into the mix.</p>
+    <p>I've struggled a lot with reporting time, because if you judge me by &quot;how well do I sit in front of a
+      computer 40 hours per week and have the job's code open in my editor?&quot; I'm a terrible programmer. I have a
+      kid who gets sick often, I'm a feminist which means I want to share household work (and there are hints that <a
+        href="https://link.springer.com/article/10.1007/s10508-022-02397-2">this is good for the relationship</a> as
+      well (which seems kind of obvious but also seems like many men don't bother)) some of which includes dropping off
+      my son at preschool and making sure dinner is ready. So if the above criteria is how I'd hire me, I would say no.
+      Never. I'd just hire someone fresh out of college (or still in), give them 50% of what I ask for, and they could
+      chug along merrily with all of their youthful energy and boundless time.</p>
+    <p>So what I've done then, though not stated explicitly, is something like asking myself, &quot;ok, so in what
+      situation <em>would</em> I hire myself in?&quot;. What I came up with is something like this:</p>
     <ol>
-    <li>I need to be able to take care of my son when he's sick</li>
-    <li>I need to drop him off at 09:00 and be done with work 17:00, and I need to exercise and eat lunch inbetween</li>
-    <li>I need to be able to have tired days</li>
-    <li>I don't want to deal with people planning that I should do x thing on precisely y day, which always gets wrecked because of someone getting sick</li>
+      <li>I need to be able to take care of my son when he's sick</li>
+      <li>I need to drop him off at 09:00 and be done with work 17:00, and I need to exercise and eat lunch inbetween
+      </li>
+      <li>I need to be able to have tired days</li>
+      <li>I don't want to deal with people planning that I should do x thing on precisely y day, which always gets
+        wrecked because of someone getting sick</li>
     </ol>
-    <p>What I came up with then, is that I should work at most 4 hours per day. That would mean I have 8 hours - 4 hours = 4 hours to be lazy and exercise. What this also means is that if he's sick one day, and my wife takes care of him the next, it's at least feasible (if hard) to work a bit longer and catch up, whereas with an expected &quot;8 hour in front of screen per day&quot;, catching up and doing 16 hours is impossible for me.</p>
-    <p>With this in mind, I can proudly answer the question of &quot;how well do I sit in front of a computer <strong>20</strong> hours per week and have the job's code open in my editor?&quot; and say &quot;very well!&quot;. Even with life's hiccups, I can do that pretty sustainably.</p>
-    <p>Now, what I haven't even started getting into is what other questions I could ask myself, which are a different way of looking at the problem, questions that would make me look better than less experienced developers.</p>
-    <p>&quot;How well do you manage unclear specifications?&quot; No problem.  <br>
-    &quot;Do you enjoy mentoring others?&quot; Yes!  <br>
-    &quot;Can we put you alone in a room with a client and you'll figure everything out and deliver a product without essentially any hand-holding?&quot; Hell yeah! I love talking to clients and users and all that stuff. I love making sure users enjoy using the tools I build for them. :D</p>
-    <p>With these criterions, and still having fulfilled the nebolous &quot;can you sit in front of computer x amount of hours&quot; for a high enough number of x, I can proudly say:</p>
+    <p>What I came up with then, is that I should work at most 4 hours per day. That would mean I have 8 hours - 4 hours
+      = 4 hours to be lazy and exercise. What this also means is that if he's sick one day, and my wife takes care of
+      him the next, it's at least feasible (if hard) to work a bit longer and catch up, whereas with an expected &quot;8
+      hour in front of screen per day&quot;, catching up and doing 16 hours is impossible for me.</p>
+    <p>With this in mind, I can proudly answer the question of &quot;how well do I sit in front of a computer
+      <strong>20</strong> hours per week and have the job's code open in my editor?&quot; and say &quot;very
+      well!&quot;. Even with life's hiccups, I can do that pretty sustainably.
+    </p>
+    <p>Now, what I haven't even started getting into is what other questions I could ask myself, which are a different
+      way of looking at the problem, questions that would make me look better than less experienced developers.</p>
+    <p>&quot;How well do you manage unclear specifications?&quot; No problem. <br>
+      &quot;Do you enjoy mentoring others?&quot; Yes! <br>
+      &quot;Can we put you alone in a room with a client and you'll figure everything out and deliver a product without
+      essentially any hand-holding?&quot; Hell yeah! I love talking to clients and users and all that stuff. I love
+      making sure users enjoy using the tools I build for them. :D</p>
+    <p>With these criterions, and still having fulfilled the nebolous &quot;can you sit in front of computer x amount of
+      hours&quot; for a high enough number of x, I can proudly say:</p>
     <p>&quot;Yes! I would hire myself!&quot;</p>
-    <p><em>#100DaysToOffload - Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>. :)</em></p>
+    <p><em>#100DaysToOffload - Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>.
+        :)</em></p>
 
-    
+
     <hr />
 
-    <h1 id="when-is-long-term-planning-needed"><a href="#when-is-long-term-planning-needed">When is long term planning needed?</a></h1>
-    <p>I often dive into things head first. I like to fix problems, code as quickly as possible while I'm still hype, I hate waiting. I really <em>really</em> hate waiting. Because it's like spending my working time doing nothing. Then when it's time to do something I'm already tired and/or bored.</p>
+    <h1 id="when-is-long-term-planning-needed"><a href="#when-is-long-term-planning-needed">When is long term planning
+        needed?</a></h1>
+    <p>I often dive into things head first. I like to fix problems, code as quickly as possible while I'm still hype, I
+      hate waiting. I really <em>really</em> hate waiting. Because it's like spending my working time doing nothing.
+      Then when it's time to do something I'm already tired and/or bored.</p>
     <p>So I tend to do things one bit at the time.</p>
-    <p>When I started working on my text editor <a href="https://github.com/saikyun/freja">freja</a>, I didn't sketch out <code>freja-frp</code>, <code>freja-layout</code> and <code>textarea</code>. I just started with the goal of &quot;implement all interactions that are in the Chrome implementation of <code>&lt;textarea&gt;&lt;/textarea&gt;</code>&quot;.</p>
-    <p>This turned out to be a great goal. It's very clear what should be there. Everything in the Chrome textarea. And it's very clear what should not be there. Everything that's not in the Chrome textarea.</p>
-    <p>Another helpful part was that I constantly communicated my progress with a close friend. So even on non-productive days I could complain about the problems I faced. I can't remember if he did, but I'm sure he brought up interactions I didn't think about at first, like triple clicking or certain funny word wrapping aspects.</p>
-    <p>After two months or so, I was at <a href="https://www.youtube.com/watch?v=ReUczDAWLfI">this stage (youtube, 1min)</a>. At that point I even managed to get some extra stuff in, like syntax highlighting. And a little easter egg for those with a watchful eye. :)</p>
-    <p>Still, after those two months, I still didn't know what was ahead of me. I had just worked merrily in a way that suited me. I had this vague sense of what an ideal text editor should be, but I didn't say that I must plan everything out ahead.</p>
-    <p>Then, about a year later, working in a similar way, with smaller problems to solve each week, I released what I call the notepad-complete version of Freja. You could essentially do everything you can in notepad, and then some (live coding in the editor!).</p>
-    <p>I believe I would never have gone this far if I had tried to plan this process ahead. And this is for a whole text editor. I wonder how many ideas are snuffed out before getting the chance to burn brightly, because of inaction.</p>
-    <p><em>#100DaysToOffload - Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>. :)</em></p>
+    <p>When I started working on my text editor <a href="https://github.com/saikyun/freja">freja</a>, I didn't sketch
+      out <code>freja-frp</code>, <code>freja-layout</code> and <code>textarea</code>. I just started with the goal of
+      &quot;implement all interactions that are in the Chrome implementation of
+      <code>&lt;textarea&gt;&lt;/textarea&gt;</code>&quot;.
+    </p>
+    <p>This turned out to be a great goal. It's very clear what should be there. Everything in the Chrome textarea. And
+      it's very clear what should not be there. Everything that's not in the Chrome textarea.</p>
+    <p>Another helpful part was that I constantly communicated my progress with a close friend. So even on
+      non-productive days I could complain about the problems I faced. I can't remember if he did, but I'm sure he
+      brought up interactions I didn't think about at first, like triple clicking or certain funny word wrapping
+      aspects.</p>
+    <p>After two months or so, I was at <a href="https://www.youtube.com/watch?v=ReUczDAWLfI">this stage (youtube,
+        1min)</a>. At that point I even managed to get some extra stuff in, like syntax highlighting. And a little
+      easter egg for those with a watchful eye. :)</p>
+    <p>Still, after those two months, I still didn't know what was ahead of me. I had just worked merrily in a way that
+      suited me. I had this vague sense of what an ideal text editor should be, but I didn't say that I must plan
+      everything out ahead.</p>
+    <p>Then, about a year later, working in a similar way, with smaller problems to solve each week, I released what I
+      call the notepad-complete version of Freja. You could essentially do everything you can in notepad, and then some
+      (live coding in the editor!).</p>
+    <p>I believe I would never have gone this far if I had tried to plan this process ahead. And this is for a whole
+      text editor. I wonder how many ideas are snuffed out before getting the chance to burn brightly, because of
+      inaction.</p>
+    <p><em>#100DaysToOffload - Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>.
+        :)</em></p>
 
-    
+
     <hr />
 
     <h1 id="zoom-in-teaching"><a href="#zoom-in-teaching">Zoom In Teaching</a></h1>
-    <p>I just read <a href="https://underjord.io/complex-systems-all-the-way-down.html">this blogpost by lawik</a>. lawik is a fellow Kodsnackare who apparently has a really cool blog.</p>
+    <p>I just read <a href="https://underjord.io/complex-systems-all-the-way-down.html">this blogpost by lawik</a>.
+      lawik is a fellow Kodsnackare who apparently has a really cool blog.</p>
     <p>I've heard that it's good content to take someone else's stuff and comment on it, so I figured I'd do that.</p>
     <p>lawik describes how one can zoom into problems infinitely. Like in the following paragraph.</p>
     <blockquote>
-    <p>When a student asks me “What are your thoughts on MongoDB?” the answer is only simple if I lie. I know some people like it. I have heard enough to distrust it. The answer “Just use Postgres” isn’t exactly right, “It’s probably fine” feels dishonest and if I add “but I’d never choose it for anything” that’s hardly helpful. There is enormous context and choosing what to bring into a learning person’s world is genuinely difficult.</p>
+      <p>When a student asks me “What are your thoughts on MongoDB?” the answer is only simple if I lie. I know some
+        people like it. I have heard enough to distrust it. The answer “Just use Postgres” isn’t exactly right, “It’s
+        probably fine” feels dishonest and if I add “but I’d never choose it for anything” that’s hardly helpful. There
+        is enormous context and choosing what to bring into a learning person’s world is genuinely difficult.</p>
     </blockquote>
-    <p>I've done a little bit of teaching myself, and have struggled with similar problems. I myself love diving into weird little details, like how Axl's crouching kick can avoid Sol's massive overhead Bandit Bringer in Guilty Gear Xrd. Or how in Clojure you can access private functions, like <code>clojure.core/into1</code> with the invocation <code>@#'clojure.core/into1</code>.</p>
-    <p>These are things obviously not relevant to a beginner, but on the scale of &quot;this is how you call a function&quot; to &quot;this is how you modify core functions&quot; one always have to come up with an answer to: &quot;do I explain this, make some vague analogue up, or ignore it?&quot;.</p>
+    <p>I've done a little bit of teaching myself, and have struggled with similar problems. I myself love diving into
+      weird little details, like how Axl's crouching kick can avoid Sol's massive overhead Bandit Bringer in Guilty Gear
+      Xrd. Or how in Clojure you can access private functions, like <code>clojure.core/into1</code> with the invocation
+      <code>@#'clojure.core/into1</code>.
+    </p>
+    <p>These are things obviously not relevant to a beginner, but on the scale of &quot;this is how you call a
+      function&quot; to &quot;this is how you modify core functions&quot; one always have to come up with an answer to:
+      &quot;do I explain this, make some vague analogue up, or ignore it?&quot;.</p>
     <p>It doesn't help that you often have to do this while solving your own problems as well.</p>
     <p>For me, the two things that have helped me teach others are:</p>
     <ol>
-    <li>Dedicate time to teaching</li>
-    <li>Teaching in a workplace setting means working together</li>
+      <li>Dedicate time to teaching</li>
+      <li>Teaching in a workplace setting means working together</li>
     </ol>
-    <p>The most succesful situation I've had was when I described an interface for a Wave Manager in a game. It was meant to keep track of the number of enemies, and when the next wave of enemies should spawn after all enemies in the current wave had died.</p>
+    <p>The most succesful situation I've had was when I described an interface for a Wave Manager in a game. It was
+      meant to keep track of the number of enemies, and when the next wave of enemies should spawn after all enemies in
+      the current wave had died.</p>
     <p>So I would write something like:</p>
     <pre><code class="language-c#">// 1. count number of enemies
 // 2. if count is zero, start a timer
@@ -143,19 +254,25 @@ void CheckNewWaveStart() {
 }
     </code></pre>
     <p>And then I'd do the same for <code>SpawnNextWave</code>, and for the next function that popped up, etc etc.</p>
-    <p>Then I said that he should implement the functions, while I work on another related but not super dependent interface.</p>
+    <p>Then I said that he should implement the functions, while I work on another related but not super dependent
+      interface.</p>
     <p>After doing that for an afternoon, he said it was the best work day he had had so far. So it worked great!</p>
     <p>I think what was helpful about this was:</p>
     <ol>
-    <li>His focus was more clear. He was not supposed to design an overarching structure, but was instead supposed to solve more zoomed-in problems.</li>
-    <li>He was contributing. It was stuff that was crucial for the game to work.</li>
-    <li>I could work on other things, related but not dependent, so I wasn't as slowed down as I would have been if we worked on the exact same thing or wildly different things. This helped my productivity and lessened context-switching.</li>
+      <li>His focus was more clear. He was not supposed to design an overarching structure, but was instead supposed to
+        solve more zoomed-in problems.</li>
+      <li>He was contributing. It was stuff that was crucial for the game to work.</li>
+      <li>I could work on other things, related but not dependent, so I wasn't as slowed down as I would have been if we
+        worked on the exact same thing or wildly different things. This helped my productivity and lessened
+        context-switching.</li>
     </ol>
-    <p>I have more things to say about the blog post, but this already turned out pretty long, so that's it for today.</p>
+    <p>I have more things to say about the blog post, but this already turned out pretty long, so that's it for today.
+    </p>
     <p>Thanks lawik for sharing your thoughts.</p>
-    <p><em>#100DaysToOffload - Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>. :)</em></p>
+    <p><em>#100DaysToOffload - Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>.
+        :)</em></p>
 
-    
+
     <hr />
 
     <h1 id="boulders"><a href="#boulders">Boulders</a></h1>
@@ -166,7 +283,8 @@ void CheckNewWaveStart() {
       importantly: die.</p>
     <p>There are some interesting quirks. For example, you can only use <code>if</code> as the last expression in a
       <code>defn</code>, or inside <code>while</code>. If you do it inside a <code>while</code> though, you can only use
-      <code>if</code> as a statement, and not an expression. Hm.</p>
+      <code>if</code> as a statement, and not an expression. Hm.
+    </p>
     <pre><code>(var lul :int 0)
     (while (&lt; lul 1)
       (if (&amp;&amp; (== 0 (in map to))

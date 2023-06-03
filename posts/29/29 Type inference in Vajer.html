@@ -1,0 +1,36 @@
+<h1 id="type-inference-in-vajer"><a href="#type-inference-in-vajer">Type inference in Vajer</a></h1>
+<p>Type inferencing in <a href="https://github.com/saikyun/vajer">Vajer</a> works now!</p>
+<p>This means code like this:</p>
+<pre><code class="language-clojure">(defn move_up
+  [map mapw maph]
+  (var pos (get_pos map mapw maph 0))
+  (if (&gt;= (- pos mapw) 0)
+    (move map pos (- pos mapw))))
+</code></pre>
+<p>Is compiled to</p>
+<pre><code class="language-c">void move_up(int* map, int mapw, int maph) {
+  int gensym54;
+  gensym54 = get_pos(map, mapw, maph, 0);
+
+  int pos = gensym54;
+
+  int gensym56;
+  int gensym57;
+  gensym57 = (pos - mapw);
+
+  gensym56 = (gensym57 &gt;= 0);
+
+  if (gensym56) {
+    int gensym59;
+    gensym59 = (pos - mapw);
+
+    move(map, pos, gensym59);
+
+  }
+
+}
+</code></pre>
+<p>!!!</p>
+<p>It's of course hideously untested and the error messages are terrible, but it's really cool that I can now run compile and run my game, with code that looks <a href="https://github.com/saikyun/vajer/blob/main/lisp/sdl-test.lisp">quite a lot like lisp</a>! :D</p>
+<video controls><source src="/posts/29/playing.mov"></video>
+<p><em>#100DaysToOffload - Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>. :)</em></p>
