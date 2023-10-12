@@ -40,6 +40,12 @@ At the end we put his body in a coffin. It's very sad to see a baby sized coffin
 
 A month later we buried him. It was also very sad. Aloud I read a text I had written, about wanting to eat ice cream with him. I cried a lot.
 
+I hesitated on whether to include the text or not, but I feel like it is a good text about Casey. It's in swedish.
+
+![Till Casey 1](till-casey-1.jpg)
+
+![Till Casey 2](till-casey-2.jpg)
+
 This week we got the burial stone. It looks very pretty. If he was born when he was supposed to, he would have been two months old now.
 
 I wish I could hold Casey.
