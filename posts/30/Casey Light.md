@@ -7,4 +7,4 @@ So, the trigger warning is: death of a child
 
 Do you still want to read? In the next link comes the actual post.
 
-[Casey](posts/30/casey.html)
+[Casey](Casey.html)
