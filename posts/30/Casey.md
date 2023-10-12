@@ -28,9 +28,9 @@ I go home with Casey's brother, and it's nice to finally be back home. I take hi
 
 Then, I think between 21:00-22:00, my wife calls. Apparently they haven't seen Casey's pulse in a while. That's not alarming in itself. During the whole visit, there has been a lot of trouble finding Casey's pulse with the CTG-machine (the machine that tracks his pulse). Still though, it takes so long that we decide that I should come to the hospital. I call my friend/neighbour to come over (and Casey's grandpa to take over, but he lives a bit further away), and as soon as I saw my friend, I went to the car. I called my wife and we talk. While driving, the doctors decide that they have to do a emergency c-section. The worry on her otherwise extremely calm voice rings through as the hangs up. I drive legally at first, but when I come out on the essentially empty highway, I turn up the speed.
 
-Earlier during our visit, we got to see what would happen in case Casey would be born too early. Apparently hand hygiene is extremely important. So when I finally get to the hospital, and the nurse tells me that my wife's still in surgery, and that I should come with her. I ask her how she and Casey are doing, but she says she doesn't know. I ask if I should sanitize my hands. She says no, but since I remember that it was very important, I do it anyway. When thinking about it later, I wonder if she already knew it wouldn't be necessary.
+Earlier during our visit, we got to see what would happen in case Casey would be born too early. Apparently hand hygiene is extremely important. So when I finally get to the hospital, and the nurse tells me that my wife's still in surgery, and that I should come with her. I ask her how my wife and Casey are doing, but the nurse says she doesn't know. I ask if I should sanitize my hands. She says no, but since I remember that it was very important, I do it anyway. When thinking about it later, I wonder if she already knew it wouldn't be necessary.
 
-The nurse takes me through dark hallways, and leads me to a room which I believe was connected to the surgery room. A crowd of nurses, midwives are standing around a table. They move aside and let me sit down. Then they tell me that Casey didn't make it. They let me hold him. And he is so beautiful. He has perfect little fingers, and he has my curly, dark hair. Obviously I cry a lot, as I do when I write this. It feels truly unfair that I'm not able to hold him.
+The nurse takes me through dark hallways, and leads me to a room which I believe was connected to the surgery room. A crowd of nurses, midwives are standing around a table. They move aside and let me sit down. Then they tell me that Casey didn't make it. They let me hold him. And he is so beautiful. He has perfect little fingers, and he has curly, dark hair, just like mine. Obviously I cry a lot, as I do when I write this. It feels truly unfair that I'm not able to hold him.
 
 I ask to be alone with him for a while, since my wife is still in the process of waking up. It felt "good" to be alone with him, because it was the only chance I ever got. Later I go up with the nurses, still holding Casey, and tell my wife what happened.
 
@@ -38,7 +38,7 @@ We stay for a couple of days, cry a lot. Talk to doctors and let friends and fam
 
 At the end we put his body in a coffin. It's very sad to see a baby sized coffin.
 
-A month later we buried him. It was also very sad. I read a text about wanting to eat ice cream with him. I cried a lot.
+A month later we buried him. It was also very sad. Aloud I read a text I had written, about wanting to eat ice cream with him. I cried a lot.
 
 This week we got the burial stone. It looks very pretty. If he was born when he was supposed to, he would have been two months old now.
 
