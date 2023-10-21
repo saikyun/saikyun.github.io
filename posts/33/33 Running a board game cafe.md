@@ -4,7 +4,7 @@ I started the board game café [Ektrollet](https://ektrollet.se) in august. It's
 
 Right now Ektrollet seems to pretty consistently sell for 12k SEK per month. Since only the rent is 10k, right now we're not going plus. We are in a small town (3k people in the municipality) and still very new, so it is to be expected. Vadstena is a very popular vacation town, so probably most of the income will be during summer.
 
-What's nice though, is that there are still new people coming in, so I think we might be able to get more local customers over time as well. We haven't done much with the signage outside either, so multiple customers have come in and been surprised that we serve Latte.
+What's nice though, is that there are still new people coming in, so I think we might be able to get more local customers over time as well. Many of the locals are super nice and hype as well, which gives both me and my wife a huge energy boost. :D We have some regulars too, and it feels like we're building something meaningful. :) We haven't done much with the signage outside either, so multiple customers have come in and been surprised that we serve Latte.
 
 It's hard to find time to do many of the "upgrady" things though, like designing signs and printing posters. To not lose our capital too quickly, I consult as a coder as well. So many of my days look something like:
 
