@@ -8,17 +8,17 @@ What's nice though, is that there are still new people coming in, so I think we 
 
 It's hard to find time to do many of the "upgrady" things though, like designing signs and printing posters. To not lose our capital too quickly, I consult as a coder as well. So many of my days look something like:
 
-07:00 Wake up
-07:50 Take son to school
-08:15 Eat breakfast
-09:00 Exercise and shower
-10:00 Start coding
-10:30 My wife opens and starts working in the café. We open 12:00, but it takes 1-1.5h to open.
-14:00 Done coding (I try to code for 3h, and take one ~30m break)
-14:30 My wife quits, and I start working in the café
-17:00 Closing time (unless it's a monday :D)
-17:30 Done closing, go home and be with my son until he sleeps at 20:30
-20:30 Relax, play something, read something
+07:00 Wake up  \
+07:50 Take son to school  \
+08:15 Eat breakfast  \
+09:00 Exercise and shower  \
+10:00 Start coding  \
+10:30 My wife opens and starts working in the café. We open 12:00, but it takes 1-1.5h to open  \
+14:00 Done coding (I try to code for 3h, and take one ~30m break)  \
+14:30 My wife quits, and I start working in the café  \
+17:00 Closing time (unless it's a monday :D)  \
+17:30 Done closing, go home and be with my son until he sleeps at 20:30  \
+20:30 Relax, play something, read something  \
 21:30 Preparing to go to bed
 
 With this schedule I feel that my mental and physical health is doing pretty well! But there's not much time over to improve the café. Some days I have some creative energy left after 14:30, and it might be empty, so then I make the website or write our newsletter etc etc.
