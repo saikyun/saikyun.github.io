@@ -1,279 +1,467 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Saikyun</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <style>
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 5px;
+    }
 
-<head>
-  <meta charset="utf-8">
-  <title>Saikyun</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-</head>
-<style>
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 5px;
-  }
+    .container img {
+      max-width: 100%;
+    }
 
-  .container img {
-    max-width: 100%;
-  }
+    * {
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
 
-  * {
-    overflow-wrap: break-word;
-    word-break: break-word;
-  }
+    hr {
+      margin: 100px 0px;
+      visibility: hidden;
+    }
 
-  hr {
-    margin: 100px 0px;
-    visibility: hidden;
-  }
+    p,
+    li {
+      font-size: 16px;
+      line-height: 1.3;
+    }
 
-  p,
-  li {
-    font-size: 16px;
-    line-height: 1.3;
-  }
+    pre {
+      white-space: pre-wrap;
+      background-color: #eee;
+      padding: 6px;
+      font-size: 14px;
+    }
+  </style>
 
-  pre {
-    white-space: pre-wrap;
-    background-color: #eee;
-    padding: 6px;
-    font-size: 14px;
-  }
-</style>
+  <body>
+    <div class="container">
+      <h1 id="still-running"><a href="#still-running">Still Running</a></h1>
+      <p>
+        Autumn is here. The sun is shining but the air is cold. My wife says I
+        have been sick lately because I'm burnt out, but it might also be
+        because of my son having starting the new semester, which tends to bring
+        about all sorts of colds.
+      </p>
+      <p>
+        I've been watching a lot of youtube lately, but don't feel very relaxed
+        by it, at least not at the moment. My favourite late night help me sleep
+        youtuber
+        <a href="https://www.youtube.com/@GrimBeard">Grimbeard</a> haven't
+        uploaded anything in a while.
+      </p>
+      <p>
+        I've been feeling a lot more at ease at home though. Somehow being sick
+        recalibrated me to want to spend more time at home, so I changed the
+        opening times of my board game café again. Right now we're open 12-21
+        thursdays &amp; fridays, 12-16 saturdays. Before I would spend many
+        saturday evenings here as well, which I started to feel is a bit too
+        much. My wife hosts game nights every other saturday, and I hope to
+        encourage local players to do the same. Sometimes though, just ordering
+        a bunch of tags for the lock is too much. I did manage to do it
+        yesterday though.
+      </p>
+      <p>
+        I wanted to write a bit to see if it feels good in a different way from
+        watching youtube. I've been wanting to code a bit more lately, which I
+        haven't felt like in a year or so. But it's still too hard to just do, I
+        don't feel excited by any programming language at the moment. And making
+        my own took to long. I think it might be the sort of thing that is hard
+        to do while also working with code.
+      </p>
+      <p>
+        I've thought of looking at
+        <a href="https://crystal-lang.org">Crystal</a> but it isn't a lisp so I
+        feel a bit scared. But it looks neat. Would be fun to at least follow
+        along a tutorial. It has type inference and macros which is what I tried
+        to do with my language.
+      </p>
+      <p>Okay. Now I don't feel like writing any more.</p>
+      <p>
+        <em
+          >#100DaysToOffload - Please say hi on
+          <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a
+          >. :)</em
+        >
+      </p>
 
-<body>
-  <div class="container">
-    <h1 id="running-a-board-game-cafe"><a href="#running-a-board-game-cafe">Running a board game café</a></h1>
-    <p>I started the board game café <a href="https://ektrollet.se">Ektrollet</a> in august. It's pretty nice. I get to
-      be
-      around board games all day, and on mondays we have game nights where I play great games while &quot;working&quot;
-      (I
-      still serve coffee, I always have enough time to play since I don't cook food/make coffee drinks during game
-      nights).</p>
-    <p>Right now Ektrollet seems to pretty consistently sell for 12k SEK per month. Since only the rent is 10k, right
-      now
-      we're not going plus. We are in a small town (3k people in the municipality) and still very new, so it is to be
-      expected. Vadstena is a very popular vacation town, so probably most of the income will be during summer.</p>
-    <p>What's nice though, is that there are still new people coming in, so I think we might be able to get more local
-      customers over time as well. Many of the locals are super nice and hype as well, which gives both me and my wife a
-      huge energy boost. :D We have some regulars too, and it feels like we're building something meaningful. :) We
-      haven't done much with the signage outside either, so multiple customers have come in and been surprised that we
-      serve Latte.</p>
-    <p>It's hard to find time to do many of the &quot;upgrady&quot; things though, like designing signs and printing
-      posters. To not lose our capital too quickly, I consult as a coder as well. So many of my days look something
-      like:
-    </p>
-    <p>07:00 Wake up <br>
-      07:50 Take son to school <br>
-      08:15 Eat breakfast <br>
-      09:00 Exercise and shower <br>
-      10:00 Start coding <br>
-      10:30 My wife opens and starts working in the café. We open 12:00, but it takes 1-1.5h to open <br>
-      14:00 Done coding (I try to code for 3h, and take one ~30m break) <br>
-      14:30 My wife quits, and I start working in the café <br>
-      17:00 Closing time (unless it's a monday :D) <br>
-      17:30 Done closing, go home and be with my son until he sleeps at 20:30 <br>
-      20:30 Relax, play something, read something <br>
-      21:30 Preparing to go to bed</p>
-    <p>With this schedule I feel that my mental and physical health is doing pretty well! But there's not much time over
-      to
-      improve the café. Some days I have some creative energy left after 14:30, and it might be empty, so then I make
-      the
-      website or write our newsletter etc etc.</p>
-    <p><img src="/posts/33/bygga_disk.jpg" alt="Building Counter">
-      <em>Building the new counter</em>
-    </p>
-    <p><img src="/posts/33/omalad_disk.jpg" alt="Unpainted Counter">
-      <em>Posing in front of the built, yet-unpainted counter</em>
-    </p>
-    <p>Right now the big project is preparing for and installing the new coffee machine, a Uniq Stella 2 Group. Me and
-      my
-      father-in-law are building a new counter on which it will stand, and into which we will install a milk jug cleaner
-      and a knockbox. :D</p>
-    <p>So far I've been using a La Pavoni Esperto, which I love, but it's not great at making multiple coffee drinks
-      simultaneously. With the La Pavoni the workflow for a Latte is something like:</p>
-    <p><img src="/posts/33/la_pavoni.jpg" alt="La Pavoni"></p>
-    <ol>
-      <li>Put portafilter on scale, fill it up with 19g coffee</li>
-      <li>Grind the coffee</li>
-      <li>Measure again, make sure it's 18g (the grinder eats some coffee)</li>
-      <li>Release &quot;fake steam&quot; (I have no idea what this is, but I do it because the manual told me)</li>
-      <li>Insert the portafilter into the La Pavoni</li>
-      <li>Raise the lever, hold it up for at least 10 seconds</li>
-      <li>Lower the lever until I feel resistance, hold it still for 3 seconds</li>
-      <li>Raise the lever for 3 seconds</li>
-      <li>Push down with 5-8 bars resistance (depending on grind size) for 30 seconds</li>
-      <li>Pour the resulting espresso into a large glass</li>
-      <li>Pour milk in a jug 225ml</li>
-      <li>Steam the milk, takes about 60 seconds I think</li>
-      <li>Pour the milk into the glass with the espresso</li>
-    </ol>
-    <p>This process I think takes about 5 minutes, possibly more. It's also extremely serial. I can't do any of these
-      steps
-      at the same time that I do anything else. It also takes longer to steam with the La Pavoni than a bigger machine,
-      at
-      least that's what I've heard. I think it has to do with the pressure of the machine. La Pavoni has 0.5-1 bar
-      pressure in the tank, while the Uniq Stella has 9 bars. I think that means more heat, and it definitely means more
-      steam going out into the milk faster.</p>
-    <p><img src="/posts/33/unic_stella.webp" alt="Unic Stella"></p>
-    <p>With the Uniq Stella, I'll also be able to condense step 4-9 into a single step 4: press the button. And while
-      that
-      button has been pressed, I can do other tasks, like grind beans for another drink. It should also be possible to
-      place milk jugs in a way that allows the 30 seconds of steaming to happen while I do other things. So I can
-      potentially go from 1 drink in 5 minutes, to 2 drinks in 2-3 minutes! I don't know what sort of speed I'll be able
-      to achieve, but it's definitely going to be faster. :)</p>
-    <p><em>#100DaysToOffload - Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>.
-        :)</em></p>
+      <h1 id="running-a-board-game-cafe">
+        <a href="#running-a-board-game-cafe">Running a board game café</a>
+      </h1>
+      <p>
+        I started the board game café
+        <a href="https://ektrollet.se">Ektrollet</a> in august. It's pretty
+        nice. I get to be around board games all day, and on mondays we have
+        game nights where I play great games while &quot;working&quot; (I still
+        serve coffee, I always have enough time to play since I don't cook
+        food/make coffee drinks during game nights).
+      </p>
+      <p>
+        Right now Ektrollet seems to pretty consistently sell for 12k SEK per
+        month. Since only the rent is 10k, right now we're not going plus. We
+        are in a small town (3k people in the municipality) and still very new,
+        so it is to be expected. Vadstena is a very popular vacation town, so
+        probably most of the income will be during summer.
+      </p>
+      <p>
+        What's nice though, is that there are still new people coming in, so I
+        think we might be able to get more local customers over time as well.
+        Many of the locals are super nice and hype as well, which gives both me
+        and my wife a huge energy boost. :D We have some regulars too, and it
+        feels like we're building something meaningful. :) We haven't done much
+        with the signage outside either, so multiple customers have come in and
+        been surprised that we serve Latte.
+      </p>
+      <p>
+        It's hard to find time to do many of the &quot;upgrady&quot; things
+        though, like designing signs and printing posters. To not lose our
+        capital too quickly, I consult as a coder as well. So many of my days
+        look something like:
+      </p>
+      <p>
+        07:00 Wake up <br />
+        07:50 Take son to school <br />
+        08:15 Eat breakfast <br />
+        09:00 Exercise and shower <br />
+        10:00 Start coding <br />
+        10:30 My wife opens and starts working in the café. We open 12:00, but
+        it takes 1-1.5h to open <br />
+        14:00 Done coding (I try to code for 3h, and take one ~30m break) <br />
+        14:30 My wife quits, and I start working in the café <br />
+        17:00 Closing time (unless it's a monday :D) <br />
+        17:30 Done closing, go home and be with my son until he sleeps at 20:30
+        <br />
+        20:30 Relax, play something, read something <br />
+        21:30 Preparing to go to bed
+      </p>
+      <p>
+        With this schedule I feel that my mental and physical health is doing
+        pretty well! But there's not much time over to improve the café. Some
+        days I have some creative energy left after 14:30, and it might be
+        empty, so then I make the website or write our newsletter etc etc.
+      </p>
+      <p>
+        <img src="/posts/33/bygga_disk.jpg" alt="Building Counter" />
+        <em>Building the new counter</em>
+      </p>
+      <p>
+        <img src="/posts/33/omalad_disk.jpg" alt="Unpainted Counter" />
+        <em>Posing in front of the built, yet-unpainted counter</em>
+      </p>
+      <p>
+        Right now the big project is preparing for and installing the new coffee
+        machine, a Uniq Stella 2 Group. Me and my father-in-law are building a
+        new counter on which it will stand, and into which we will install a
+        milk jug cleaner and a knockbox. :D
+      </p>
+      <p>
+        So far I've been using a La Pavoni Esperto, which I love, but it's not
+        great at making multiple coffee drinks simultaneously. With the La
+        Pavoni the workflow for a Latte is something like:
+      </p>
+      <p><img src="/posts/33/la_pavoni.jpg" alt="La Pavoni" /></p>
+      <ol>
+        <li>Put portafilter on scale, fill it up with 19g coffee</li>
+        <li>Grind the coffee</li>
+        <li>
+          Measure again, make sure it's 18g (the grinder eats some coffee)
+        </li>
+        <li>
+          Release &quot;fake steam&quot; (I have no idea what this is, but I do
+          it because the manual told me)
+        </li>
+        <li>Insert the portafilter into the La Pavoni</li>
+        <li>Raise the lever, hold it up for at least 10 seconds</li>
+        <li>
+          Lower the lever until I feel resistance, hold it still for 3 seconds
+        </li>
+        <li>Raise the lever for 3 seconds</li>
+        <li>
+          Push down with 5-8 bars resistance (depending on grind size) for 30
+          seconds
+        </li>
+        <li>Pour the resulting espresso into a large glass</li>
+        <li>Pour milk in a jug 225ml</li>
+        <li>Steam the milk, takes about 60 seconds I think</li>
+        <li>Pour the milk into the glass with the espresso</li>
+      </ol>
+      <p>
+        This process I think takes about 5 minutes, possibly more. It's also
+        extremely serial. I can't do any of these steps at the same time that I
+        do anything else. It also takes longer to steam with the La Pavoni than
+        a bigger machine, at least that's what I've heard. I think it has to do
+        with the pressure of the machine. La Pavoni has 0.5-1 bar pressure in
+        the tank, while the Uniq Stella has 9 bars. I think that means more
+        heat, and it definitely means more steam going out into the milk faster.
+      </p>
+      <p><img src="/posts/33/unic_stella.webp" alt="Unic Stella" /></p>
+      <p>
+        With the Uniq Stella, I'll also be able to condense step 4-9 into a
+        single step 4: press the button. And while that button has been pressed,
+        I can do other tasks, like grind beans for another drink. It should also
+        be possible to place milk jugs in a way that allows the 30 seconds of
+        steaming to happen while I do other things. So I can potentially go from
+        1 drink in 5 minutes, to 2 drinks in 2-3 minutes! I don't know what sort
+        of speed I'll be able to achieve, but it's definitely going to be
+        faster. :)
+      </p>
+      <p>
+        <em
+          >#100DaysToOffload - Please say hi on
+          <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a
+          >. :)</em
+        >
+      </p>
 
+      <hr />
 
+      <h1 id="illegible"><a href="#illegible">Illegible</a></h1>
+      <p>
+        I don't like pushing myself. I feel like it's very common when I push
+        myself that:
+      </p>
+      <ol>
+        <li>I get burnt out (more or less clinically)</li>
+        <li>The result isn't worth it</li>
+      </ol>
+      <p>
+        When you add to that that everything is meaningless, we get a question:
+      </p>
+      <p>
+        Is it better to spend a meaningless existence feeling good or feeling
+        bad?
+      </p>
+      <p>
+        I still remember one time in school. I think I was 13 years old. I was
+        at home, working on an assignment in natural science. After having
+        gotten bad grades on assignments multiple times due to illegible hand
+        writing, I put a lot of effort into writing properly. This was painful
+        for me. Writing hurt my hand a lot, so my method was generally to write
+        as quickly as possible as to lessen the time I had to feel pain.
+      </p>
+      <p>
+        But this time I wanted to write properly. So I endured the pain. I wrote
+        carefully and slowly, while my hand started hurting more and more. I
+        tend to have trouble remembering things, but I do remember finishing the
+        assignment, and writing down what song I listened to at that moment.
+        Somehow I had to mark down the occasion, since now I really had fought
+        for something.
+      </p>
+      <p>
+        When handing in the assignment, I even asked my teacher: &quot;Is this
+        legible?&quot; He replied: &quot;Yes.&quot;
+      </p>
+      <p>
+        A few days passed, and I got the assignment back with the grade. I just
+        got the usual passing grade, with a note: &quot;illegible&quot;.
+      </p>
+      <p>
+        <em
+          >#100DaysToOffload - Please say hi on
+          <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a
+          >. :)</em
+        >
+      </p>
 
+      <hr />
 
+      <h1 id="coding"><a href="#coding">Coding</a></h1>
+      <p>
+        <em
+          >In which saikyun rambles on about things he forgot he wrote in
+          earlier posts</em
+        >
+      </p>
+      <p>
+        I like to have a feeling of flow when I code. The best I've felt
+        generally is using Clojure. Here are the main things I think helps
+        feeling flow with Clojure:
+      </p>
+      <ul>
+        <li>
+          unrestricted live coding with a repl
+          <ul>
+            <li>
+              I could rewrite clojure.core (the standard library) while my
+              application was running. that power is very useful when
+              experimenting and modifying functions and trying them again. you
+              can set up your state in a perfect way for your experiment, then
+              modify the function until it outputs what you expect.
+              <ul>
+                <li>
+                  this is possible with TDD as well, but sometimes it can be
+                  hard/take a long time to set up the state necessary for TDD
+                  (maybe the state is hard to serialize), making it more
+                  practical to just run your application, make it go into the
+                  state you want (e.g. in a game, run to the place where you
+                  want to try something), then run/modify/run the function until
+                  it does the right thing
+                  <ul>
+                    <li>
+                      an alternative solution to repl'ing here is just having
+                      all state be serializeable and have a super fast compiler.
+                      I believe that setup would be hard to discern from
+                      repl'ing. this is probably how I'd do it with a compiled
+                      language :)
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              if you don't understand what the above means, it just means that
+              you can modify your program while it is running. say you have an
+              animation that you want to tweak, let's say the bounce of a
+              button. let's also say that the button is only visible after you
+              have filled in some state (e.g. a submit button that won't bounce
+              until you have filled out a form). with live coding, you can
+              modify the code, and instantly see how the animation changes,
+              while the form is still filled in. you can also &quot;ask
+              questions&quot;, i.e. write code to query the state (&quot;what
+              name is currently inputted?&quot; or &quot;does the email fulfil
+              <code>correct-email?</code>?&quot;). I still haven't figured out a
+              nice way to express this succintly. it might be something that
+              cannot be told, only shown. if that is the case,
+              <a href="https://www.youtube.com/watch?v=k1FMk7Js2Rw"
+                >here's one place where I try to show it</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li>
+          immutable data
+          <ul>
+            <li>
+              it just turns code cleaner, in general. in my current C project I
+              modify pointers which in hindsight has turned a lot of my project
+              to mush
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a
+            href="http://danmidwood.com/content/2014/11/21/animated-paredit.html"
+            >paredit</a
+          >
+          <ul>
+            <li>
+              the elegance of paredit is being able to think about code in a
+              more abstract way. being able to flip two branches of an
+              <code>if</code>, or changing the order of two elements in a
+              vector, and having those commands use the same hotkey is just so
+              nice when you get into it (<code>transpose-sexps</code> (this is
+              emacs, not paredit, but paredit adds a bunch more -- from vscode's
+              perspective it's all paredit))
+            </li>
+          </ul>
+        </li>
+        <li>
+          libraries that seldom move
+          <ul>
+            <li>
+              clojure has a culture of adding onto rather than modifying. Rich
+              Hickey has a
+              <a href="https://www.youtube.com/watch?v=oyLBGkS5ICk"
+                >good talk</a
+              >
+              on why modifying your functions often means breaking them.
+            </li>
+            <li>this leads to more calm when updating libraries</li>
+          </ul>
+        </li>
+      </ul>
+      <p>
+        What is the problem with Clojure then? Well, it's on Java. And Java
+        makes it harder to build games. It's slow (and Clojure is often even
+        slower), it's harder to build iOS apps, it's harder to deploy for web
+        (especially with the build sizes going up (there is ofc CLJS)), it's
+        harder to build for consoles. But my main gripe is that it's slow.
+        Immutability doesn't help games all that much either, and writing
+        mutable code in Clojure tends to feel a bit wonky.
+      </p>
+      <p>
+        I'm not saying it can't be done. I've made
+        <a href="http://animal-capital.surge.sh">a game</a> on CLJS, and have
+        played around with graphics libraries and Clojure. I just feel that it
+        isn't a natural fit. If you could show me a code editor written on Java
+        that doesn't feel sluggish and doesn't eat &gt;100mb ram, maybe I could
+        be persuaded otherwise. Because I feel that it's the underlying platform
+        that's the main problem.
+      </p>
+      <p>
+        C on the other hand, doesn't have these problems. It feels very natural
+        to interact with graphic libraries, and it's small and fast. Very nice.
+        But it's instead often painful to code in. But in this case, I'm not
+        convinced that the underlying platform is the problem. I think here
+        there's space to fix the language instead.
+      </p>
+      <p>
+        For example, repl'ing is impractical in C, but I think you could fix
+        that.The OS lets you modify your program while running, thanks to
+        <code>dlopen</code> -- loading dll / .so-files during runtime. Immutable
+        data is nice for flow, but not necessary for games (though you probably
+        want to peek a lot at some of the benefits you get from immutable data,
+        like being able to express that values put into a function doesn't
+        change, like non-<code>mut</code> parameters in that unnameable
+        oxidizing language). Paredit? Just make the language a lisp and it'll be
+        fine. Libraries that seldom move? This is more of a culture thing, but I
+        believe focusing on functions over classes help, since functions are
+        easier to add more of. E.g. you could update a library by adding a
+        <code>foo2</code> rather than modifying <code>foo</code>, then let the
+        user of the library either use the old one or the new one. No breakage.
+      </p>
+      <p>
+        So this is what I'm trying to do with
+        <a href="https://github.com/saikyun/vajer">vajer</a>. Sadly I'm
+        currently coding it in C, and I'm not a very good C programmer, so I am
+        a bit stuck. So instead of trying to solve it, I'm writing some more
+        blog posts.
+      </p>
+      <p>
+        <em
+          >#100DaysToOffload - Please say hi on
+          <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a
+          >. :)</em
+        >
+      </p>
 
-    <hr />
+      <hr />
 
-    <h1 id="illegible"><a href="#illegible">Illegible</a></h1>
-    <p>I don't like pushing myself. I feel like it's very common when I push myself that:</p>
-    <ol>
-      <li>I get burnt out (more or less clinically)</li>
-      <li>The result isn't worth it</li>
-    </ol>
-    <p>When you add to that that everything is meaningless, we get a question:</p>
-    <p>Is it better to spend a meaningless existence feeling good or feeling bad?</p>
-    <p>I still remember one time in school. I think I was 13 years old. I was at home, working on an assignment in
-      natural
-      science. After having gotten bad grades on assignments multiple times due to illegible hand writing, I put a lot
-      of
-      effort into writing properly. This was painful for me. Writing hurt my hand a lot, so my method was generally to
-      write as quickly as possible as to lessen the time I had to feel pain.</p>
-    <p>But this time I wanted to write properly. So I endured the pain. I wrote carefully and slowly, while my hand
-      started
-      hurting more and more. I tend to have trouble remembering things, but I do remember finishing the assignment, and
-      writing down what song I listened to at that moment. Somehow I had to mark down the occasion, since now I really
-      had
-      fought for something.</p>
-    <p>When handing in the assignment, I even asked my teacher: &quot;Is this legible?&quot;
-      He replied: &quot;Yes.&quot;</p>
-    <p>A few days passed, and I got the assignment back with the grade. I just got the usual passing grade, with a note:
-      &quot;illegible&quot;.</p>
-    <p><em>#100DaysToOffload - Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>.
-        :)</em></p>
+      <h1 id="casey-light-light">
+        <a href="#casey-light-light">Casey Light Light</a>
+      </h1>
+      <p>
+        This post is very sad, and might be uppsetting for you. So I've created
+        a subpage for it. If you don't want to read about something sad and
+        personal, you shouldn't read this. If you still want to read it, press
+        the link below.
+      </p>
+      <p><a href="posts/30/Casey Light.html">Casey Light</a></p>
 
-    <hr />
+      <hr />
 
-    <h1 id="coding"><a href="#coding">Coding</a></h1>
-    <p><em>In which saikyun rambles on about things he forgot he wrote in earlier posts</em></p>
-    <p>I like to have a feeling of flow when I code. The best I've felt generally is using Clojure. Here are the main
-      things
-      I think helps feeling flow with Clojure:</p>
-    <ul>
-      <li>unrestricted live coding with a repl
-        <ul>
-          <li>I could rewrite clojure.core (the standard library) while my application was running. that power is very
-            useful when experimenting and modifying functions and trying them again. you can set up your state in a
-            perfect way for your experiment, then modify the function until it outputs what you expect.
-            <ul>
-              <li>this is possible with TDD as well, but sometimes it can be hard/take a long time to set up the
-                state necessary for TDD (maybe the state is hard to serialize), making it more practical to just
-                run your application, make it go into the state you want (e.g. in a game, run to the place where
-                you want to try something), then run/modify/run the function until it does the right thing
-                <ul>
-                  <li>an alternative solution to repl'ing here is just having all state be serializeable and
-                    have a super fast compiler. I believe that setup would be hard to discern from repl'ing.
-                    this is probably how I'd do it with a compiled language :)</li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li>if you don't understand what the above means, it just means that you can modify your program while it is
-            running. say you have an animation that you want to tweak, let's say the bounce of a button. let's also
-            say that the button is only visible after you have filled in some state (e.g. a submit button that won't
-            bounce until you have filled out a form). with live coding, you can modify the code, and instantly see
-            how the animation changes, while the form is still filled in. you can also &quot;ask questions&quot;,
-            i.e. write code to query the state (&quot;what name is currently inputted?&quot; or &quot;does the email
-            fulfil <code>correct-email?</code>?&quot;). I still haven't figured out a nice way to express this
-            succintly. it might be something that cannot be told, only shown. if that is the case, <a
-              href="https://www.youtube.com/watch?v=k1FMk7Js2Rw">here's one place where I try to show it</a></li>
-        </ul>
-      </li>
-      <li>immutable data
-        <ul>
-          <li>it just turns code cleaner, in general. in my current C project I modify pointers which in hindsight has
-            turned a lot of my project to mush</li>
-        </ul>
-      </li>
-      <li><a href="http://danmidwood.com/content/2014/11/21/animated-paredit.html">paredit</a>
-        <ul>
-          <li>the elegance of paredit is being able to think about code in a more abstract way. being able to flip two
-            branches of an <code>if</code>, or changing the order of two elements in a vector, and having those
-            commands use the same hotkey is just so nice when you get into it (<code>transpose-sexps</code> (this is
-            emacs, not paredit, but paredit adds a bunch more -- from vscode's perspective it's all paredit))</li>
-        </ul>
-      </li>
-      <li>libraries that seldom move
-        <ul>
-          <li>clojure has a culture of adding onto rather than modifying. Rich Hickey has a <a
-              href="https://www.youtube.com/watch?v=oyLBGkS5ICk">good talk</a> on why modifying your functions
-            often means breaking them.</li>
-          <li>this leads to more calm when updating libraries</li>
-        </ul>
-      </li>
-    </ul>
-    <p>What is the problem with Clojure then? Well, it's on Java. And Java makes it harder to build games. It's slow
-      (and
-      Clojure is often even slower), it's harder to build iOS apps, it's harder to deploy for web (especially with the
-      build sizes going up (there is ofc CLJS)), it's harder to build for consoles. But my main gripe is that it's slow.
-      Immutability doesn't help games all that much either, and writing mutable code in Clojure tends to feel a bit
-      wonky.
-    </p>
-    <p>I'm not saying it can't be done. I've made <a href="http://animal-capital.surge.sh">a game</a> on CLJS, and have
-      played around with graphics libraries and Clojure. I just feel that it isn't a natural fit. If you could show me a
-      code editor written on Java that doesn't feel sluggish and doesn't eat &gt;100mb ram, maybe I could be persuaded
-      otherwise. Because I feel that it's the underlying platform that's the main problem.</p>
-    <p>C on the other hand, doesn't have these problems. It feels very natural to interact with graphic libraries, and
-      it's
-      small and fast. Very nice. But it's instead often painful to code in. But in this case, I'm not convinced that the
-      underlying platform is the problem. I think here there's space to fix the language instead.</p>
-    <p>For example, repl'ing is impractical in C, but I think you could fix that.The OS lets you modify your program
-      while
-      running, thanks to <code>dlopen</code> -- loading dll / .so-files during runtime. Immutable data is nice for flow,
-      but not necessary for games (though you probably want to peek a lot at some of the benefits you get from immutable
-      data, like being able to express that values put into a function doesn't change, like non-<code>mut</code>
-      parameters in that unnameable oxidizing language). Paredit? Just make the language a lisp and it'll be fine.
-      Libraries that seldom move? This is more of a culture thing, but I believe focusing on functions over classes
-      help,
-      since functions are easier to add more of. E.g. you could update a library by adding a <code>foo2</code> rather
-      than
-      modifying <code>foo</code>, then let the user of the library either use the old one or the new one. No breakage.
-    </p>
-    <p>So this is what I'm trying to do with <a href="https://github.com/saikyun/vajer">vajer</a>. Sadly I'm currently
-      coding it in C, and I'm not a very good C programmer, so I am a bit stuck. So instead of trying to solve it, I'm
-      writing some more blog posts.</p>
-    <p><em>#100DaysToOffload - Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>.
-        :)</em></p>
-
-    <hr />
-
-
-    <h1 id="casey-light-light"><a href="#casey-light-light">Casey Light Light</a></h1>
-    <p>This post is very sad, and might be uppsetting for you. So I've created a subpage for it. If you don't want to
-      read
-      about something sad and personal, you shouldn't read this. If you still want to read it, press the link below.</p>
-    <p><a href="posts/30/Casey Light.html">Casey Light</a></p>
-
-
-    <hr />
-
-    <h1 id="type-inference-in-vajer"><a href="#type-inference-in-vajer">Type inference in Vajer</a></h1>
-    <p>Type inferencing in <a href="https://github.com/saikyun/vajer">Vajer</a> works now!</p>
-    <p>This means code like this:</p>
-    <pre><code class="language-clojure">(defn move_up
+      <h1 id="type-inference-in-vajer">
+        <a href="#type-inference-in-vajer">Type inference in Vajer</a>
+      </h1>
+      <p>
+        Type inferencing in
+        <a href="https://github.com/saikyun/vajer">Vajer</a> works now!
+      </p>
+      <p>This means code like this:</p>
+      <pre><code class="language-clojure">(defn move_up
   [map mapw maph]
   (var pos (get_pos map mapw maph 0))
   (if (&gt;= (- pos mapw) 0)
     (move map pos (- pos mapw))))
 </code></pre>
-    <p>Is compiled to</p>
-    <pre><code class="language-c">void move_up(int* map, int mapw, int maph) {
+      <p>Is compiled to</p>
+      <pre><code class="language-c">void move_up(int* map, int mapw, int maph) {
   int gensym54;
   gensym54 = get_pos(map, mapw, maph, 0);
 
@@ -295,23 +483,33 @@
 
 }
 </code></pre>
-    <p>!!!</p>
-    <p>It's of course hideously untested and the error messages are terrible, but it's really cool that I can now run
-      compile and run my game, with code that looks <a
-        href="https://github.com/saikyun/vajer/blob/main/lisp/sdl-test.lisp">quite a lot like lisp</a>! :D</p>
-    <video controls>
-      <source src="/posts/29/playing.mov">
-    </video>
-    <p><em>#100DaysToOffload - Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>.
-        :)</em></p>
+      <p>!!!</p>
+      <p>
+        It's of course hideously untested and the error messages are terrible,
+        but it's really cool that I can now run compile and run my game, with
+        code that looks
+        <a href="https://github.com/saikyun/vajer/blob/main/lisp/sdl-test.lisp"
+          >quite a lot like lisp</a
+        >! :D
+      </p>
+      <video controls>
+        <source src="/posts/29/playing.mov" />
+      </video>
+      <p>
+        <em
+          >#100DaysToOffload - Please say hi on
+          <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a
+          >. :)</em
+        >
+      </p>
 
+      <hr />
 
-    <hr />
-
-
-    <h1 id="less-wonky-if-in-vajer"><a href="#less-wonky-if-in-vajer">Less wonky if in Vajer</a></h1>
-    <p>Last time I wrote about Vajer, I had to write if like this:</p>
-    <pre><code>(defn move-up
+      <h1 id="less-wonky-if-in-vajer">
+        <a href="#less-wonky-if-in-vajer">Less wonky if in Vajer</a>
+      </h1>
+      <p>Last time I wrote about Vajer, I had to write if like this:</p>
+      <pre><code>(defn move-up
   [map :char*
     mapw :int
     maph :int] :int
@@ -323,9 +521,12 @@
       0))
 )
     </code></pre>
-    <p>Because it couldn't deal with void. Also it could <em>only</em> deal with ints.</p>
-    <p>Now that's fixed! The same function now looks like this:</p>
-    <pre><code>(defn move_up
+      <p>
+        Because it couldn't deal with void. Also it could <em>only</em> deal
+        with ints.
+      </p>
+      <p>Now that's fixed! The same function now looks like this:</p>
+      <pre><code>(defn move_up
   [map :char*
     mapw :int
     maph :int] :void
@@ -334,178 +535,335 @@
   (if (&gt;= (- pos mapw) 0)
     (move map pos (- pos mapw))))
     </code></pre>
-    <p>Now that I look at it, it seems some other things changed, but the important one is that I don't need :int return
-      type on the function, and the if doesn't need the do-block and returning an int!</p>
-    <p><em>#100DaysToOffload - Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>.
-        :)</em></p>
+      <p>
+        Now that I look at it, it seems some other things changed, but the
+        important one is that I don't need :int return type on the function, and
+        the if doesn't need the do-block and returning an int!
+      </p>
+      <p>
+        <em
+          >#100DaysToOffload - Please say hi on
+          <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a
+          >. :)</em
+        >
+      </p>
 
+      <hr />
 
-    <hr />
+      <h1 id="would-you-hire-yourself">
+        <a href="#would-you-hire-yourself">Would You Hire Yourself?</a>
+      </h1>
+      <p>
+        As is usually the case when I am tired but get time to lay still in bed
+        all morning (not that common with a 6 year old son), my mind starts
+        visiting interesting places.
+      </p>
+      <p>
+        When I am stressed, it's sadly mostly about work. But lately, it seems
+        that those processes have slowed down. Perhaps because I got fired from
+        the last job I was stressed at. My current work feels more manageable,
+        and I'm able to exercise 5 times per week.
+      </p>
+      <p>
+        This morning, one of the interesting things that popped up was the
+        question &quot;would I hire myself?&quot;. Something struck a chord when
+        I &quot;heard&quot; this, and I think it's sort of an interesting
+        question to explore.
+      </p>
+      <p>
+        Since the economy was rough in the last company I worked for, I got the
+        &quot;ephiphany&quot; of: for every crown you get paid, you should earn
+        your company two crowns. If you can't do that, you're probably not
+        working in an economically sustainable way.
+      </p>
+      <p>
+        Since then (a full two months ago) I've started to ask myself this
+        before considering working with someone: will I bring more than I cost?
+      </p>
+      <p>
+        I think the way I'm working right now, that's definitely true. I believe
+        I am adding a lot toward the goals of the company, which are also things
+        people are willing to pay for.
+      </p>
+      <p>
+        The &quot;would I hire myself?&quot; question is a bit broader though.
+        Because with that framing, one gets a bit of company culture, morality
+        and personality traits into the mix.
+      </p>
+      <p>
+        I've struggled a lot with reporting time, because if you judge me by
+        &quot;how well do I sit in front of a computer 40 hours per week and
+        have the job's code open in my editor?&quot; I'm a terrible programmer.
+        I have a kid who gets sick often, I'm a feminist which means I want to
+        share household work (and there are hints that
+        <a href="https://link.springer.com/article/10.1007/s10508-022-02397-2"
+          >this is good for the relationship</a
+        >
+        as well (which seems kind of obvious but also seems like many men don't
+        bother)) some of which includes dropping off my son at preschool and
+        making sure dinner is ready. So if the above criteria is how I'd hire
+        me, I would say no. Never. I'd just hire someone fresh out of college
+        (or still in), give them 50% of what I ask for, and they could chug
+        along merrily with all of their youthful energy and boundless time.
+      </p>
+      <p>
+        So what I've done then, though not stated explicitly, is something like
+        asking myself, &quot;ok, so in what situation <em>would</em> I hire
+        myself in?&quot;. What I came up with is something like this:
+      </p>
+      <ol>
+        <li>I need to be able to take care of my son when he's sick</li>
+        <li>
+          I need to drop him off at 09:00 and be done with work 17:00, and I
+          need to exercise and eat lunch inbetween
+        </li>
+        <li>I need to be able to have tired days</li>
+        <li>
+          I don't want to deal with people planning that I should do x thing on
+          precisely y day, which always gets wrecked because of someone getting
+          sick
+        </li>
+      </ol>
+      <p>
+        What I came up with then, is that I should work at most 4 hours per day.
+        That would mean I have 8 hours - 4 hours = 4 hours to be lazy and
+        exercise. What this also means is that if he's sick one day, and my wife
+        takes care of him the next, it's at least feasible (if hard) to work a
+        bit longer and catch up, whereas with an expected &quot;8 hour in front
+        of screen per day&quot;, catching up and doing 16 hours is impossible
+        for me.
+      </p>
+      <p>
+        With this in mind, I can proudly answer the question of &quot;how well
+        do I sit in front of a computer <strong>20</strong> hours per week and
+        have the job's code open in my editor?&quot; and say &quot;very
+        well!&quot;. Even with life's hiccups, I can do that pretty sustainably.
+      </p>
+      <p>
+        Now, what I haven't even started getting into is what other questions I
+        could ask myself, which are a different way of looking at the problem,
+        questions that would make me look better than less experienced
+        developers.
+      </p>
+      <p>
+        &quot;How well do you manage unclear specifications?&quot; No problem.
+        <br />
+        &quot;Do you enjoy mentoring others?&quot; Yes! <br />
+        &quot;Can we put you alone in a room with a client and you'll figure
+        everything out and deliver a product without essentially any
+        hand-holding?&quot; Hell yeah! I love talking to clients and users and
+        all that stuff. I love making sure users enjoy using the tools I build
+        for them. :D
+      </p>
+      <p>
+        With these criterions, and still having fulfilled the nebolous &quot;can
+        you sit in front of computer x amount of hours&quot; for a high enough
+        number of x, I can proudly say:
+      </p>
+      <p>&quot;Yes! I would hire myself!&quot;</p>
+      <p>
+        <em
+          >#100DaysToOffload - Please say hi on
+          <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a
+          >. :)</em
+        >
+      </p>
 
-    <h1 id="would-you-hire-yourself"><a href="#would-you-hire-yourself">Would You Hire Yourself?</a></h1>
-    <p>As is usually the case when I am tired but get time to lay still in bed all morning (not that common with a 6
-      year old son), my mind starts visiting interesting places.</p>
-    <p>When I am stressed, it's sadly mostly about work. But lately, it seems that those processes have slowed down.
-      Perhaps because I got fired from the last job I was stressed at. My current work feels more manageable, and I'm
-      able to exercise 5 times per week.</p>
-    <p>This morning, one of the interesting things that popped up was the question &quot;would I hire myself?&quot;.
-      Something struck a chord when I &quot;heard&quot; this, and I think it's sort of an interesting question to
-      explore.</p>
-    <p>Since the economy was rough in the last company I worked for, I got the &quot;ephiphany&quot; of: for every crown
-      you get paid, you should earn your company two crowns. If you can't do that, you're probably not working in an
-      economically sustainable way.</p>
-    <p>Since then (a full two months ago) I've started to ask myself this before considering working with someone: will
-      I bring more than I cost?</p>
-    <p>I think the way I'm working right now, that's definitely true. I believe I am adding a lot toward the goals of
-      the company, which are also things people are willing to pay for.</p>
-    <p>The &quot;would I hire myself?&quot; question is a bit broader though. Because with that framing, one gets a bit
-      of company culture, morality and personality traits into the mix.</p>
-    <p>I've struggled a lot with reporting time, because if you judge me by &quot;how well do I sit in front of a
-      computer 40 hours per week and have the job's code open in my editor?&quot; I'm a terrible programmer. I have a
-      kid who gets sick often, I'm a feminist which means I want to share household work (and there are hints that <a
-        href="https://link.springer.com/article/10.1007/s10508-022-02397-2">this is good for the relationship</a> as
-      well (which seems kind of obvious but also seems like many men don't bother)) some of which includes dropping off
-      my son at preschool and making sure dinner is ready. So if the above criteria is how I'd hire me, I would say no.
-      Never. I'd just hire someone fresh out of college (or still in), give them 50% of what I ask for, and they could
-      chug along merrily with all of their youthful energy and boundless time.</p>
-    <p>So what I've done then, though not stated explicitly, is something like asking myself, &quot;ok, so in what
-      situation <em>would</em> I hire myself in?&quot;. What I came up with is something like this:</p>
-    <ol>
-      <li>I need to be able to take care of my son when he's sick</li>
-      <li>I need to drop him off at 09:00 and be done with work 17:00, and I need to exercise and eat lunch inbetween
-      </li>
-      <li>I need to be able to have tired days</li>
-      <li>I don't want to deal with people planning that I should do x thing on precisely y day, which always gets
-        wrecked because of someone getting sick</li>
-    </ol>
-    <p>What I came up with then, is that I should work at most 4 hours per day. That would mean I have 8 hours - 4 hours
-      = 4 hours to be lazy and exercise. What this also means is that if he's sick one day, and my wife takes care of
-      him the next, it's at least feasible (if hard) to work a bit longer and catch up, whereas with an expected &quot;8
-      hour in front of screen per day&quot;, catching up and doing 16 hours is impossible for me.</p>
-    <p>With this in mind, I can proudly answer the question of &quot;how well do I sit in front of a computer
-      <strong>20</strong> hours per week and have the job's code open in my editor?&quot; and say &quot;very
-      well!&quot;. Even with life's hiccups, I can do that pretty sustainably.
-    </p>
-    <p>Now, what I haven't even started getting into is what other questions I could ask myself, which are a different
-      way of looking at the problem, questions that would make me look better than less experienced developers.</p>
-    <p>&quot;How well do you manage unclear specifications?&quot; No problem. <br>
-      &quot;Do you enjoy mentoring others?&quot; Yes! <br>
-      &quot;Can we put you alone in a room with a client and you'll figure everything out and deliver a product without
-      essentially any hand-holding?&quot; Hell yeah! I love talking to clients and users and all that stuff. I love
-      making sure users enjoy using the tools I build for them. :D</p>
-    <p>With these criterions, and still having fulfilled the nebolous &quot;can you sit in front of computer x amount of
-      hours&quot; for a high enough number of x, I can proudly say:</p>
-    <p>&quot;Yes! I would hire myself!&quot;</p>
-    <p><em>#100DaysToOffload - Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>.
-        :)</em></p>
+      <hr />
 
+      <h1 id="when-is-long-term-planning-needed">
+        <a href="#when-is-long-term-planning-needed"
+          >When is long term planning needed?</a
+        >
+      </h1>
+      <p>
+        I often dive into things head first. I like to fix problems, code as
+        quickly as possible while I'm still hype, I hate waiting. I really
+        <em>really</em> hate waiting. Because it's like spending my working time
+        doing nothing. Then when it's time to do something I'm already tired
+        and/or bored.
+      </p>
+      <p>So I tend to do things one bit at the time.</p>
+      <p>
+        When I started working on my text editor
+        <a href="https://github.com/saikyun/freja">freja</a>, I didn't sketch
+        out <code>freja-frp</code>, <code>freja-layout</code> and
+        <code>textarea</code>. I just started with the goal of &quot;implement
+        all interactions that are in the Chrome implementation of
+        <code>&lt;textarea&gt;&lt;/textarea&gt;</code>&quot;.
+      </p>
+      <p>
+        This turned out to be a great goal. It's very clear what should be
+        there. Everything in the Chrome textarea. And it's very clear what
+        should not be there. Everything that's not in the Chrome textarea.
+      </p>
+      <p>
+        Another helpful part was that I constantly communicated my progress with
+        a close friend. So even on non-productive days I could complain about
+        the problems I faced. I can't remember if he did, but I'm sure he
+        brought up interactions I didn't think about at first, like triple
+        clicking or certain funny word wrapping aspects.
+      </p>
+      <p>
+        After two months or so, I was at
+        <a href="https://www.youtube.com/watch?v=ReUczDAWLfI"
+          >this stage (youtube, 1min)</a
+        >. At that point I even managed to get some extra stuff in, like syntax
+        highlighting. And a little easter egg for those with a watchful eye. :)
+      </p>
+      <p>
+        Still, after those two months, I still didn't know what was ahead of me.
+        I had just worked merrily in a way that suited me. I had this vague
+        sense of what an ideal text editor should be, but I didn't say that I
+        must plan everything out ahead.
+      </p>
+      <p>
+        Then, about a year later, working in a similar way, with smaller
+        problems to solve each week, I released what I call the notepad-complete
+        version of Freja. You could essentially do everything you can in
+        notepad, and then some (live coding in the editor!).
+      </p>
+      <p>
+        I believe I would never have gone this far if I had tried to plan this
+        process ahead. And this is for a whole text editor. I wonder how many
+        ideas are snuffed out before getting the chance to burn brightly,
+        because of inaction.
+      </p>
+      <p>
+        <em
+          >#100DaysToOffload - Please say hi on
+          <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a
+          >. :)</em
+        >
+      </p>
 
-    <hr />
+      <hr />
 
-    <h1 id="when-is-long-term-planning-needed"><a href="#when-is-long-term-planning-needed">When is long term planning
-        needed?</a></h1>
-    <p>I often dive into things head first. I like to fix problems, code as quickly as possible while I'm still hype, I
-      hate waiting. I really <em>really</em> hate waiting. Because it's like spending my working time doing nothing.
-      Then when it's time to do something I'm already tired and/or bored.</p>
-    <p>So I tend to do things one bit at the time.</p>
-    <p>When I started working on my text editor <a href="https://github.com/saikyun/freja">freja</a>, I didn't sketch
-      out <code>freja-frp</code>, <code>freja-layout</code> and <code>textarea</code>. I just started with the goal of
-      &quot;implement all interactions that are in the Chrome implementation of
-      <code>&lt;textarea&gt;&lt;/textarea&gt;</code>&quot;.
-    </p>
-    <p>This turned out to be a great goal. It's very clear what should be there. Everything in the Chrome textarea. And
-      it's very clear what should not be there. Everything that's not in the Chrome textarea.</p>
-    <p>Another helpful part was that I constantly communicated my progress with a close friend. So even on
-      non-productive days I could complain about the problems I faced. I can't remember if he did, but I'm sure he
-      brought up interactions I didn't think about at first, like triple clicking or certain funny word wrapping
-      aspects.</p>
-    <p>After two months or so, I was at <a href="https://www.youtube.com/watch?v=ReUczDAWLfI">this stage (youtube,
-        1min)</a>. At that point I even managed to get some extra stuff in, like syntax highlighting. And a little
-      easter egg for those with a watchful eye. :)</p>
-    <p>Still, after those two months, I still didn't know what was ahead of me. I had just worked merrily in a way that
-      suited me. I had this vague sense of what an ideal text editor should be, but I didn't say that I must plan
-      everything out ahead.</p>
-    <p>Then, about a year later, working in a similar way, with smaller problems to solve each week, I released what I
-      call the notepad-complete version of Freja. You could essentially do everything you can in notepad, and then some
-      (live coding in the editor!).</p>
-    <p>I believe I would never have gone this far if I had tried to plan this process ahead. And this is for a whole
-      text editor. I wonder how many ideas are snuffed out before getting the chance to burn brightly, because of
-      inaction.</p>
-    <p><em>#100DaysToOffload - Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>.
-        :)</em></p>
-
-
-    <hr />
-
-    <h1 id="zoom-in-teaching"><a href="#zoom-in-teaching">Zoom In Teaching</a></h1>
-    <p>I just read <a href="https://underjord.io/complex-systems-all-the-way-down.html">this blogpost by lawik</a>.
-      lawik is a fellow Kodsnackare who apparently has a really cool blog.</p>
-    <p>I've heard that it's good content to take someone else's stuff and comment on it, so I figured I'd do that.</p>
-    <p>lawik describes how one can zoom into problems infinitely. Like in the following paragraph.</p>
-    <blockquote>
-      <p>When a student asks me “What are your thoughts on MongoDB?” the answer is only simple if I lie. I know some
-        people like it. I have heard enough to distrust it. The answer “Just use Postgres” isn’t exactly right, “It’s
-        probably fine” feels dishonest and if I add “but I’d never choose it for anything” that’s hardly helpful. There
-        is enormous context and choosing what to bring into a learning person’s world is genuinely difficult.</p>
-    </blockquote>
-    <p>I've done a little bit of teaching myself, and have struggled with similar problems. I myself love diving into
-      weird little details, like how Axl's crouching kick can avoid Sol's massive overhead Bandit Bringer in Guilty Gear
-      Xrd. Or how in Clojure you can access private functions, like <code>clojure.core/into1</code> with the invocation
-      <code>@#'clojure.core/into1</code>.
-    </p>
-    <p>These are things obviously not relevant to a beginner, but on the scale of &quot;this is how you call a
-      function&quot; to &quot;this is how you modify core functions&quot; one always have to come up with an answer to:
-      &quot;do I explain this, make some vague analogue up, or ignore it?&quot;.</p>
-    <p>It doesn't help that you often have to do this while solving your own problems as well.</p>
-    <p>For me, the two things that have helped me teach others are:</p>
-    <ol>
-      <li>Dedicate time to teaching</li>
-      <li>Teaching in a workplace setting means working together</li>
-    </ol>
-    <p>The most succesful situation I've had was when I described an interface for a Wave Manager in a game. It was
-      meant to keep track of the number of enemies, and when the next wave of enemies should spawn after all enemies in
-      the current wave had died.</p>
-    <p>So I would write something like:</p>
-    <pre><code class="language-c#">// 1. count number of enemies
+      <h1 id="zoom-in-teaching">
+        <a href="#zoom-in-teaching">Zoom In Teaching</a>
+      </h1>
+      <p>
+        I just read
+        <a href="https://underjord.io/complex-systems-all-the-way-down.html"
+          >this blogpost by lawik</a
+        >. lawik is a fellow Kodsnackare who apparently has a really cool blog.
+      </p>
+      <p>
+        I've heard that it's good content to take someone else's stuff and
+        comment on it, so I figured I'd do that.
+      </p>
+      <p>
+        lawik describes how one can zoom into problems infinitely. Like in the
+        following paragraph.
+      </p>
+      <blockquote>
+        <p>
+          When a student asks me “What are your thoughts on MongoDB?” the answer
+          is only simple if I lie. I know some people like it. I have heard
+          enough to distrust it. The answer “Just use Postgres” isn’t exactly
+          right, “It’s probably fine” feels dishonest and if I add “but I’d
+          never choose it for anything” that’s hardly helpful. There is enormous
+          context and choosing what to bring into a learning person’s world is
+          genuinely difficult.
+        </p>
+      </blockquote>
+      <p>
+        I've done a little bit of teaching myself, and have struggled with
+        similar problems. I myself love diving into weird little details, like
+        how Axl's crouching kick can avoid Sol's massive overhead Bandit Bringer
+        in Guilty Gear Xrd. Or how in Clojure you can access private functions,
+        like <code>clojure.core/into1</code> with the invocation
+        <code>@#'clojure.core/into1</code>.
+      </p>
+      <p>
+        These are things obviously not relevant to a beginner, but on the scale
+        of &quot;this is how you call a function&quot; to &quot;this is how you
+        modify core functions&quot; one always have to come up with an answer
+        to: &quot;do I explain this, make some vague analogue up, or ignore
+        it?&quot;.
+      </p>
+      <p>
+        It doesn't help that you often have to do this while solving your own
+        problems as well.
+      </p>
+      <p>For me, the two things that have helped me teach others are:</p>
+      <ol>
+        <li>Dedicate time to teaching</li>
+        <li>Teaching in a workplace setting means working together</li>
+      </ol>
+      <p>
+        The most succesful situation I've had was when I described an interface
+        for a Wave Manager in a game. It was meant to keep track of the number
+        of enemies, and when the next wave of enemies should spawn after all
+        enemies in the current wave had died.
+      </p>
+      <p>So I would write something like:</p>
+      <pre><code class="language-c#">// 1. count number of enemies
 // 2. if count is zero, start a timer
 // 3. if timer is complete, call SpawnNextWave
 void CheckNewWaveStart() {
 
 }
     </code></pre>
-    <p>And then I'd do the same for <code>SpawnNextWave</code>, and for the next function that popped up, etc etc.</p>
-    <p>Then I said that he should implement the functions, while I work on another related but not super dependent
-      interface.</p>
-    <p>After doing that for an afternoon, he said it was the best work day he had had so far. So it worked great!</p>
-    <p>I think what was helpful about this was:</p>
-    <ol>
-      <li>His focus was more clear. He was not supposed to design an overarching structure, but was instead supposed to
-        solve more zoomed-in problems.</li>
-      <li>He was contributing. It was stuff that was crucial for the game to work.</li>
-      <li>I could work on other things, related but not dependent, so I wasn't as slowed down as I would have been if we
-        worked on the exact same thing or wildly different things. This helped my productivity and lessened
-        context-switching.</li>
-    </ol>
-    <p>I have more things to say about the blog post, but this already turned out pretty long, so that's it for today.
-    </p>
-    <p>Thanks lawik for sharing your thoughts.</p>
-    <p><em>#100DaysToOffload - Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>.
-        :)</em></p>
+      <p>
+        And then I'd do the same for <code>SpawnNextWave</code>, and for the
+        next function that popped up, etc etc.
+      </p>
+      <p>
+        Then I said that he should implement the functions, while I work on
+        another related but not super dependent interface.
+      </p>
+      <p>
+        After doing that for an afternoon, he said it was the best work day he
+        had had so far. So it worked great!
+      </p>
+      <p>I think what was helpful about this was:</p>
+      <ol>
+        <li>
+          His focus was more clear. He was not supposed to design an overarching
+          structure, but was instead supposed to solve more zoomed-in problems.
+        </li>
+        <li>
+          He was contributing. It was stuff that was crucial for the game to
+          work.
+        </li>
+        <li>
+          I could work on other things, related but not dependent, so I wasn't
+          as slowed down as I would have been if we worked on the exact same
+          thing or wildly different things. This helped my productivity and
+          lessened context-switching.
+        </li>
+      </ol>
+      <p>
+        I have more things to say about the blog post, but this already turned
+        out pretty long, so that's it for today.
+      </p>
+      <p>Thanks lawik for sharing your thoughts.</p>
+      <p>
+        <em
+          >#100DaysToOffload - Please say hi on
+          <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a
+          >. :)</em
+        >
+      </p>
 
+      <hr />
 
-    <hr />
-
-    <h1 id="boulders"><a href="#boulders">Boulders</a></h1>
-    <video controls>
-      <source src="/posts/24/boulders.mov">
-    </video>
-    <p>Somehow I managed to get a game of some sort working in my lisp. :D You can move around, collect money, and most
-      importantly: die.</p>
-    <p>There are some interesting quirks. For example, you can only use <code>if</code> as the last expression in a
-      <code>defn</code>, or inside <code>while</code>. If you do it inside a <code>while</code> though, you can only use
-      <code>if</code> as a statement, and not an expression. Hm.
-    </p>
-    <pre><code>(var lul :int 0)
+      <h1 id="boulders"><a href="#boulders">Boulders</a></h1>
+      <video controls>
+        <source src="/posts/24/boulders.mov" />
+      </video>
+      <p>
+        Somehow I managed to get a game of some sort working in my lisp. :D You
+        can move around, collect money, and most importantly: die.
+      </p>
+      <p>
+        There are some interesting quirks. For example, you can only use
+        <code>if</code> as the last expression in a <code>defn</code>, or inside
+        <code>while</code>. If you do it inside a <code>while</code> though, you
+        can only use <code>if</code> as a statement, and not an expression. Hm.
+      </p>
+      <pre><code>(var lul :int 0)
     (while (&lt; lul 1)
       (if (&amp;&amp; (== 0 (in map to))
               (&lt; to (* mapw maph)))
@@ -513,216 +871,409 @@ void CheckNewWaveStart() {
             (set dead 1)))
     (set lul 1))
     </code></pre>
-    <p>So there's some of this littered around.</p>
-    <p>What's nice is that now I have an example program, stored in git. So now I can go through various pain points
-      (and I've written some down in <a
-        href="https://github.com/saikyun/vajer/blob/main/QnA.md#todo-this-code-breaks-because-of-if-wanting-to-set-a-parents-defns-return-value">QnA.md</a>).
-      Then over time I can compare my progress to this initial program, and see how much cleaner newer versions of vajer
-      will be. :)</p>
-    <p><em>#100DaysToOffload - Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>.
-        :)</em></p>
+      <p>So there's some of this littered around.</p>
+      <p>
+        What's nice is that now I have an example program, stored in git. So now
+        I can go through various pain points (and I've written some down in
+        <a
+          href="https://github.com/saikyun/vajer/blob/main/QnA.md#todo-this-code-breaks-because-of-if-wanting-to-set-a-parents-defns-return-value"
+          >QnA.md</a
+        >). Then over time I can compare my progress to this initial program,
+        and see how much cleaner newer versions of vajer will be. :)
+      </p>
+      <p>
+        <em
+          >#100DaysToOffload - Please say hi on
+          <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a
+          >. :)</em
+        >
+      </p>
 
+      <hr />
 
-    <hr />
+      <h1><a href="#vajer-progress">Vajer Progress</a></h1>
+      <video controls>
+        <source src="/posts/23/digging.mov" />
+      </video>
+      <p>
+        Today I was able to create a character that can move around on the
+        screen.
+        <a href="https://github.com/saikyun/vajer/blob/main/lisp/sdl-test.lisp"
+          >Code</a
+        >
+      </p>
+      <p>Some reflections:</p>
+      <ul>
+        <li>
+          I have a vague sense I need to deal with memory management soon, but
+          it hasn't come up yet really
+        </li>
+        <li>
+          Atm I kinda copy <a href="janet">https://janet-lang.org</a>'s style,
+          which might be good but maybe I need to think about some things
+        </li>
+        <li>Probably will want to be able to define structs soon</li>
+        <li>
+          I want macros soon too, like defining <code>(++ x)</code> instead of
+          <code>(set x (+ x 1))</code> (assuming I keep janet style)
+        </li>
+        <li>I feel like I can do a lot already!</li>
+      </ul>
+      <p>
+        <em
+          >#100DaysToOffload - Please say hi on
+          <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a
+          >. :)</em
+        >
+      </p>
 
-    <h1><a href="#vajer-progress">Vajer Progress</a></h1>
-    <video controls>
-      <source src="/posts/23/digging.mov">
-    </video>
-    <p>Today I was able to create a character that can move around on the screen. <a
-        href="https://github.com/saikyun/vajer/blob/main/lisp/sdl-test.lisp">Code</a></p>
-    <p>Some reflections:</p>
-    <ul>
-      <li>I have a vague sense I need to deal with memory management soon, but it hasn't come up yet really</li>
-      <li>Atm I kinda copy <a href="janet">https://janet-lang.org</a>'s style, which might be good but maybe I need to
-        think about some things</li>
-      <li>Probably will want to be able to define structs soon</li>
-      <li>I want macros soon too, like defining <code>(++ x)</code> instead of <code>(set x (+ x 1))</code> (assuming I
-        keep janet style)</li>
-      <li>I feel like I can do a lot already!</li>
-    </ul>
-    <p><em>#100DaysToOffload - Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>.
-        :)</em></p>
+      <hr />
 
+      <h1 id="untitled"><a href="#untitled">&lt;untitled&gt;</a></h1>
+      <p>I just don't know what to write about.</p>
+      <p>My mind is kind of spinning, due to lack of sleep and things.</p>
+      <p>
+        Right now I'm waiting in the smell of stone grilled bread for my gluten
+        free pizza and my wife's vegetarian avocado salad to be made by the men
+        behind the counter.
+      </p>
+      <p>
+        I'm trying gluten free food at the moment, and for the last two weeks or
+        so. I can't remember if I wrote this already, but if I forgot it, I'm
+        sure you did as well.
+      </p>
+      <p>
+        The first inkling that I might have some problem with gluten was the way
+        I felt after eating Max's plant beef burger, which I'm pretty sure is
+        made with wheat. After eating one of those bad boy's I was knocked out
+        for an hour or three.
+      </p>
+      <p>
+        It has felt very inconsistent though, like I didn't feel affected when
+        eating bread or pizza etc.
+      </p>
+      <p>
+        But after one tired day too many, I figured I need to try something. I
+        can't remember exactly what made me try gluten free, but I think one
+        part of it was vaguely remembering my mom saying felt she felt much
+        better when not eating bread and stuff.
+      </p>
+      <p>So I just tried it.</p>
+      <p>
+        The main difference in my life has been going from 4+ sandwiches per day
+        to 0. I've had to cook more stuff for breakfast, like eggs and pancakes
+        using almond flour.
+      </p>
+      <p>
+        It was kind of funny, I had no real clue what almond flour was. I
+        thought it was some strange stuff made in a lab for gluten allergic
+        people.
+      </p>
+      <p>But then I read the back.</p>
+      <p>It's made out of almonds.</p>
+      <p>
+        <em
+          >#100DaysToOffload - Please say hi on
+          <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a
+          >. :)</em
+        >
+      </p>
 
-    <hr />
+      <hr />
 
-    <h1 id="untitled"><a href="#untitled">&lt;untitled&gt;</a></h1>
-    <p>I just don't know what to write about.</p>
-    <p>My mind is kind of spinning, due to lack of sleep and things.</p>
-    <p>Right now I'm waiting in the smell of stone grilled bread for my gluten free pizza and my wife's vegetarian
-      avocado salad to be made by the men behind the counter.</p>
-    <p>I'm trying gluten free food at the moment, and for the last two weeks or so. I can't remember if I wrote this
-      already, but if I forgot it, I'm sure you did as well.</p>
-    <p>The first inkling that I might have some problem with gluten was the way I felt after eating Max's plant beef
-      burger, which I'm pretty sure is made with wheat. After eating one of those bad boy's I was knocked out for an
-      hour or three.</p>
-    <p>It has felt very inconsistent though, like I didn't feel affected when eating bread or pizza etc.</p>
-    <p>But after one tired day too many, I figured I need to try something. I can't remember exactly what made me try
-      gluten free, but I think one part of it was vaguely remembering my mom saying felt she felt much better when not
-      eating bread and stuff.</p>
-    <p>So I just tried it.</p>
-    <p>The main difference in my life has been going from 4+ sandwiches per day to 0. I've had to cook more stuff for
-      breakfast, like eggs and pancakes using almond flour.</p>
-    <p>It was kind of funny, I had no real clue what almond flour was. I thought it was some strange stuff made in a lab
-      for gluten allergic people.</p>
-    <p>But then I read the back.</p>
-    <p>It's made out of almonds.</p>
-    <p><em>#100DaysToOffload - Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>.
-        :)</em></p>
+      <h1 id="late"><a href="#late">Late</a></h1>
+      <p>
+        Today is the first time I failed to post a daily blog before 24:00. :O
+      </p>
+      <p>
+        I managed to make a @ move around with my lisp and sdl, so that was
+        neat.
+      </p>
+      <p>
+        I got to rebuy a mod for minecraft for my son, because we had bought it
+        on my account before.
+      </p>
+      <p>
+        My wife and I started watching a new series that is surprisingly good:
+        &quot;Kärlek och Anarki&quot;.
+      </p>
+      <p>
+        The machines are beeping and whirring. Some of it is comforting. Other
+        sounds more grating, or even shocking sometimes.
+      </p>
+      <p>I hope the whizzes will lull me to sleep.</p>
+      <p>
+        <em
+          >#100DaysToOffload - Please say hi on
+          <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a
+          >. :)</em
+        >
+      </p>
 
+      <hr />
 
-    <hr />
+      <h1 id="back-exercises"><a href="#back-exercises">Back Exercises</a></h1>
+      <p>
+        Today was a pretty strange day, so here are my top three back exercises.
+        Please be careful and listen to your body, I have no clue if these are
+        for you, so try them at your own peril. I got them from a physical
+        therapist though, and I believe they are fairly gentle.
+      </p>
+      <p>I don't know their names, so I'll just name them something.</p>
+      <h2>The band puller</h2>
+      <ol>
+        <li>Put a rubber band under your right foot</li>
+        <li>Stand straight</li>
+        <li>Put your right hand forward, at the level of your hips</li>
+        <li>
+          With the hand in this position, adjust the band so that it is just
+          starting to stretch
+        </li>
+        <li>
+          Pull your hand and the band upwards, so that your hand pointing
+          straight forward, at the level of your shoulder
+        </li>
+        <li>Slowly move your hand down to the starting position</li>
+        <li>
+          Repeat 5-10 times, then change hand and foot. Do the same, and repeat
+          for a total of 15-30 times per side
+        </li>
+      </ol>
+      <p>Progression: Use a rubber band with more resistance</p>
+      <h2>Super Person</h2>
+      <ol>
+        <li>
+          Stand on all fours, hands under shoulders, knees under your hips
+        </li>
+        <li>
+          Lift your right arm, hold it straight forward, in level with your
+          head, for a breath, then put it back down
+        </li>
+        <li>
+          Repeat with your left arm, then right, etc, for a total of 5-15
+          repetitions per arm
+        </li>
+      </ol>
+      <p>
+        Progression: Increase the number and length of your breaths Next level:
+        Straighten your left leg, point it straight back, when you lift your
+        right hand
+      </p>
+      <p>
+        <img
+          src="https://assets.sweat.com/html_body_blocks/images/000/017/410/original/BodyweightBackExercises_en34d4af320b45983dc4e77cf115e4697c.jpg?1587971199"
+          alt="Super Person"
+        />
+        <em
+          >Image from
+          https://www.sweat.com/blogs/fitness/bodyweight-back-exercises</em
+        >
+      </p>
+      <h2>Spine-into-floor-pusher</h2>
+      <ol>
+        <li>
+          Lie down on your back, with your feet a bit away from your butt, so
+          that your legs make a sort of triangle
+        </li>
+        <li>
+          Push your back into the floor. You'll want to use your
+          &quot;core&quot; more than your stomach, you can verify that you're
+          doing this by feeling right above your pelvis, especially to the
+          sides. You should feel muscles tense here
+        </li>
+        <li>Hold that position for 5 breaths, then release</li>
+        <li>Repeat 10-20 times</li>
+      </ol>
+      <p>
+        <img
+          src="https://www.dummies.com/wp-content/uploads/461643.image0.jpg"
+          alt="Spine-into-floor-pusher"
+        />
+      </p>
+      <p>
+        Progression: Keep one leg straight forward, and lift it ever so slightly
+        above the ground. The lower you keep your leg (without touching the
+        ground), the harder it will be
+      </p>
+      <p>
+        These exercises help me a lot when my back hurts. I hope they can be
+        helpful for you as well. :)
+      </p>
+      <p>
+        <em
+          >#100DaysToOffload - Please say hi on
+          <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a
+          >. :)</em
+        >
+      </p>
 
-    <h1 id="late"><a href="#late">Late</a></h1>
-    <p>Today is the first time I failed to post a daily blog before 24:00. :O</p>
-    <p>I managed to make a @ move around with my lisp and sdl, so that was neat.</p>
-    <p>I got to rebuy a mod for minecraft for my son, because we had bought it on my account before.</p>
-    <p>My wife and I started watching a new series that is surprisingly good: &quot;Kärlek och Anarki&quot;.</p>
-    <p>The machines are beeping and whirring. Some of it is comforting. Other sounds more grating, or even shocking
-      sometimes.</p>
-    <p>I hope the whizzes will lull me to sleep.</p>
-    <p><em>#100DaysToOffload - Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>.
-        :)</em></p>
+      <hr />
 
+      <h1 id="little-green-line">
+        <a href="#little-green-line">Little Green Line</a>
+      </h1>
+      <p>Today I made a green little line.</p>
+      <p>
+        <img src="/posts/19/little_green_line.png" alt="Little Green Line" />
+      </p>
+      <p>
+        <em
+          >#100DaysToOffload - Please say hi on
+          <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a
+          >. :)</em
+        >
+      </p>
 
-    <hr />
+      <hr />
 
-    <h1 id="back-exercises"><a href="#back-exercises">Back Exercises</a></h1>
-    <p>Today was a pretty strange day, so here are my top three back exercises. Please be careful and listen to your
-      body, I have no clue if these are for you, so try them at your own peril. I got them from a physical therapist
-      though, and I believe they are fairly gentle.</p>
-    <p>I don't know their names, so I'll just name them something.</p>
-    <h2>The band puller</h2>
-    <ol>
-      <li>Put a rubber band under your right foot</li>
-      <li>Stand straight</li>
-      <li>Put your right hand forward, at the level of your hips</li>
-      <li>With the hand in this position, adjust the band so that it is just starting to stretch</li>
-      <li>Pull your hand and the band upwards, so that your hand pointing straight forward, at the level of your
-        shoulder</li>
-      <li>Slowly move your hand down to the starting position</li>
-      <li>Repeat 5-10 times, then change hand and foot. Do the same, and repeat for a total of 15-30 times per side</li>
-    </ol>
-    <p>Progression: Use a rubber band with more resistance</p>
-    <h2>Super Person</h2>
-    <ol>
-      <li>Stand on all fours, hands under shoulders, knees under your hips</li>
-      <li>Lift your right arm, hold it straight forward, in level with your head, for a breath, then put it back down
-      </li>
-      <li>Repeat with your left arm, then right, etc, for a total of 5-15 repetitions per arm</li>
-    </ol>
-    <p>Progression: Increase the number and length of your breaths
-      Next level: Straighten your left leg, point it straight back, when you lift your right hand</p>
-    <p><img
-        src="https://assets.sweat.com/html_body_blocks/images/000/017/410/original/BodyweightBackExercises_en34d4af320b45983dc4e77cf115e4697c.jpg?1587971199"
-        alt="Super Person">
-      <em>Image from https://www.sweat.com/blogs/fitness/bodyweight-back-exercises</em>
-    </p>
-    <h2>Spine-into-floor-pusher</h2>
-    <ol>
-      <li>Lie down on your back, with your feet a bit away from your butt, so that your legs make a sort of triangle
-      </li>
-      <li>Push your back into the floor. You'll want to use your &quot;core&quot; more than your stomach, you can verify
-        that you're doing this by feeling right above your pelvis, especially to the sides. You should feel muscles
-        tense here</li>
-      <li>Hold that position for 5 breaths, then release</li>
-      <li>Repeat 10-20 times</li>
-    </ol>
-    <p><img src="https://www.dummies.com/wp-content/uploads/461643.image0.jpg" alt="Spine-into-floor-pusher"></p>
-    <p>Progression: Keep one leg straight forward, and lift it ever so slightly above the ground. The lower you keep
-      your leg (without touching the ground), the harder it will be</p>
-    <p>These exercises help me a lot when my back hurts. I hope they can be helpful for you as well. :)</p>
-    <p><em>#100DaysToOffload - Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>.
-        :)</em></p>
+      <h1 id="balancing-input-and-output">
+        <a href="#balancing-input-and-output">Balancing Input and Output</a>
+      </h1>
+      <p>
+        I watched a video about art one time, making art, that is. As I remember
+        it, the video person said that one problem people can have is that they
+        are doubting themselves. And one reason for that doubt is that they know
+        a lot, but can only execute a little. This can happen when you watch a
+        lot of tutorials on &quot;how to do things&quot; (like art), but don't
+        spend enough time experimenting with the information you gathered. This
+        builds up a huge discrepancy between what you know, and what you can do.
+      </p>
+      <p>
+        The video person gave a concrete ratio, I can't quite remember, but it
+        was something like watching 20 minutes of art tutorials should be enough
+        for at least 5 hours of practise, or maybe it was 20 hours.
+      </p>
+      <p>
+        I wonder, with tech, if the ratio isn't even worse. People are still
+        debating SOLID principles, while I still feel pretty undecided about it.
+        I haven't put in enough hours coding using those principles, or without,
+        and compared them, to actually have a solid opinion. And I feel this way
+        about:
+      </p>
+      <ul>
+        <li>Fibers</li>
+        <li>
+          Macros (though I'm leaning pretty far into liking them, I have no clue
+          about reader macros!?)
+        </li>
+        <li>
+          Logic in configuration files (though I think it's heresy, I can't
+          really say why in a way that would convince anyone)
+        </li>
+        <li>Exceptions</li>
+        <li>
+          &quot;Functional programming&quot; (I can't even define it -- I'm
+          pretty sure I like <code>map</code>/<code>filter</code>/<code
+            >reduce</code
+          >
+          though, but I'm pretty sure I don't like allocating functions each
+          time they are run)
+        </li>
+        <li>for–loops</li>
+        <li>Iterators</li>
+      </ul>
+      <p>
+        And this is just basic stuff. How about which way to structure your
+        code? What language to choose? Static vs dynamic typing? (You aren't
+        allowed to have an opinion on this unless you've tried Idris.)
+      </p>
+      <p>
+        Okay, so, yeah. Whatever. This technical stuff is kinda getting in the
+        way of the point I want to make. Which is this.
+      </p>
+      <p>
+        I think it's good to find a balance between input and output. If I have
+        too much input, I'll just become an armchair expert, and those don't get
+        anything done and everyone think they're annoying.
+      </p>
+      <p>
+        I've become more aware of this problem while trying to use the GTD
+        tools. Like capturing all ideas and potential tasks. Now I try to listen
+        to a podcast episode, or watch a talk. But just the amount of things I
+        write down gets exhausting. There are so many good ideas in the world,
+        and so much to explore. But I already have a ton of things to do and
+        explore! I don't really need more ideas at the moment! I just need to
+        output more. And in the meantime, I'll try to find more meaningless ways
+        to rest, less draining than watching talks or listening to podcasts
+        where my brain just fills up with more stuff I don't have time to try.
+      </p>
+      <p>
+        <em
+          >#100DaysToOffload - Please say hi on
+          <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a
+          >. :)</em
+        >
+      </p>
 
+      <hr />
 
-    <hr />
+      <h1 id="exercise-and-adhd">
+        <a href="#exercise-and-adhd">Exercise and ADHD</a>
+      </h1>
+      <p>
+        I wonder how much less people with ADHD would suffer if they got
+        sufficient exercise.
+      </p>
+      <p>I feel both anxiety and sleeplessness decrease when I exercise.</p>
+      <p>
+        I read that when children get to exercise that got their hearts going as
+        little as 5 minutes in the morning, before classes, they were better at
+        focusing.
+      </p>
+      <p>
+        I wonder how many get medicated when maybe they should just get a chance
+        to exercise more.
+      </p>
+      <p>
+        I'm sure some people need medication, I just wonder if there are enough
+        economic interests in getting people to move around more.
+      </p>
+      <p>
+        My back pain is eradicated after I jog/walk/jog for a bit. It's very
+        nice.
+      </p>
+      <p>I'm happy I can move more now.</p>
+      <p>
+        <em
+          >#100DaysToOffload - Please say hi on
+          <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a
+          >. :)</em
+        >
+      </p>
 
-    <h1 id="little-green-line"><a href="#little-green-line">Little Green Line</a></h1>
-    <p>Today I made a green little line.</p>
-    <p><img src="/posts/19/little_green_line.png" alt="Little Green Line"></p>
-    <p><em>#100DaysToOffload - Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>.
-        :)</em></p>
+      <hr />
 
-    <hr />
-
-    <h1 id="balancing-input-and-output"><a href="#balancing-input-and-output">Balancing Input and Output</a></h1>
-    <p>I watched a video about art one time, making art, that is. As I remember it, the video person said that one
-      problem people can have is that they are doubting themselves. And one reason for that doubt is that they know a
-      lot, but can only execute a little. This can happen when you watch a lot of tutorials on &quot;how to do
-      things&quot; (like art), but don't spend enough time experimenting with the information you gathered. This builds
-      up a huge discrepancy between what you know, and what you can do.</p>
-    <p>The video person gave a concrete ratio, I can't quite remember, but it was something like watching 20 minutes of
-      art tutorials should be enough for at least 5 hours of practise, or maybe it was 20 hours.</p>
-    <p>I wonder, with tech, if the ratio isn't even worse. People are still debating SOLID principles, while I still
-      feel pretty undecided about it. I haven't put in enough hours coding using those principles, or without, and
-      compared them, to actually have a solid opinion. And I feel this way about:</p>
-    <ul>
-      <li>Fibers</li>
-      <li>Macros (though I'm leaning pretty far into liking them, I have no clue about reader macros!?)</li>
-      <li>Logic in configuration files (though I think it's heresy, I can't really say why in a way that would convince
-        anyone)</li>
-      <li>Exceptions</li>
-      <li>&quot;Functional programming&quot; (I can't even define it -- I'm pretty sure I like
-        <code>map</code>/<code>filter</code>/<code>reduce</code> though, but I'm pretty sure I don't like allocating
-        functions each time they are run)
-      </li>
-      <li>for–loops</li>
-      <li>Iterators</li>
-    </ul>
-    <p>And this is just basic stuff. How about which way to structure your code? What language to choose? Static vs
-      dynamic typing? (You aren't allowed to have an opinion on this unless you've tried Idris.)</p>
-    <p>Okay, so, yeah. Whatever. This technical stuff is kinda getting in the way of the point I want to make. Which is
-      this.</p>
-    <p>I think it's good to find a balance between input and output. If I have too much input, I'll just become an
-      armchair expert, and those don't get anything done and everyone think they're annoying.</p>
-    <p>I've become more aware of this problem while trying to use the GTD tools. Like capturing all ideas and potential
-      tasks. Now I try to listen to a podcast episode, or watch a talk. But just the amount of things I write down gets
-      exhausting. There are so many good ideas in the world, and so much to explore. But I already have a ton of things
-      to do and explore! I don't really need more ideas at the moment! I just need to output more. And in the meantime,
-      I'll try to find more meaningless ways to rest, less draining than watching talks or listening to podcasts where
-      my brain just fills up with more stuff I don't have time to try.</p>
-    <p><em>#100DaysToOffload - Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>.
-        :)</em></p>
-
-
-    <hr />
-
-
-    <h1 id="exercise-and-adhd"><a href="#exercise-and-adhd">Exercise and ADHD</a></h1>
-    <p>I wonder how much less people with ADHD would suffer if they got sufficient exercise.</p>
-    <p>I feel both anxiety and sleeplessness decrease when I exercise.</p>
-    <p>I read that when children get to exercise that got their hearts going as little as 5 minutes in the morning,
-      before classes, they were better at focusing.</p>
-    <p>I wonder how many get medicated when maybe they should just get a chance to exercise more.</p>
-    <p>I'm sure some people need medication, I just wonder if there are enough economic interests in getting people to
-      move around more.</p>
-    <p>My back pain is eradicated after I jog/walk/jog for a bit. It's very nice.</p>
-    <p>I'm happy I can move more now.</p>
-    <p><em>#100DaysToOffload - Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>.
-        :)</em></p>
-
-
-    <hr />
-
-    <h1 id="compiling-lisp-to-c"><a href="#compiling-lisp-to-c">Compiling Lisp to C</a></h1>
-    <p>Today I got some time to work a bit more on the compiler. It's been a two week break, mostly because of focusing
-      on GTD stuff, having meetings with work people last week, my wife going to Stockholm for a couple of days, my wife
-      being sick, me trying to actually do the stuff I wrote in my Orthodox GTD Journal.</p>
-    <p>I'm pretty happy though, because my home is surprisingly clean, and I finally ordered a portable laptop stand
-      that I've been wanting for years. I've also bought a Planck EZ from a nice guy / super star (perhaps most famous
-      for his <a href="https://www.youtube.com/watch?v=Fy0aCDmgnxg">shorts video</a>). When it has arrived I'll proudly
-      take a photo of my glorious set up. Did I mention I bought wooden wrist support as well?</p>
-    <p>So, with all that sort of figured out, I finally felt the peace of mind to sit down with my lisp again.</p>
-    <p>When I last left of, I had almost fulfilled the goal of compiling</p>
-    <pre><code>(defn fac [n]
+      <h1 id="compiling-lisp-to-c">
+        <a href="#compiling-lisp-to-c">Compiling Lisp to C</a>
+      </h1>
+      <p>
+        Today I got some time to work a bit more on the compiler. It's been a
+        two week break, mostly because of focusing on GTD stuff, having meetings
+        with work people last week, my wife going to Stockholm for a couple of
+        days, my wife being sick, me trying to actually do the stuff I wrote in
+        my Orthodox GTD Journal.
+      </p>
+      <p>
+        I'm pretty happy though, because my home is surprisingly clean, and I
+        finally ordered a portable laptop stand that I've been wanting for
+        years. I've also bought a Planck EZ from a nice guy / super star
+        (perhaps most famous for his
+        <a href="https://www.youtube.com/watch?v=Fy0aCDmgnxg">shorts video</a>).
+        When it has arrived I'll proudly take a photo of my glorious set up. Did
+        I mention I bought wooden wrist support as well?
+      </p>
+      <p>
+        So, with all that sort of figured out, I finally felt the peace of mind
+        to sit down with my lisp again.
+      </p>
+      <p>When I last left of, I had almost fulfilled the goal of compiling</p>
+      <pre><code>(defn fac [n]
   (if (&lt;= n 1)
     1
     (* n (fac (- n 1)))))
 </code></pre>
-    <p>to</p>
-    <pre><code>int fac(n) {
+      <p>to</p>
+      <pre><code>int fac(n) {
     int res;
     if (n &lt;= 1) {
         res = 1;
@@ -732,546 +1283,929 @@ void CheckNewWaveStart() {
     return res;
 }
     </code></pre>
-    <p>The stuff that was missing was:</p>
-    <ol>
-      <li>Figuring out what should get a <code>;</code> at the end (e.g. not <code>if</code>)</li>
-      <li>Calling user defined functions</li>
-    </ol>
-    <p>I fixed 1. pretty easily, thanks to having both thought and talked about the problem with my friend. 2. was
-      pretty easy to, for now I just assume people fill in the right names for everything and try to call it.</p>
-    <p>After that, I got it to compile it to C and run the resulting source in the same process using libttc. Very cool!
-      :D</p>
-    <p>I did know there were some problems though. So after the initial success, I wrote some down:</p>
-    <ul>
-      <li>Types (right now only <code>int</code> is supported)</li>
-      <li>While-loops</li>
-      <li>Structs</li>
-    </ul>
-    <p>I decided to tackle types first, and thanks to the great resource in janet's <a
-        href="https://github.com/janet-lang/jpm/blob/476cbebbb08e92032ca6ae0bb842c199fe8edd3f//jpm/cgen.janet">cgen</a>,
-      I figured I could just use explicit types for now, in the ast having the form of <code>(int num)</code>, so a defn
-      would look like: <code>(defn add [(int x) (int y)] int)</code>. I thought I could make it look a bit nicer in my
-      source, so I decided on this syntax for now:</p>
-    <pre><code>(defn strlen-plus-n
+      <p>The stuff that was missing was:</p>
+      <ol>
+        <li>
+          Figuring out what should get a <code>;</code> at the end (e.g. not
+          <code>if</code>)
+        </li>
+        <li>Calling user defined functions</li>
+      </ol>
+      <p>
+        I fixed 1. pretty easily, thanks to having both thought and talked about
+        the problem with my friend. 2. was pretty easy to, for now I just assume
+        people fill in the right names for everything and try to call it.
+      </p>
+      <p>
+        After that, I got it to compile it to C and run the resulting source in
+        the same process using libttc. Very cool! :D
+      </p>
+      <p>
+        I did know there were some problems though. So after the initial
+        success, I wrote some down:
+      </p>
+      <ul>
+        <li>Types (right now only <code>int</code> is supported)</li>
+        <li>While-loops</li>
+        <li>Structs</li>
+      </ul>
+      <p>
+        I decided to tackle types first, and thanks to the great resource in
+        janet's
+        <a
+          href="https://github.com/janet-lang/jpm/blob/476cbebbb08e92032ca6ae0bb842c199fe8edd3f//jpm/cgen.janet"
+          >cgen</a
+        >, I figured I could just use explicit types for now, in the ast having
+        the form of <code>(int num)</code>, so a defn would look like:
+        <code>(defn add [(int x) (int y)] int)</code>. I thought I could make it
+        look a bit nicer in my source, so I decided on this syntax for now:
+      </p>
+      <pre><code>(defn strlen-plus-n
   [str :string num :int] :int
   (+ num (strlen str)))
     </code></pre>
-    <p>Of course, the goal is to add type inference later, but since the C ast will need the types explicitly, to make
-      sure that worked first, it felt easiest to start with explicit types.</p>
-    <p>Anyway, after hacking just a bit, mainly changing how <code>defn</code> ast nodes are transformed (specifically
-      the arguments), I managed to compile the above to:</p>
-    <pre><code class="language-c">int strlen_plus_n(char* str, int num) {
+      <p>
+        Of course, the goal is to add type inference later, but since the C ast
+        will need the types explicitly, to make sure that worked first, it felt
+        easiest to start with explicit types.
+      </p>
+      <p>
+        Anyway, after hacking just a bit, mainly changing how
+        <code>defn</code> ast nodes are transformed (specifically the
+        arguments), I managed to compile the above to:
+      </p>
+      <pre><code class="language-c">int strlen_plus_n(char* str, int num) {
   return num + strlen(str);
 }
     </code></pre>
-    <p>Yay! :D</p>
-    <p>Soon I might actually be able to compile enough C to write a little program. :)</p>
-    <p><em>#100DaysToOffload - Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>.
-        :)</em></p>
+      <p>Yay! :D</p>
+      <p>
+        Soon I might actually be able to compile enough C to write a little
+        program. :)
+      </p>
+      <p>
+        <em
+          >#100DaysToOffload - Please say hi on
+          <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a
+          >. :)</em
+        >
+      </p>
 
+      <hr />
 
-    <hr />
+      <h1 id="first-day-of-work">
+        <a href="#first-day-of-work">First Day of Work</a>
+      </h1>
+      <p>Today I had my first day of work. Doing the new work.</p>
+      <p>
+        It felt good to know that I can work and get an income again. It&#39;s
+        nice doing not much at all, but even nicer to do a little bit of
+        something, and then nothing at all.
+      </p>
+      <p>
+        Today nothing at all meant getting home early to make surprise dinner
+        for my wife. She seems happy. My son is with his grandpa. It&#39;s
+        strange how rare a walk to the library together with my wife can be.
+      </p>
+      <p>
+        I don&#39;t understand how you&#39;re meant to work a lot, and have
+        children, and take care of your body. Yesterday I managed to reach my
+        goal of jog/walk/jogging for 30 minutes, which felt great! But I would
+        have had a hard time doing it if I weren&#39;t able to spend part of my
+        work day exercising. Evening time is so chaotic and prone to random
+        events, that it&#39;s hard to make a habit of anything, at least for me.
+      </p>
+      <p>
+        So I&#39;m very grateful that I&#39;m able to take care of my body
+        better.
+      </p>
+      <p>
+        I&#39;ve heard that police and firemen get to work out during work time.
+        I wonder why the same isn&#39;t true for programmers?
+      </p>
 
-    <h1 id="first-day-of-work"><a href="#first-day-of-work">First Day of Work</a></h1>
-    <p>Today I had my first day of work. Doing the new work.</p>
-    <p>It felt good to know that I can work and get an income again. It&#39;s nice doing not much at all, but even nicer
-      to do a little bit of something, and then nothing at all.</p>
-    <p>Today nothing at all meant getting home early to make surprise dinner for my wife. She seems happy. My son is
-      with his grandpa. It&#39;s strange how rare a walk to the library together with my wife can be.</p>
-    <p>I don&#39;t understand how you&#39;re meant to work a lot, and have children, and take care of your body.
-      Yesterday I managed to reach my goal of jog/walk/jogging for 30 minutes, which felt great! But I would have had a
-      hard time doing it if I weren&#39;t able to spend part of my work day exercising. Evening time is so chaotic and
-      prone to random events, that it&#39;s hard to make a habit of anything, at least for me.</p>
-    <p>So I&#39;m very grateful that I&#39;m able to take care of my body better.</p>
-    <p>I&#39;ve heard that police and firemen get to work out during work time. I wonder why the same isn&#39;t true for
-      programmers?</p>
+      <hr />
 
+      <h1 id="the-purge"><a href="#the-purge">The Purge</a></h1>
+      <p>
+        Today we purged my son's stuffed animals. I wanted to write about the
+        fun system I came up with, with dice to rate which animals he liked the
+        most. He seemed to like assigning numbers to the animals.
+      </p>
+      <p>But in the end, he still cried.</p>
 
-    <hr />
+      <hr />
 
+      <h1 id="fruits-of-gtd"><a href="#fruits-of-gtd">Fruits of GTD</a></h1>
+      <p>
+        Yesterday evening I took the time to sit down with my action-list,
+        specifically the one called &quot;At Computer&quot;. And I finally felt
+        relief.
+      </p>
+      <p>
+        But relief isn't the right kind of word. In the GTD Fast seminars, David
+        Allen talks about how you don't think, and just do. And I actually felt
+        that way. I just plowed through action after action, and when I was
+        done, I had scratched out over 20 entries, some of which were pretty big
+        (in my mind), like doing taxes. Others had been needing tending since
+        august last year, but were now made progress on in minutes.
+      </p>
+      <p>So yeah, that was pretty cool.</p>
+      <p>
+        I don't have that much to say about it, other than I felt that the
+        earlier steps really helped turning the productive phase super
+        productive. Less figuring out what to do, more doing.
+      </p>
+      <p>
+        This post feels super boring, but I'm gonna practice publishing boring
+        things as well. Because I might be wrong.
+      </p>
+      <p>
+        <em
+          >#100DaysToOffload - Please say hi on
+          <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a
+          >. :)</em
+        >
+      </p>
 
-    <h1 id="the-purge"><a href="#the-purge">The Purge</a></h1>
-    <p>Today we purged my son's stuffed animals. I wanted to write about the fun system I came up with, with dice to
-      rate which animals he liked the most. He seemed to like assigning numbers to the animals.</p>
-    <p>But in the end, he still cried.</p>
+      <hr />
 
+      <h1 id="catching-up"><a href="#catching-up">Catching Up</a></h1>
+      <p>
+        Today I finally got the time to sit down and go through my inbox. My
+        book is now filled with tasks and actions.
+      </p>
+      <p>
+        Trying to get to this point has made me think a bit about doing things,
+        and time.
+      </p>
+      <p>
+        It's interesting how much time is spent doing things that doesn't feel
+        like you're doing anything. For example, today I woke up at ~8:00 and
+        the clock was 11 or so before I felt I could sit down with my lists. The
+        time inbetween felt like I did nothing, but what I actually did was:
+      </p>
+      <ul>
+        <li>Get up</li>
+        <li>Make breakfast for my son</li>
+        <li>
+          Send a photo of me holding Way of Kings that arrived during the night
+          (my son took the package in because he has been hype for the latest
+          volume of Handbok för Superhjältar) to my friend who recommended it to
+          me
+        </li>
+        <li>Poop</li>
+        <li>Jog and buy saturday candy</li>
+        <li>Shower</li>
+        <li>Make breakfast for me and my wife</li>
+        <li>Eat and talk with my son and wife</li>
+        <li>Clear out my desk</li>
+      </ul>
+      <p>
+        And I'm probably forgetting details, like getting dressed, fetching a
+        towel, making new sections for my action book.
+      </p>
+      <p>
+        It's just so much stuff! No wonder I feel pressed for time sometimes. It
+        probably doesn't help that I can take some time switching between
+        different contexts. My wife says it's because of autism, I claim it's
+        because of being burnt out. Maybe we're both right. :)
+      </p>
+      <p>
+        Now my inbox is empty! Or, well, almost. I noticed I had another note in
+        my pocket, but that one doesn't count because it wasn't in my inbox yet.
+        So good enough!
+      </p>
+      <p>Now I need to find time to actually do the actions.</p>
+      <p>
+        <em
+          >#100DaysToOffload - Please say hi on
+          <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a
+          >. :)</em
+        >
+      </p>
 
-    <hr />
+      <hr />
 
+      <h1 id="good-things-come-in-pairs">
+        <a href="#good-things-come-in-pairs">Good Things Come in Pairs</a>
+      </h1>
+      <p>
+        Yesterday was an interesting day. After a bit of a struggle finding a
+        nice place to work, I suddenly got two offers on the same day! One
+        working with a game made in cljs + react native, which is kinda silly
+        how good of a fit it is for me. However, the other offer was more
+        stable, paid more (i.e. allowing me to work less, 15h/week(!!!)), and
+        feels very meaningful.
+      </p>
+      <p>So I chose the latter.</p>
+      <p>
+        I think it's funny how common it is for me that when I struggle with
+        something, and try to find a way out, it is often the case that after a
+        time of panic, two solutions arise at the same time. It has happened
+        multiple times with both love interests and jobs. Maybe it's a way to
+        ensure that you suffer a bit as well, even in your time of luck? :)
+      </p>
+      <p>
+        I feel a bit bad for the cljs guy though, so if you are or know of
+        someone interested in cljs + react native + gamedev, please contact me.
+      </p>
+      <p>
+        I'm very grateful that things seem to be turning out smoothly. Now I'll
+        be in a good shape both economically and stress-wise (15h / w!!!) to
+        receive our second son in august. ^_^
+      </p>
+      <p>
+        <em
+          >#100DaysToOffload - Please say hi on
+          <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a
+          >. :)</em
+        >
+      </p>
 
-    <h1 id="fruits-of-gtd"><a href="#fruits-of-gtd">Fruits of GTD</a></h1>
-    <p>Yesterday evening I took the time to sit down with my action-list, specifically the one called &quot;At
-      Computer&quot;. And I finally felt relief.</p>
-    <p>But relief isn't the right kind of word. In the GTD Fast seminars, David Allen talks about how you don't think,
-      and just do. And I actually felt that way. I just plowed through action after action, and when I was done, I had
-      scratched out over 20 entries, some of which were pretty big (in my mind), like doing taxes. Others had been
-      needing tending since august last year, but were now made progress on in minutes.</p>
-    <p>So yeah, that was pretty cool.</p>
-    <p>I don't have that much to say about it, other than I felt that the earlier steps really helped turning the
-      productive phase super productive. Less figuring out what to do, more doing.</p>
-    <p>This post feels super boring, but I'm gonna practice publishing boring things as well. Because I might be wrong.
-    </p>
-    <p><em>#100DaysToOffload - Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>.
-        :)</em></p>
+      <hr />
 
+      <h1 id="day-4-on-gtd"><a href="#day-4-on-gtd">Day 4 on GTD</a></h1>
+      <p>
+        Since starting to note everything down, as per Orthodox GTD Dogma, I'm
+        realizing I have way more obligations than I thought. In a single day I
+        noted over 20 things for my inbox plus email plus texts. And I don't
+        even have a job!
+      </p>
+      <p>A sample of things in my inbox:</p>
+      <ul>
+        <li>
+          Dinosaurs (for the RPG session I'm planning for my son &amp; wife, we
+          recently made characters for the
+          <a
+            href="https://handbokforsuperhjaltar.se/butik/spel/rollspel/handbok-for-superhjaltar-rollspelet/"
+            >Handbok för Superhjältar</a
+          >
+          role playing game)
+        </li>
+        <li>Check Twitter</li>
+        <li>Remove rug from balcony</li>
+        <li>Contact son's friend's mom to plan playdate</li>
+        <li>Brett Victor, Future of Code and Learning Programming</li>
+        <li>Sun lamp</li>
+        <li>
+          Check SMS from my wife (I accidentally read it but I need to remember
+          to put it in my inbox)
+        </li>
+        <li>
+          Get Megaman Legends for a let's play that I'm doing with two friends
+        </li>
+      </ul>
+      <p>It's just a lot of stuff!!</p>
+      <p>
+        And I have even more already that has undergone the holy ritual of
+        &quot;processing&quot;, which means they are deciphered into
+        &quot;Goal&quot; and &quot;Action&quot;, and are under categories such
+        as &quot;At Home&quot; or &quot;By Computer&quot; or
+        &quot;Projects&quot;.
+      </p>
+      <p>
+        Oh great, I just found another note. 10 more things, so 30 for today.
+      </p>
+      <p>
+        I'm a bit happy to get all these obligations down on paper, but I also
+        notice I feel stress that it takes so much time to just process all of
+        these notes. I hope I'll reach a point when there won't be too much new
+        stuff, and I can spend a bit more time actually doing some of the
+        actions I've written down.
+      </p>
+      <p>What are your experiences with GTD or similar systems?</p>
+      <p>
+        <em
+          >#100DaysToOffload - Please say hi on
+          <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a
+          >. :)</em
+        >
+      </p>
 
-    <hr />
+      <hr />
 
-    <h1 id="catching-up"><a href="#catching-up">Catching Up</a></h1>
-    <p>Today I finally got the time to sit down and go through my inbox. My book is now filled with tasks and actions.
-    </p>
-    <p>Trying to get to this point has made me think a bit about doing things, and time.</p>
-    <p>It's interesting how much time is spent doing things that doesn't feel like you're doing anything. For example,
-      today I woke up at ~8:00 and the clock was 11 or so before I felt I could sit down with my lists. The time
-      inbetween felt like I did nothing, but what I actually did was:</p>
-    <ul>
-      <li>Get up</li>
-      <li>Make breakfast for my son</li>
-      <li>Send a photo of me holding Way of Kings that arrived during the night (my son took the package in because he
-        has been hype for the latest volume of Handbok för Superhjältar) to my friend who recommended it to me</li>
-      <li>Poop</li>
-      <li>Jog and buy saturday candy</li>
-      <li>Shower</li>
-      <li>Make breakfast for me and my wife</li>
-      <li>Eat and talk with my son and wife</li>
-      <li>Clear out my desk</li>
-    </ul>
-    <p>And I'm probably forgetting details, like getting dressed, fetching a towel, making new sections for my action
-      book.</p>
-    <p>It's just so much stuff! No wonder I feel pressed for time sometimes. It probably doesn't help that I can take
-      some time switching between different contexts. My wife says it's because of autism, I claim it's because of being
-      burnt out. Maybe we're both right. :)</p>
-    <p>Now my inbox is empty! Or, well, almost. I noticed I had another note in my pocket, but that one doesn't count
-      because it wasn't in my inbox yet. So good enough!</p>
-    <p>Now I need to find time to actually do the actions.</p>
-    <p><em>#100DaysToOffload - Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>.
-        :)</em></p>
+      <h1 id="tenth-post"><a href="#tenth-post">Tenth Post!</a></h1>
+      <p>
+        This is my tenth post! I can't write much because my day got taken over
+        by:
+      </p>
+      <ol>
+        <li>Fixing the blog so it's more readable on more devices</li>
+        <li>
+          Talking with
+          <a href="https://mastodon.social/@bjoreman@toot.cafe">Fredrik</a>
+          about code and stuff
+        </li>
+        <li>Talking with people who might give me money to write code</li>
+        <li>
+          Going through a giant list of notes I've collected trying to implement
+          GTD system
+        </li>
+      </ol>
+      <p>
+        Now I'm gonna go make gluten free pizza and play LA Noire with my
+        friend.
+      </p>
+      <p>
+        <em
+          >#100DaysToOffload - Please say hi on
+          <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a
+          >. :)</em
+        >
+      </p>
 
+      <hr />
 
-    <hr />
-
-
-    <h1 id="good-things-come-in-pairs"><a href="#good-things-come-in-pairs">Good Things Come in Pairs</a></h1>
-    <p>Yesterday was an interesting day. After a bit of a struggle finding a nice place to work, I suddenly got two
-      offers on the same day! One working with a game made in cljs + react native, which is kinda silly how good of a
-      fit it is for me. However, the other offer was more stable, paid more (i.e. allowing me to work less,
-      15h/week(!!!)), and feels very meaningful.</p>
-    <p>So I chose the latter.</p>
-    <p>I think it's funny how common it is for me that when I struggle with something, and try to find a way out, it is
-      often the case that after a time of panic, two solutions arise at the same time. It has happened multiple times
-      with both love interests and jobs. Maybe it's a way to ensure that you suffer a bit as well, even in your time of
-      luck? :)</p>
-    <p>I feel a bit bad for the cljs guy though, so if you are or know of someone interested in cljs + react native +
-      gamedev, please contact me.</p>
-    <p>I'm very grateful that things seem to be turning out smoothly. Now I'll be in a good shape both economically and
-      stress-wise (15h / w!!!) to receive our second son in august. ^_^</p>
-    <p><em>#100DaysToOffload - Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>.
-        :)</em></p>
-
-
-    <hr />
-
-    <h1 id="day-4-on-gtd"><a href="#day-4-on-gtd">Day 4 on GTD</a></h1>
-    <p>Since starting to note everything down, as per Orthodox GTD Dogma, I'm realizing I have way more obligations than
-      I thought. In a single day I noted over 20 things for my inbox plus email plus texts. And I don't even have a job!
-    </p>
-    <p>A sample of things in my inbox:</p>
-    <ul>
-      <li>Dinosaurs (for the RPG session I'm planning for my son &amp; wife, we recently made characters for the <a
-          href="https://handbokforsuperhjaltar.se/butik/spel/rollspel/handbok-for-superhjaltar-rollspelet/">Handbok för
-          Superhjältar</a> role playing game)</li>
-      <li>Check Twitter</li>
-      <li>Remove rug from balcony</li>
-      <li>Contact son's friend's mom to plan playdate</li>
-      <li>Brett Victor, Future of Code and Learning Programming</li>
-      <li>Sun lamp</li>
-      <li>Check SMS from my wife (I accidentally read it but I need to remember to put it in my inbox)</li>
-      <li>Get Megaman Legends for a let's play that I'm doing with two friends</li>
-    </ul>
-    <p>It's just a lot of stuff!!</p>
-    <p>And I have even more already that has undergone the holy ritual of &quot;processing&quot;, which means they are
-      deciphered into &quot;Goal&quot; and &quot;Action&quot;, and are under categories such as &quot;At Home&quot; or
-      &quot;By Computer&quot; or &quot;Projects&quot;.</p>
-    <p>Oh great, I just found another note. 10 more things, so 30 for today.</p>
-    <p>I'm a bit happy to get all these obligations down on paper, but I also notice I feel stress that it takes so much
-      time to just process all of these notes. I hope I'll reach a point when there won't be too much new stuff, and I
-      can spend a bit more time actually doing some of the actions I've written down.</p>
-    <p>What are your experiences with GTD or similar systems?</p>
-    <p><em>#100DaysToOffload - Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>.
-        :)</em></p>
-
-
-    <hr />
-
-
-
-    <h1 id="tenth-post"><a href="#tenth-post">Tenth Post!</a></h1>
-    <p>This is my tenth post! I can't write much because my day got taken over by:</p>
-    <ol>
-      <li>Fixing the blog so it's more readable on more devices</li>
-      <li>Talking with <a href="https://mastodon.social/@bjoreman@toot.cafe">Fredrik</a> about code and stuff</li>
-      <li>Talking with people who might give me money to write code</li>
-      <li>Going through a giant list of notes I've collected trying to implement GTD system</li>
-    </ol>
-    <p>Now I'm gonna go make gluten free pizza and play LA Noire with my friend.</p>
-    <p><em>#100DaysToOffload - Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>.
-        :)</em></p>
-
-
-    <hr />
-
-    <h1 id="getting-used-to-bad-things"><a href="#getting-used-to-bad-things">Getting used to bad things</a></h1>
-    <p>I think there are more people than me who are good at getting used to bad things.</p>
-    <p>I used to code lisp in emacs, and what's amazing about it, is that you can use <a
-        href="http://danmidwood.com/content/2014/11/21/animated-paredit.html">Paredit</a> (and other structural editing
-      tools, like those built into emacs) which let's you treat the code like a branching road where you can move towns
-      and lakes around, rather than erase individual characters. The most obvious example in my mind are languages where
-      <code>,</code> separates &quot;things&quot;, e.g.:
-    </p>
-    <pre><code>int sum(int curr, int acc)
+      <h1 id="getting-used-to-bad-things">
+        <a href="#getting-used-to-bad-things">Getting used to bad things</a>
+      </h1>
+      <p>
+        I think there are more people than me who are good at getting used to
+        bad things.
+      </p>
+      <p>
+        I used to code lisp in emacs, and what's amazing about it, is that you
+        can use
+        <a href="http://danmidwood.com/content/2014/11/21/animated-paredit.html"
+          >Paredit</a
+        >
+        (and other structural editing tools, like those built into emacs) which
+        let's you treat the code like a branching road where you can move towns
+        and lakes around, rather than erase individual characters. The most
+        obvious example in my mind are languages where <code>,</code> separates
+        &quot;things&quot;, e.g.:
+      </p>
+      <pre><code>int sum(int curr, int acc)
 </code></pre>
-    <p>In this situation, if you want to switch the place of <code>int curr</code> and <code>int acc</code>, you have to
-      do this awkward dance of selecting <code>acc</code>, cutting it, moving the cursor to <code>curr</code>, paste it,
-      select <code>curr</code>, cut it, move the cursor back to where <code>acc</code> used to be, paste. If there were
-      no <code>,</code>, at least you could just select and cut the whole <code>int acc</code>, move the cursor to right
-      after <code>(</code>, and paste, hit space, and remove the trailing space at the end. There are many variants on
-      this, and if you're anything like me, you notice when these awkward things happen. And there's not really a clean
-      solution.</p>
-    <p><a href="https://calva.io/images/paredit/transpose.gif">That's not true in lisp.</a></p>
-    <p>You just do a single command, <code>transpose-sexp</code> (preferably bound to a hotkey). And when you want to
-      move multiple expressions that are in the same block, let's say you have code like this:
-      <code>(curr :int acc :int)</code>, then at least you can stand in the middle, hit <code>Ctrl+K</code> which cuts
-      until right before the closing <code>)</code>, then move to the beginning of the expression, then paste. At least
-      you don't have to fiddle with selecting single characters.
-    </p>
-    <p>But I've gotten used to not having it, after sitting in C-based languages for more than a year. And it's very
-      sad.</p>
-    <p>Of course there are a lot worse things to get used to, like depression, abuse and plastic accumulating in our
-      nature.</p>
-    <p>Still though, I wonder if there's a connection. If you allow yourself to get used to one thing that you can
-      affect, but don't. Do you get better at getting used to bad things?</p>
-    <p><em>#100DaysToOffload - Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>.
-        :)</em></p>
+      <p>
+        In this situation, if you want to switch the place of
+        <code>int curr</code> and <code>int acc</code>, you have to do this
+        awkward dance of selecting <code>acc</code>, cutting it, moving the
+        cursor to <code>curr</code>, paste it, select <code>curr</code>, cut it,
+        move the cursor back to where <code>acc</code> used to be, paste. If
+        there were no <code>,</code>, at least you could just select and cut the
+        whole <code>int acc</code>, move the cursor to right after
+        <code>(</code>, and paste, hit space, and remove the trailing space at
+        the end. There are many variants on this, and if you're anything like
+        me, you notice when these awkward things happen. And there's not really
+        a clean solution.
+      </p>
+      <p>
+        <a href="https://calva.io/images/paredit/transpose.gif"
+          >That's not true in lisp.</a
+        >
+      </p>
+      <p>
+        You just do a single command, <code>transpose-sexp</code> (preferably
+        bound to a hotkey). And when you want to move multiple expressions that
+        are in the same block, let's say you have code like this:
+        <code>(curr :int acc :int)</code>, then at least you can stand in the
+        middle, hit <code>Ctrl+K</code> which cuts until right before the
+        closing <code>)</code>, then move to the beginning of the expression,
+        then paste. At least you don't have to fiddle with selecting single
+        characters.
+      </p>
+      <p>
+        But I've gotten used to not having it, after sitting in C-based
+        languages for more than a year. And it's very sad.
+      </p>
+      <p>
+        Of course there are a lot worse things to get used to, like depression,
+        abuse and plastic accumulating in our nature.
+      </p>
+      <p>
+        Still though, I wonder if there's a connection. If you allow yourself to
+        get used to one thing that you can affect, but don't. Do you get better
+        at getting used to bad things?
+      </p>
+      <p>
+        <em
+          >#100DaysToOffload - Please say hi on
+          <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a
+          >. :)</em
+        >
+      </p>
 
+      <hr />
 
-    <hr />
+      <h1 id="productivity"><a href="#productivity">Productivity</a></h1>
+      <p>
+        I wanted to name this Tired, but I already made that post, so let's do
+        something else.
+      </p>
+      <p>
+        During the weekend, I listened to 90% of the second episode of
+        <a href="https://synk.fm/podcast/2-en-snurra-varje-dag/">Synk</a>. In
+        this episode, Fredrik and Martin talks about productivity and
+        productivity tools (like papers and pens and Obsidian). I don't care
+        about productivity, I just wanted to listen to them talk about something
+        that isn't game development, because I've spent the last 5 years of my
+        life listening to game development podcasts.
+      </p>
+      <p>
+        One of the things I like about Fredrik is that he tends to question
+        things. So when he said he didn't necessarily do Orthodox GTD, but still
+        enjoyed
+        <a
+          href="https://www.reddit.com/r/gtd/comments/b6ok53/gtd_fast_not_sure_how_long_it_will_be_up_for/"
+          >these seminars by the author of the GTD book</a
+        >, I was intrigued. I want to listen to people talk, and here's a person
+        I like hearing talk saying I should listen to this other person talk. So
+        I did.
+      </p>
+      <p>
+        First, the speaker (David Allen), feels very chill. I thought he'd be a
+        stuffy business person, something I felt when trying to listen to Eat
+        That Frog (some other productivity book thing). So it's just enjoyable
+        to listen to him.
+      </p>
+      <p>
+        Secondly, his focus on being lazy, and that you should be able to enjoy
+        all of life, not just work, made me feel that maybe he has something
+        sensible to say.
+      </p>
+      <p>
+        So I kept listening for a bit while jog/walk/jogging today (maybe half
+        an hour), and I'm still feeling &quot;nah, I don't need this
+        productivity stuff, my memory is doing all right. the important things
+        are always in front of me&quot;. But with his comment about
+        &quot;collecting notes&quot; still ringing in my ears, I start noticing
+        all the little problems at home that I have some intention to solve, and
+        have not solved. Here's a sample:
+      </p>
+      <ul>
+        <li>Out of milk</li>
+        <li>Three bottles of lotion of which two are almost empty</li>
+        <li>I have no job</li>
+        <li>Three bags of cardboard that needs to be recycled</li>
+        <li>A pot of potato soup has been on the balcony since february</li>
+        <li>A horde of bath toys next to the shower that are never used</li>
+        <li>
+          Plan for working on my son's daycare tomorrow (e.g. eat lunch in time
+          (which means buying lunch in time), bring something gluten free to eat
+          between lunch and dinner (which means buying something gluten free))
+        </li>
+      </ul>
+      <p>
+        Of course, all of these things are in front of me from time to time. But
+        I don't keep them in mind for when I have time to deal with them. This
+        is obvious stuff, but I have felt so anxious about having todo lists
+        that I don't have time or energy to go through, that I've convinced
+        myself the best solution is to have no list at all. But I'm starting to
+        come around to the thought that I might be wrong. Maybe it's better to
+        have the lists, and even if I haven't solved everything, at least I can
+        think: &quot;well, it's on the list, and when I have time and energy, I
+        can go through the list and solve it.&quot;
+      </p>
+      <p>I don't need to keep it in my mind.</p>
+      <p>
+        <em
+          >#100DaysToOffload - Please say hi on
+          <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a
+          >. :)</em
+        >
+      </p>
 
-    <h1 id="productivity"><a href="#productivity">Productivity</a></h1>
-    <p>I wanted to name this Tired, but I already made that post, so let's do something else.</p>
-    <p>During the weekend, I listened to 90% of the second episode of <a
-        href="https://synk.fm/podcast/2-en-snurra-varje-dag/">Synk</a>. In this episode, Fredrik and Martin talks about
-      productivity and productivity tools (like papers and pens and Obsidian). I don't care about productivity, I just
-      wanted to listen to them talk about something that isn't game development, because I've spent the last 5 years of
-      my life listening to game development podcasts.</p>
-    <p>One of the things I like about Fredrik is that he tends to question things. So when he said he didn't necessarily
-      do Orthodox GTD, but still enjoyed <a
-        href="https://www.reddit.com/r/gtd/comments/b6ok53/gtd_fast_not_sure_how_long_it_will_be_up_for/">these seminars
-        by the author of the GTD book</a>, I was intrigued. I want to listen to people talk, and here's a person I like
-      hearing talk saying I should listen to this other person talk. So I did.</p>
-    <p>First, the speaker (David Allen), feels very chill. I thought he'd be a stuffy business person, something I felt
-      when trying to listen to Eat That Frog (some other productivity book thing). So it's just enjoyable to listen to
-      him.</p>
-    <p>Secondly, his focus on being lazy, and that you should be able to enjoy all of life, not just work, made me feel
-      that maybe he has something sensible to say.</p>
-    <p>So I kept listening for a bit while jog/walk/jogging today (maybe half an hour), and I'm still feeling &quot;nah,
-      I don't need this productivity stuff, my memory is doing all right. the important things are always in front of
-      me&quot;. But with his comment about &quot;collecting notes&quot; still ringing in my ears, I start noticing all
-      the little problems at home that I have some intention to solve, and have not solved. Here's a sample:</p>
-    <ul>
-      <li>Out of milk</li>
-      <li>Three bottles of lotion of which two are almost empty</li>
-      <li>I have no job</li>
-      <li>Three bags of cardboard that needs to be recycled</li>
-      <li>A pot of potato soup has been on the balcony since february</li>
-      <li>A horde of bath toys next to the shower that are never used</li>
-      <li>Plan for working on my son's daycare tomorrow (e.g. eat lunch in time (which means buying lunch in time),
-        bring something gluten free to eat between lunch and dinner (which means buying something gluten free))</li>
-    </ul>
-    <p>Of course, all of these things are in front of me from time to time. But I don't keep them in mind for when I
-      have time to deal with them. This is obvious stuff, but I have felt so anxious about having todo lists that I
-      don't have time or energy to go through, that I've convinced myself the best solution is to have no list at all.
-      But I'm starting to come around to the thought that I might be wrong. Maybe it's better to have the lists, and
-      even if I haven't solved everything, at least I can think: &quot;well, it's on the list, and when I have time and
-      energy, I can go through the list and solve it.&quot;</p>
-    <p>I don't need to keep it in my mind.</p>
-    <p><em>#100DaysToOffload - Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>.
-        :)</em></p>
+      <hr />
 
-    <hr />
+      <h1 id="rest-day"><a href="#rest-day">Rest Day</a></h1>
+      <p>Today it is sunday.</p>
+      <p>
+        For a while, I tried having a rule that I shouldn't code on sundays. I
+        had this feeling that I was tiring myself out, and not giving myself
+        enough time to recover. Sundays felt very boring, and I was often tired.
+        Implementing this rule, it felt worse. Now I had nothing meaningful to
+        do. And since I was tired, I had a hard time coming up with things to
+        do. But over time, I started to appreciate this tired feeling.
+      </p>
+      <p>
+        As long as I don't fight against it, it's not dangerous. It's just
+        there. And since I'm not allowed to code, there's not really that much
+        actually hard things to do. I can clean the kitchen even if I feel
+        sluggish. I can watch youtube with my son.
+      </p>
+      <p>
+        After getting laid off though, I felt pressure to create a game quickly,
+        and tried to spend as much time as possible on it, including sundays. In
+        the beginning, it was pretty easy. I got some sort of energy rush after
+        being laid off. But then it went as with most projects, after three
+        weeks or so, the hype died down. Me and my family got a long bout of
+        colds and infections in the middle of it as well, so it wasn't really
+        feasible to struggle so hard to create something quickly. My wife also
+        commented on that I didn't seem as happy, now that I was working on
+        sundays as well again.
+      </p>
+      <p>
+        (In case you're wondering, it was supposed to be a hexagonal,
+        <a href="http://www.roguebasin.com/index.php/Berlin_Interpretation"
+          >berlin interpretation roguelike</a
+        >
+        with <a href="https://youtu.be/urL6ZFOXbCA">trains</a>. I played a bit
+        of <a href="https://www.cavesofqud.com">Caves of Qud</a> which inspired
+        me to try to create something with less graphics and more code. However,
+        I quickly ended up having to draw a lot, which meant I spent a lot of
+        time not making fun gameplay. I think this helped kill my motivation.)
+      </p>
+      <p>
+        After letting myself just enjoy empty days, rather than forcing myself
+        to produce, I've felt that I've started to recover from my last job. I
+        think I was more stressed than I realized, and since I experienced burn
+        out (with sleeplessness and extreme difficulties concentrating) at my
+        last job, I imagine I'm more stress sensitive than most.
+      </p>
+      <p>
+        I've recently managed to jog often as well. I've been wanting to jog for
+        about ten years, ever since reading Murakami's
+        <a
+          href="https://www.goodreads.com/book/show/2195464.What_I_Talk_About_When_I_Talk_About_Running"
+          >&quot;What I Talk About When I Talk About Running&quot;</a
+        >. I never found a way to do it sustainably though. In the beginning, I
+        just tried running for about 10 minutes straight, then increasing by 1-2
+        minutes every day. I think I lasted two weeks, then I started getting a
+        lot of pain (I think in my knee, but I can't quite remember). I tried
+        taking a short break, but it felt like no matter how long my break was,
+        the pain instantly came back. Knowing myself as a 22-year old, I don't
+        think I had the patience to wait weeks or months, and try again. So I
+        quit, for many years. I've tried from time to time after that, but due
+        to my
+        <a href="https://en.wikipedia.org/wiki/Ehlers%E2%80%93Danlos_syndromes"
+          >EDS</a
+        >
+        various parts of my body are very sensitive, e.g. knees, feet and my
+        back.
+      </p>
+      <p>
+        But this year, I think I finally found a combination of things that
+        actually work. I'm using
+        <a
+          href="https://cdn.sportshop.com/catalog/product/580/580/1/0/109747_1.jpg"
+          >Hoka shoes</a
+        >
+        which have bizarrely large soles (I tried
+        <a
+          href="https://runon.se/images/thumbs/000/0003907_joe-nimble-w-nimbletoes-addict-road-blackout-dam.jpeg"
+          >flat shoes with very little soles</a
+        >
+        before that but it didn't work for me). I'm also doing the
+        &quot;Run/Walk/Run&quot; thing, which for me meant in the beginning to
+        stretch, walk for 5 minutes, do 10x 20s jog, 40s walk, walk for 5
+        minutes. Now I'm up to 22x 30s jog, 30s walk, and I've managed to keep
+        it up even after getting sick, which is incredibly motivating for me,
+        because getting sick tends to break all my forming habits.
+      </p>
+      <p>
+        I think this newfound ability to jog has helped me a lot in my recovery.
+        I sleep well, despite now being completely sleep medication free. I also
+        don't get as sensitive to days when I sleep worse. So overall my mood is
+        better.
+      </p>
+      <p>
+        Then I ended up listening to the Kodsnack episode mentioned
+        <a href="#thought-loops">in my first blog post</a>. And they said people
+        should just start blogging. So I did! And all of a sudden my brain
+        started connecting things again, I could think more clearly, and deeper
+        than I have been able to for a while. So of course I start coding again.
+        My motivation got an extreme boost, and now I feel like I have the
+        capability to pull through. What's best is that I have no illusion of
+        being able to make money of a niche programming language (well, I guess
+        <a href="https://ziglang.org/news/announcing-zig-software-foundation/"
+          >one can hope</a
+        >, but there isn't as much buzz as with games). I believe this helps me
+        feel that this is more of a hobby than a job.
+      </p>
+      <p>
+        Still though, I don't want to risk my newfound energy. Therefore I
+        resolve to not code on sundays. That way, I will at least have one
+        restful day. And I'm also going to try not to write about code on
+        sundays. I can write about my feelings about code, but not get into
+        technical stuff.
+      </p>
+      <p>
+        Hope you'll also enjoy a restful sunday. :) My and my wife gonna get to
+        watch my son's first dance performance, so I know I will!
+      </p>
+      <p>
+        <em
+          >#100DaysToOffload - Please say hi on
+          <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a
+          >. :)</em
+        >
+      </p>
 
-    <h1 id="rest-day"><a href="#rest-day">Rest Day</a></h1>
-    <p>Today it is sunday.</p>
-    <p>For a while, I tried having a rule that I shouldn't code on sundays. I had this feeling that I was tiring myself
-      out, and not giving myself enough time to recover. Sundays felt very boring, and I was often tired. Implementing
-      this rule, it felt worse. Now I had nothing meaningful to do. And since I was tired, I had a hard time coming up
-      with things to do. But over time, I started to appreciate this tired feeling.</p>
-    <p>As long as I don't fight against it, it's not dangerous. It's just there. And since I'm not allowed to code,
-      there's not really that much actually hard things to do. I can clean the kitchen even if I feel sluggish. I can
-      watch youtube with my son.</p>
-    <p>After getting laid off though, I felt pressure to create a game quickly, and tried to spend as much time as
-      possible on it, including sundays. In the beginning, it was pretty easy. I got some sort of energy rush after
-      being laid off. But then it went as with most projects, after three weeks or so, the hype died down. Me and my
-      family got a long bout of colds and infections in the middle of it as well, so it wasn't really feasible to
-      struggle so hard to create something quickly. My wife also commented on that I didn't seem as happy, now that I
-      was working on sundays as well again.</p>
-    <p>(In case you're wondering, it was supposed to be a hexagonal, <a
-        href="http://www.roguebasin.com/index.php/Berlin_Interpretation">berlin interpretation roguelike</a> with <a
-        href="https://youtu.be/urL6ZFOXbCA">trains</a>. I played a bit of <a href="https://www.cavesofqud.com">Caves of
-        Qud</a> which inspired me to try to create something with less graphics and more code. However, I quickly ended
-      up having to draw a lot, which meant I spent a lot of time not making fun gameplay. I think this helped kill my
-      motivation.)</p>
-    <p>After letting myself just enjoy empty days, rather than forcing myself to produce, I've felt that I've started to
-      recover from my last job. I think I was more stressed than I realized, and since I experienced burn out (with
-      sleeplessness and extreme difficulties concentrating) at my last job, I imagine I'm more stress sensitive than
-      most.</p>
-    <p>I've recently managed to jog often as well. I've been wanting to jog for about ten years, ever since reading
-      Murakami's <a
-        href="https://www.goodreads.com/book/show/2195464.What_I_Talk_About_When_I_Talk_About_Running">&quot;What I Talk
-        About When I Talk About Running&quot;</a>. I never found a way to do it sustainably though. In the beginning, I
-      just tried running for about 10 minutes straight, then increasing by 1-2 minutes every day. I think I lasted two
-      weeks, then I started getting a lot of pain (I think in my knee, but I can't quite remember). I tried taking a
-      short break, but it felt like no matter how long my break was, the pain instantly came back. Knowing myself as a
-      22-year old, I don't think I had the patience to wait weeks or months, and try again. So I quit, for many years.
-      I've tried from time to time after that, but due to my <a
-        href="https://en.wikipedia.org/wiki/Ehlers%E2%80%93Danlos_syndromes">EDS</a> various parts of my body are very
-      sensitive, e.g. knees, feet and my back.</p>
-    <p>But this year, I think I finally found a combination of things that actually work. I'm using <a
-        href="https://cdn.sportshop.com/catalog/product/580/580/1/0/109747_1.jpg">Hoka shoes</a> which have bizarrely
-      large soles (I tried <a
-        href="https://runon.se/images/thumbs/000/0003907_joe-nimble-w-nimbletoes-addict-road-blackout-dam.jpeg">flat
-        shoes with very little soles</a> before that but it didn't work for me). I'm also doing the
-      &quot;Run/Walk/Run&quot; thing, which for me meant in the beginning to stretch, walk for 5 minutes, do 10x 20s
-      jog, 40s walk, walk for 5 minutes. Now I'm up to 22x 30s jog, 30s walk, and I've managed to keep it up even after
-      getting sick, which is incredibly motivating for me, because getting sick tends to break all my forming habits.
-    </p>
-    <p>I think this newfound ability to jog has helped me a lot in my recovery. I sleep well, despite now being
-      completely sleep medication free. I also don't get as sensitive to days when I sleep worse. So overall my mood is
-      better.</p>
-    <p>Then I ended up listening to the Kodsnack episode mentioned <a href="#thought-loops">in my first blog post</a>.
-      And they said people should just start blogging. So I did! And all of a sudden my brain started connecting things
-      again, I could think more clearly, and deeper than I have been able to for a while. So of course I start coding
-      again. My motivation got an extreme boost, and now I feel like I have the capability to pull through. What's best
-      is that I have no illusion of being able to make money of a niche programming language (well, I guess <a
-        href="https://ziglang.org/news/announcing-zig-software-foundation/">one can hope</a>, but there isn't as much
-      buzz as with games). I believe this helps me feel that this is more of a hobby than a job.</p>
-    <p>Still though, I don't want to risk my newfound energy. Therefore I resolve to not code on sundays. That way, I
-      will at least have one restful day. And I'm also going to try not to write about code on sundays. I can write
-      about my feelings about code, but not get into technical stuff.</p>
-    <p>Hope you'll also enjoy a restful sunday. :) My and my wife gonna get to watch my son's first dance performance,
-      so I know I will!</p>
-    <p><em>#100DaysToOffload - Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>.
-        :)</em></p>
+      <hr />
 
-    <hr />
+      <h1 id="time"><a href="#time">Time</a></h1>
+      <p>It's hard for me how to know how to spend my time.</p>
+      <p>
+        Sometimes I feel like I spend too little time with my son. At the same
+        time, I think it can be hard to get all the things done while also
+        getting time to spend with my son. And even if I get time to spend with
+        my son, it can feel hard to find time to spend with my wife. And if I
+        get both of those, it's hard to find time to spend with my wife and son
+        at the same time. And then someone get's sick while we're at the
+        playground. And now we have even less time to go buy food. So they eat
+        leftovers, and I boil some rice. But now it's the day after that day,
+        and now I have to buy breakfast before I can eat breakfast, and now I
+        get less time to spend with my son.
+      </p>
+      <p>
+        Also I spent two hours watching this fascinating lecture about
+        <a href="https://www.youtube.com/watch?v=Ge3aKEmZcqY"
+          >performance in programming</a
+        >.
+      </p>
+      <p>
+        <em
+          >#100DaysToOffload - Please say hi on
+          <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a
+          >. :)</em
+        >
+      </p>
 
-    <h1 id="time"><a href="#time">Time</a></h1>
-    <p>It's hard for me how to know how to spend my time.</p>
-    <p>Sometimes I feel like I spend too little time with my son. At the same time, I think it can be hard to get all
-      the things done while also getting time to spend with my son. And even if I get time to spend with my son, it can
-      feel hard to find time to spend with my wife. And if I get both of those, it's hard to find time to spend with my
-      wife and son at the same time. And then someone get's sick while we're at the playground. And now we have even
-      less time to go buy food. So they eat leftovers, and I boil some rice. But now it's the day after that day, and
-      now I have to buy breakfast before I can eat breakfast, and now I get less time to spend with my son.</p>
-    <p>Also I spent two hours watching this fascinating lecture about <a
-        href="https://www.youtube.com/watch?v=Ge3aKEmZcqY">performance in programming</a>.</p>
-    <p><em>#100DaysToOffload - Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>.
-        :)</em></p>
+      <hr />
 
-    <hr />
+      <a href="#tired">
+        <h1 id="tired">Tired</h1>
+      </a>
+      <p>
+        Yesterday I had seemingly endless amounts of energy. And today I feel
+        very tired. If this had been a regular workday, I would have been
+        whipping myself over the lack of productivity. Luckily, I'm currently on
+        paid leave, so I don't have to worry so much.
+      </p>
+      <p>Until I start thinking about how I will soon die, of course.</p>
+      <p>
+        In the face of that, tired days can really feel like a waste. I think
+        I've come up with a spell that helps though. What I've thought is
+        something like this:
+      </p>
+      <ul>
+        <li>
+          <p>
+            If you try to get good at something -- let's say drawing -- and it
+            takes ten years, but you die after five, is it meaningful?
+          </p>
+        </li>
+        <li>
+          <p>
+            If it is not, then you should probably not be drawing. I mean, even
+            if you didn't die, you might get injured, or you might get tired of
+            drawing, or your life changes in such a way that you can't spend as
+            much time on drawing.
+          </p>
+        </li>
+        <li>
+          <p>
+            Therefore, it must be meaningful, even if we don't get good at it.
+          </p>
+        </li>
+        <li>
+          <p>
+            In that case, what happens if you spend half as much time on drawing
+            per week, and it would take 20 years to get good at it? The numbers
+            are different, but the equation is the same, right? You might die
+            after 5 or 10, it doesn't matter really. Even if you die after 1
+            day, it must still be meaningful.
+          </p>
+        </li>
+      </ul>
+      <p>
+        With this in mind, it doesn't matter if you are tired one day, because
+        the striving toward getting good at drawing is worth it anyway.
+      </p>
+      <p>And if it isn't, you should probably quit.</p>
+      <p>#100DaysToOffload</p>
 
-    <a href="#tired">
-      <h1 id="tired">Tired</h1>
-    </a>
-    <p>Yesterday I had seemingly endless amounts of energy. And today I feel very tired. If this had been a regular
-      workday,
-      I would have been whipping myself over the lack of productivity. Luckily, I'm currently on paid leave, so I don't
-      have
-      to worry so much.</p>
-    <p>Until I start thinking about how I will soon die, of course.</p>
-    <p>In the face of that, tired days can really feel like a waste. I think I've come up with a spell that helps
-      though.
-      What I've thought is something like this:</p>
-    <ul>
-      <li>
-        <p>If you try to get good at something -- let's say drawing -- and it takes ten years, but you die after five,
-          is it
-          meaningful?</p>
-      </li>
-      <li>
-        <p>If it is not, then you should probably not be drawing. I mean, even if you didn't die, you might get injured,
-          or
-          you might get tired of drawing, or your life changes in such a way that you can't spend as much time on
-          drawing.
-        </p>
-      </li>
-      <li>
-        <p>Therefore, it must be meaningful, even if we don't get good at it.</p>
-      </li>
-      <li>
-        <p>In that case, what happens if you spend half as much time on drawing per week, and it would take 20 years to
-          get
-          good at it? The numbers are different, but the equation is the same, right? You might die after 5 or 10, it
-          doesn't matter really. Even if you die after 1 day, it must still be meaningful.</p>
-      </li>
-    </ul>
-    <p>With this in mind, it doesn't matter if you are tired one day, because the striving toward getting good at
-      drawing is
-      worth it anyway.</p>
-    <p>And if it isn't, you should probably quit.</p>
-    <p>#100DaysToOffload</p>
+      <p>
+        Please say hi on
+        <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>.
+        :)
+      </p>
 
-    <p>Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>. :)</p>
+      <hr />
 
-    <hr />
+      <a href="#making-a-lisp-in-c">
+        <h1 id="making-a-lisp-in-c">Making a Lisp in C</h1>
+      </a>
+      <p>
+        Today I started working on a lisp in c. I want the lisp to compile to C.
+        I've tried it before, but the first time I got stuck on figuring out
+        what types things should be (assuming I don't want to fill out all the
+        types all the time in lisp). Since then I've done some basic work on
+        <a
+          href="https://github.com/saikyun/unification/tree/10b19ae798b508127fb54fa68ed218c99bdd23f4"
+          >unification</a
+        >
+        / type inference. When I tried my first lisp in c, I only found research
+        papers about unification, which I had trouble understanding. I wasn't
+        sure how to learn how to read them either, and ended up listening to
+        <a href="https://en.wikipedia.org/wiki/Tractatus_Logico-Philosophicus"
+          >Tractatus Logico-Philosophicus</a
+        >. It didn't work very well in audiobook form, and it definitely did not
+        help me understand how to read science papers with strange symbols.
+      </p>
+      <p>
+        Since then, a friend showed me
+        https://eli.thegreenplace.net/2018/unification/ which talked my language
+        a lot better. So I was able to do the basic stuff, finally.
+      </p>
+      <p>
+        I did start on
+        <a href="https://github.com/saikyun/lisp-to-c">another lisp in c</a>
+        after writing that unification stuff. While I did manage to compile some
+        C from lisp, I got a bit stuck trying to figure out how enable macros
+        (i.e. running lisp while still being in the compilation phase). At least
+        I think that's what happened. I started some work on doing both
+        <code>eval</code> and <code>compile</code>, i.e. an interpreter
+        <em>and</em> a compiler. But it seemed like I would have to write a lot
+        of the same code over and over again.
+      </p>
+      <p>What I've figured out now is that I somehow want to be able to:</p>
+      <ol>
+        <li>Compile lisp code to C</li>
+        <li>
+          Evaluate lisp code while in the compilation phase, using the same code
+          as step 1. does
+        </li>
+      </ol>
+      <p>
+        This seemed tricky, since I didn't know of a way to get
+        <code>eval</code> for C. Then I remembered that my friend told me about
+        <a href="https://bellard.org/tcc/">tcc</a>. tcc is a tiny c compiler,
+        that is easy to build and bundle with your project. Even in the 2nd
+        iteration, I figured I'd use tcc to generate dlls to facilitate live
+        coding. What I didn't realize back then, but figured out now when
+        reading the docs, is that you can <em>use tcc as a library</em>, and
+        <em>compile functions to memory</em>.
+      </p>
+      <p>
+        <a href="https://github.com/saikyun/libtcc-example">I tried that.</a>
+        It's very awesome. Suddenly you have eval in C.
+      </p>
+      <p>
+        This means that if I encounter a macro during compilation, I can call
+        some libtcc functions, and get some results, and then use those results
+        when continuing compilation. Pretty cool!
+      </p>
+      <p>
+        I'm also guessing it'll make live coding ever so slightly faster, since
+        I won't have to start a separate process, compile a dll/so to disk,
+        <code>dlload</code> that dll, e.t.c.
+      </p>
+      <h2>Third time's the charm</h2>
+      <p>
+        So now I'm starting again, this time using only C, and trying to make
+        sure everything works with tcc. Sadly I had some
+        <a
+          href="https://lists.nongnu.org/archive/html/tinycc-devel/2023-04/msg00029.html"
+          >problems building binaries</a
+        >
+        on my macbook air m2, but <code>tcc -run</code> does work. So hopefully
+        it can be sorted out.
+      </p>
+      <p>
+        Ofc what I probably &quot;should&quot; do is either use llvm, or go all
+        the way and just interact with assembly directly, but both those have
+        their problems.
+      </p>
+      <p>
+        First off, llvm just seems to have slower compile times overall than
+        tcc. Of course it then wins hugely during runtime, but that's not
+        important for <code>eval</code>. My language should be able to AOT
+        compile as well, and then I'd use clang / gcc / cl. But when coding, I
+        figure tcc will speed up development a lot.
+      </p>
+      <p>
+        Doing something with assembly, instead of having the middle step of C,
+        appeals to me a lot, but I know next to nothing about assembly, while I
+        can do basic stuff in C. And even if I were to learn some sort of
+        assembly, I would be tied hard to whatever platform I decided to learn.
+        With tcc it seems feasibly to build/eval on all desktop platforms, and
+        maybe the browser and phones.
+      </p>
+      <p>
+        And since my language will build to C in the end, I figure that when
+        you're done coding and want to build binaries, it should be possible to
+        build them for all manners of platforms, including consoles. You lose
+        <code>eval</code>, but while it's a bit boring to lose it, it's not as
+        crucial as it is while developing.
+      </p>
+      <p>
+        So far I've built the
+        <a href="https://app.slack.com/client/T024SRSB2/C011CD5P1S6"
+          >tokenizer</a
+        >. Not much to look at yet. But hopefully it won't be too long until I
+        can call some C functions using my lisp. :)
+      </p>
+      <p>#100DaysToOffload</p>
 
-    <a href="#making-a-lisp-in-c">
-      <h1 id="making-a-lisp-in-c">Making a Lisp in C</h1>
-    </a>
-    <p>Today I started working on a lisp in c. I want the lisp to compile to C. I've tried it before, but the first time
-      I
-      got stuck on figuring out what types things should be (assuming I don't want to fill out all the types all the
-      time in
-      lisp). Since then I've done some basic work on <a
-        href="https://github.com/saikyun/unification/tree/10b19ae798b508127fb54fa68ed218c99bdd23f4">unification</a> /
-      type
-      inference. When I tried my first lisp in c, I only found research papers about unification, which I had trouble
-      understanding. I wasn't sure how to learn how to read them either, and ended up listening to <a
-        href="https://en.wikipedia.org/wiki/Tractatus_Logico-Philosophicus">Tractatus Logico-Philosophicus</a>. It
-      didn't
-      work very well in audiobook form, and it definitely did not help me understand how to read science papers with
-      strange
-      symbols.</p>
-    <p>Since then, a friend showed me https://eli.thegreenplace.net/2018/unification/ which talked my language a lot
-      better.
-      So I was able to do the basic stuff, finally.</p>
-    <p>I did start on <a href="https://github.com/saikyun/lisp-to-c">another lisp in c</a> after writing that
-      unification
-      stuff. While I did manage to compile some C from lisp, I got a bit stuck trying to figure out how enable macros
-      (i.e.
-      running lisp while still being in the compilation phase). At least I think that's what happened. I started some
-      work
-      on doing both <code>eval</code> and <code>compile</code>, i.e. an interpreter <em>and</em> a compiler. But it
-      seemed
-      like I would have to write a lot of the same code over and over again.</p>
-    <p>What I've figured out now is that I somehow want to be able to:</p>
-    <ol>
-      <li>Compile lisp code to C</li>
-      <li>Evaluate lisp code while in the compilation phase, using the same code as step 1. does</li>
-    </ol>
-    <p>This seemed tricky, since I didn't know of a way to get <code>eval</code> for C. Then I remembered that my friend
-      told me about <a href="https://bellard.org/tcc/">tcc</a>. tcc is a tiny c compiler, that is easy to build and
-      bundle
-      with your project. Even in the 2nd iteration, I figured I'd use tcc to generate dlls to facilitate live coding.
-      What I
-      didn't realize back then, but figured out now when reading the docs, is that you can <em>use tcc as a
-        library</em>,
-      and <em>compile functions to memory</em>.</p>
-    <p><a href="https://github.com/saikyun/libtcc-example">I tried that.</a> It's very awesome. Suddenly you have eval
-      in C.
-    </p>
-    <p>This means that if I encounter a macro during compilation, I can call some libtcc functions, and get some
-      results,
-      and then use those results when continuing compilation. Pretty cool!</p>
-    <p>I'm also guessing it'll make live coding ever so slightly faster, since I won't have to start a separate process,
-      compile a dll/so to disk, <code>dlload</code> that dll, e.t.c.</p>
-    <h2>Third time's the charm</h2>
-    <p>So now I'm starting again, this time using only C, and trying to make sure everything works with tcc. Sadly I had
-      some <a href="https://lists.nongnu.org/archive/html/tinycc-devel/2023-04/msg00029.html">problems building
-        binaries</a>
-      on my macbook air m2, but <code>tcc -run</code> does work. So hopefully it can be sorted out.</p>
-    <p>Ofc what I probably &quot;should&quot; do is either use llvm, or go all the way and just interact with assembly
-      directly, but both those have their problems.</p>
-    <p>First off, llvm just seems to have slower compile times overall than tcc. Of course it then wins hugely during
-      runtime, but that's not important for <code>eval</code>. My language should be able to AOT compile as well, and
-      then
-      I'd use clang / gcc / cl. But when coding, I figure tcc will speed up development a lot.</p>
-    <p>Doing something with assembly, instead of having the middle step of C, appeals to me a lot, but I know next to
-      nothing about assembly, while I can do basic stuff in C. And even if I were to learn some sort of assembly, I
-      would be
-      tied hard to whatever platform I decided to learn. With tcc it seems feasibly to build/eval on all desktop
-      platforms,
-      and maybe the browser and phones.</p>
-    <p>And since my language will build to C in the end, I figure that when you're done coding and want to build
-      binaries,
-      it should be possible to build them for all manners of platforms, including consoles. You lose <code>eval</code>,
-      but
-      while it's a bit boring to lose it, it's not as crucial as it is while developing.</p>
-    <p>So far I've built the <a href="https://app.slack.com/client/T024SRSB2/C011CD5P1S6">tokenizer</a>. Not much to
-      look at
-      yet. But hopefully it won't be too long until I can call some C functions using my lisp. :)</p>
-    <p>#100DaysToOffload</p>
+      <p>
+        Please say hi on
+        <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>.
+        :)
+      </p>
 
-    <p>Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>. :)</p>
+      <hr />
 
-    <hr />
-
-    <a href="#coding-with-chatgpt">
-      <h1 id="coding-with-chatgpt">Coding with ChatGPT</h1>
-    </a>
-    <p>After I played around with wasm yesterday, I talked to a friend. He got me inspired to try some <a
-        href="https://openai.com/blog/chatgpt">ChatGPT</a> coding. I started out making a lisp parser in rust. It turned
-      out
-      pretty well, after some massage and asking it to change things. For example, it used <code>&amp;str</code> without
-      explicit lifetimes, which Rust didn't like. I could tell it to add the explicit lifetimes though, but now the code
-      looked disgusting.</p>
-    <p>I bought the premium version and tried gpt4, and it instead used <code>String</code> (which seems sensible, and
-      looks
-      a lot nicer), but now it did tokenizing and parsing at the same time, which makes the code raise my upper lip in
-      disgust.</p>
-    <p>It's a very different feeling from hand coding things. Like pushing a river. You can affect it, but it's hard to
-      control, and sometimes you get chaotic whirls that the compiler and I don't like.</p>
-    <p>After the lisp parser, &quot;we&quot; made the evaluator. At first it had a big <code>match</code> where it would
-      put
-      functions like <code>+</code> as a case. But I wanted it instead to look up symbols in an environment, and have
-      certain symbols be added to the environment by default. I asked it to do this, and it actually rewrote the code.
-      That
-      was pretty cool! Still some manual labour on top, but it's the sort of change that can feel hard to switch to,
-      when
-      you've already coded in a different style.</p>
-    <p>I should mention that from nothing to evaluator took about an hour. I think that's faster than I could have
-      written
-      it by hand, and it's definitely faster than it would have taken me to write it in Rust, since I'm a bit rusty.</p>
-    <pre><code>cargo run
+      <a href="#coding-with-chatgpt">
+        <h1 id="coding-with-chatgpt">Coding with ChatGPT</h1>
+      </a>
+      <p>
+        After I played around with wasm yesterday, I talked to a friend. He got
+        me inspired to try some
+        <a href="https://openai.com/blog/chatgpt">ChatGPT</a> coding. I started
+        out making a lisp parser in rust. It turned out pretty well, after some
+        massage and asking it to change things. For example, it used
+        <code>&amp;str</code> without explicit lifetimes, which Rust didn't
+        like. I could tell it to add the explicit lifetimes though, but now the
+        code looked disgusting.
+      </p>
+      <p>
+        I bought the premium version and tried gpt4, and it instead used
+        <code>String</code> (which seems sensible, and looks a lot nicer), but
+        now it did tokenizing and parsing at the same time, which makes the code
+        raise my upper lip in disgust.
+      </p>
+      <p>
+        It's a very different feeling from hand coding things. Like pushing a
+        river. You can affect it, but it's hard to control, and sometimes you
+        get chaotic whirls that the compiler and I don't like.
+      </p>
+      <p>
+        After the lisp parser, &quot;we&quot; made the evaluator. At first it
+        had a big <code>match</code> where it would put functions like
+        <code>+</code> as a case. But I wanted it instead to look up symbols in
+        an environment, and have certain symbols be added to the environment by
+        default. I asked it to do this, and it actually rewrote the code. That
+        was pretty cool! Still some manual labour on top, but it's the sort of
+        change that can feel hard to switch to, when you've already coded in a
+        different style.
+      </p>
+      <p>
+        I should mention that from nothing to evaluator took about an hour. I
+        think that's faster than I could have written it by hand, and it's
+        definitely faster than it would have taken me to write it in Rust, since
+        I'm a bit rusty.
+      </p>
+      <pre><code>cargo run
     Finished dev [unoptimized + debuginfo] target(s) in 0.01s
      Running `target/debug/lisp`
 List([Symbol(&quot;+&quot;), Number(1.0), List([Symbol(&quot;*&quot;), Number(2.0), Number(3.0)])])
 Result: 7
 </code></pre>
-    <p>I tried some other stuff, like generating example Clojure code to use as a test, something to implement in my own
-      lisp. It was kind of hilarious, because it missed a closing parens. Even AI can't write lisp. :') <a
-        href="http://danmidwood.com/content/2014/11/21/animated-paredit.html">Paredit</a> ftw. If you haven't checked
-      out
-      structural programming at all, I recommend just looking at those beautiful gifs.</p>
-    <p>One thing ChatGPT has over me is how quickly it can switch between different tasks. Despite me feeling tired, I
-      felt
-      that I could get a momentum boost by seeing it's code, wether it was correct or not. It's like giving me a space
-      where
-      it already has filled out the little calls that I might have forgotten (how did I split a string with a regex in
-      Clojure again?). It was also nice to get some Rust examples, since I haven't used it in 6 years.</p>
-    <p>After that, I tried making a card game using TypeScript. I started out having it give me examples using canvas
-      (e.g.
-      a function that renders playing cards), but I quickly felt that I wanted some abstractions over loading sprites
-      and
-      handling user input. Maybe that was wrong, but that was how I felt.</p>
-    <p>This is where I felt chatgpt became very annoying to use. I tried to have it give me examples for using PixiJS,
-      then
-      Phaser, then P5. And over and over again it resulted in strange typescript errors. I'm sure there might have been
-      configuration somewhere that's strange, or I was using old examples or something. But overall it felt really
-      unpleasant, and took way too much time. It might have more to do with the TypeScript + npm + webpack/parceljl/???
-      combination that easily leads to a silly amount of things that can go wrong.</p>
-    <p>After getting over the hurdle of getting something to draw a rectangle on the screen (which ended up being
-      easiest
-      with p5), &quot;we&quot; started adding things like a deck, hands of cards, a play zone etc. It felt all right,
-      but I
-      felt a lot less helped than when it wrote the parser. My guess is that the parser is more well defined, and it's
-      the
-      sort of thing that's easy to get wrong as a human, while coding game mechanics has more to do with positioning
-      things
-      on the screen and moving things between different collections.</p>
-    <p>Another point for ChatGPT was asking for math with natural language:</p>
-    <pre><code>Can you give me an easing function in javascript, that starts out slow, then fast, then slow in the middle, then fast again?
+      <p>
+        I tried some other stuff, like generating example Clojure code to use as
+        a test, something to implement in my own lisp. It was kind of hilarious,
+        because it missed a closing parens. Even AI can't write lisp. :')
+        <a href="http://danmidwood.com/content/2014/11/21/animated-paredit.html"
+          >Paredit</a
+        >
+        ftw. If you haven't checked out structural programming at all, I
+        recommend just looking at those beautiful gifs.
+      </p>
+      <p>
+        One thing ChatGPT has over me is how quickly it can switch between
+        different tasks. Despite me feeling tired, I felt that I could get a
+        momentum boost by seeing it's code, wether it was correct or not. It's
+        like giving me a space where it already has filled out the little calls
+        that I might have forgotten (how did I split a string with a regex in
+        Clojure again?). It was also nice to get some Rust examples, since I
+        haven't used it in 6 years.
+      </p>
+      <p>
+        After that, I tried making a card game using TypeScript. I started out
+        having it give me examples using canvas (e.g. a function that renders
+        playing cards), but I quickly felt that I wanted some abstractions over
+        loading sprites and handling user input. Maybe that was wrong, but that
+        was how I felt.
+      </p>
+      <p>
+        This is where I felt chatgpt became very annoying to use. I tried to
+        have it give me examples for using PixiJS, then Phaser, then P5. And
+        over and over again it resulted in strange typescript errors. I'm sure
+        there might have been configuration somewhere that's strange, or I was
+        using old examples or something. But overall it felt really unpleasant,
+        and took way too much time. It might have more to do with the TypeScript
+        + npm + webpack/parceljl/??? combination that easily leads to a silly
+        amount of things that can go wrong.
+      </p>
+      <p>
+        After getting over the hurdle of getting something to draw a rectangle
+        on the screen (which ended up being easiest with p5), &quot;we&quot;
+        started adding things like a deck, hands of cards, a play zone etc. It
+        felt all right, but I felt a lot less helped than when it wrote the
+        parser. My guess is that the parser is more well defined, and it's the
+        sort of thing that's easy to get wrong as a human, while coding game
+        mechanics has more to do with positioning things on the screen and
+        moving things between different collections.
+      </p>
+      <p>
+        Another point for ChatGPT was asking for math with natural language:
+      </p>
+      <pre><code>Can you give me an easing function in javascript, that starts out slow, then fast, then slow in the middle, then fast again?
 </code></pre>
-    <pre><code>Yes, you can use the &quot;easeInOutQuad&quot; easing function in JavaScript to achieve the desired effect. Here is the code for the function:
+      <pre><code>Yes, you can use the &quot;easeInOutQuad&quot; easing function in JavaScript to achieve the desired effect. Here is the code for the function:
 
 function easeInOutQuad(t, b, c, d) {
   t /= d/2;
@@ -1280,167 +2214,258 @@ function easeInOutQuad(t, b, c, d) {
   return -c/2 * (t*(t-2) - 1) + b;
 }
 </code></pre>
-    <p>This is the sort of code I could figure out, but it takes me a long time and I don't enjoy it. I believe asking
-      it
-      for help with vector math can come in handy as well.</p>
-    <p>The most important thing I learned, is that I enjoy coding a lot more than doing code reviews. So I'll probably
-      keep
-      hand coding for as long as I can. :)</p>
-    <p>#100DaysToOffload</p>
+      <p>
+        This is the sort of code I could figure out, but it takes me a long time
+        and I don't enjoy it. I believe asking it for help with vector math can
+        come in handy as well.
+      </p>
+      <p>
+        The most important thing I learned, is that I enjoy coding a lot more
+        than doing code reviews. So I'll probably keep hand coding for as long
+        as I can. :)
+      </p>
+      <p>#100DaysToOffload</p>
 
-    <p>Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>. :)</p>
+      <p>
+        Please say hi on
+        <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>.
+        :)
+      </p>
 
-    <hr />
+      <hr />
 
-    <a href="#web-assembly">
-      <h1 id="web-assembly">Web Assembly</h1>
-    </a>
-    <p>Yesterday I posted my first blog on <a href="http://kodsnack.se">Kodsnack</a>'s slack channel, and got some
-      feedback
-      on my woes about programming.</p>
-    <p>Some said that zig and r*** might be good languages to look at, and I argued a bit about how they appear to me as
-      languages that doesn't have the same goals in mind as me. I think being able to (compile and) execute code with
-      &lt;200ms delay is important, since I find it pleasant when working on things like animations and layouts. Needing
-      to
-      wait even a second while modifying an animation feels painful to me.</p>
-    <p>I want to be clear and say that I do think zig and rust are interesting (and probably good) languages, and it's a
-      difference in priorities and aesthetics, not in some objective &quot;good&quot;ness. So if you do enjoy zig /
-      rust,
-      please keep rocking on. :)</p>
-    <p>I also got some kind words about <a href="https://github.com/saikyun/freja">Freja</a>, which I really appreciate.
-    </p>
-    <p>The last thing that came up was the subject of WASM. Being interested in both web and games, I've been curious
-      about
-      WASM since it's inception. I still remember playing some Quake or DOOM demo in the browser, and it seemed kind of
-      magical. I never did anything with it though, since at the time I was busy writing web apps in node and play
-      League of
-      Legends.</p>
-    <p>Last summer I started wondering if assembly is a good target for live coding, since it's very flexible (just swap
-      out
-      the byte code right?). It seemed very tricky to write a multi platform compiler though.</p>
-    <p>When camping with my family, I started reading about <a href="https://100r.co/site/uxn.html">uxn</a>, and <a
-        href="https://wiki.xxiivv.com/site/paper_computing.html">pen &amp; paper computing</a>).</p>
-    <p>In the paper prototyping site, they mention that you can compute using a really small instruction set:</p>
-    <blockquote>
-      <p>The following three counter machine models have the same computational power since the instructions of one
-        model
-        can be derived from those of another:</p>
-    </blockquote>
-    <blockquote>
-      <p>INC(r), DEC(r), JZ(r, z) - Minsky (1961, 1967), Lambek (1961)</p>
-    </blockquote>
-    <blockquote>
-      <p>CLR(r), INC(r), JE(rj, rk, z) - Ershov (1958), Peter (1958)</p>
-    </blockquote>
-    <blockquote>
-      <p>INC(r), CPY(rj, rk), JE(rj, rk, z) - Elgot-Robinson (1964), Minsky (1967)</p>
-    </blockquote>
-    <p>With this knowledge, I made a assembly editor and interpreter using termux. It was pretty fun, and it really
-      fulfilled the minimalist language that I envisioned. It was pretty cool that you see how the registers changed
-      when
-      you ran the program too.</p>
-    <p>Next step was obviously to make this compile to arm assembly. Arm is the simple one, right? <a
-        href="https://developer.arm.com/documentation/dui0068/b/ARM-Instruction-Reference">Oh boy</a>. I read a bit, and
-      felt that I understand some, but it was far from my naive 3-instruction view of the world. And even if I
-      understood
-      enough, I realized I'd be super platform dependent, which doesn't feel very appealing.</p>
-    <p>I haven't touched or thought very much about assembly since then.</p>
-    <h2>Back to WASM</h2>
-    <p>With this in mind, the mention of <a href="https://webassembly.org">web assembly</a> came at an interesting time
-      for
-      me. I now knew that assembly computing could be pretty enjoyable, and I also had built up a need for a simple way
-      to
-      play around with assembly, but that was more flexible than uxn. While I think uxn is cool, I'm not sure I want the
-      restrictions.</p>
-    <p>WASM seems pretty diverse to me, with a bunch of different projects going on. For my goals, this combination
-      appealed
-      to me:</p>
-    <ul>
-      <li><a href="https://github.com/bytecodealliance/wasmtime">wasmtime</a> -- wasm runtime for desktops</li>
-      <li><a href="https://github.com/WebAssembly/wabt">wabt</a> -- tons of tools, including wat2wasm: compile wasm text
-        files (.wat) to binary (.wasm)</li>
-      <li><a href="https://wasi.dev">wasi</a> -- system interface for WASM (think libc)</li>
-      <li><a href="https://github.com/bjorn3/browser_wasi_shim">browser_wasi_shim</a> -- wasi interface for browser</li>
-    </ul>
-    <p>I've just started (like 2 hours ago), but so far I managed to create a little example repo that I feel happy
-      about.
-      Check it out <a href="https://github.com/saikyun/wasm-wasi-hello-world">here</a>.</p>
-    <pre><code>wasmtime hello-world-wasi.wat
+      <a href="#web-assembly">
+        <h1 id="web-assembly">Web Assembly</h1>
+      </a>
+      <p>
+        Yesterday I posted my first blog on
+        <a href="http://kodsnack.se">Kodsnack</a>'s slack channel, and got some
+        feedback on my woes about programming.
+      </p>
+      <p>
+        Some said that zig and r*** might be good languages to look at, and I
+        argued a bit about how they appear to me as languages that doesn't have
+        the same goals in mind as me. I think being able to (compile and)
+        execute code with &lt;200ms delay is important, since I find it pleasant
+        when working on things like animations and layouts. Needing to wait even
+        a second while modifying an animation feels painful to me.
+      </p>
+      <p>
+        I want to be clear and say that I do think zig and rust are interesting
+        (and probably good) languages, and it's a difference in priorities and
+        aesthetics, not in some objective &quot;good&quot;ness. So if you do
+        enjoy zig / rust, please keep rocking on. :)
+      </p>
+      <p>
+        I also got some kind words about
+        <a href="https://github.com/saikyun/freja">Freja</a>, which I really
+        appreciate.
+      </p>
+      <p>
+        The last thing that came up was the subject of WASM. Being interested in
+        both web and games, I've been curious about WASM since it's inception. I
+        still remember playing some Quake or DOOM demo in the browser, and it
+        seemed kind of magical. I never did anything with it though, since at
+        the time I was busy writing web apps in node and play League of Legends.
+      </p>
+      <p>
+        Last summer I started wondering if assembly is a good target for live
+        coding, since it's very flexible (just swap out the byte code right?).
+        It seemed very tricky to write a multi platform compiler though.
+      </p>
+      <p>
+        When camping with my family, I started reading about
+        <a href="https://100r.co/site/uxn.html">uxn</a>, and
+        <a href="https://wiki.xxiivv.com/site/paper_computing.html"
+          >pen &amp; paper computing</a
+        >).
+      </p>
+      <p>
+        In the paper prototyping site, they mention that you can compute using a
+        really small instruction set:
+      </p>
+      <blockquote>
+        <p>
+          The following three counter machine models have the same computational
+          power since the instructions of one model can be derived from those of
+          another:
+        </p>
+      </blockquote>
+      <blockquote>
+        <p>INC(r), DEC(r), JZ(r, z) - Minsky (1961, 1967), Lambek (1961)</p>
+      </blockquote>
+      <blockquote>
+        <p>CLR(r), INC(r), JE(rj, rk, z) - Ershov (1958), Peter (1958)</p>
+      </blockquote>
+      <blockquote>
+        <p>
+          INC(r), CPY(rj, rk), JE(rj, rk, z) - Elgot-Robinson (1964), Minsky
+          (1967)
+        </p>
+      </blockquote>
+      <p>
+        With this knowledge, I made a assembly editor and interpreter using
+        termux. It was pretty fun, and it really fulfilled the minimalist
+        language that I envisioned. It was pretty cool that you see how the
+        registers changed when you ran the program too.
+      </p>
+      <p>
+        Next step was obviously to make this compile to arm assembly. Arm is the
+        simple one, right?
+        <a
+          href="https://developer.arm.com/documentation/dui0068/b/ARM-Instruction-Reference"
+          >Oh boy</a
+        >. I read a bit, and felt that I understand some, but it was far from my
+        naive 3-instruction view of the world. And even if I understood enough,
+        I realized I'd be super platform dependent, which doesn't feel very
+        appealing.
+      </p>
+      <p>I haven't touched or thought very much about assembly since then.</p>
+      <h2>Back to WASM</h2>
+      <p>
+        With this in mind, the mention of
+        <a href="https://webassembly.org">web assembly</a> came at an
+        interesting time for me. I now knew that assembly computing could be
+        pretty enjoyable, and I also had built up a need for a simple way to
+        play around with assembly, but that was more flexible than uxn. While I
+        think uxn is cool, I'm not sure I want the restrictions.
+      </p>
+      <p>
+        WASM seems pretty diverse to me, with a bunch of different projects
+        going on. For my goals, this combination appealed to me:
+      </p>
+      <ul>
+        <li>
+          <a href="https://github.com/bytecodealliance/wasmtime">wasmtime</a> --
+          wasm runtime for desktops
+        </li>
+        <li>
+          <a href="https://github.com/WebAssembly/wabt">wabt</a> -- tons of
+          tools, including wat2wasm: compile wasm text files (.wat) to binary
+          (.wasm)
+        </li>
+        <li>
+          <a href="https://wasi.dev">wasi</a> -- system interface for WASM
+          (think libc)
+        </li>
+        <li>
+          <a href="https://github.com/bjorn3/browser_wasi_shim"
+            >browser_wasi_shim</a
+          >
+          -- wasi interface for browser
+        </li>
+      </ul>
+      <p>
+        I've just started (like 2 hours ago), but so far I managed to create a
+        little example repo that I feel happy about. Check it out
+        <a href="https://github.com/saikyun/wasm-wasi-hello-world">here</a>.
+      </p>
+      <pre><code>wasmtime hello-world-wasi.wat
 hello world
 </code></pre>
-    <p>What I did was pull together examples from the projects mentioned above, and managed to run a program printing
-      <code>hello world</code> in both the browser and on my macbook, using wasmtime. It's not much, but it's still cool
-      to
-      be able to hand write assembly code and have it do stuff and run on multiple platforms. :)
-    </p>
-    <p>#100DaysToOffload</p>
+      <p>
+        What I did was pull together examples from the projects mentioned above,
+        and managed to run a program printing <code>hello world</code> in both
+        the browser and on my macbook, using wasmtime. It's not much, but it's
+        still cool to be able to hand write assembly code and have it do stuff
+        and run on multiple platforms. :)
+      </p>
+      <p>#100DaysToOffload</p>
 
-    <p>Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>. :)</p>
+      <p>
+        Please say hi on
+        <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>.
+        :)
+      </p>
 
-    <hr />
+      <hr />
 
-    <a href="#thought-loops">
-      <h1 id="thought-loops">Thought loops</h1>
-    </a>
-    <p>Inspired by <a href="https://bjoreman.com">Fredrik Björeman</a> I decided to create my own blog. In his podcast
-      <a href="https://kodsnack.se/508/">Kodsnack</a> he and <a href="https://6510.nu/@krig">Kristoffer</a> talks about
-      getting stuff out without thinking too much.
-    </p>
-    <p>I felt this very hard, as I've been stuck in some thought loops lately. If I were to describe it as shortly as I
-      could, this would be my attempt:</p>
-    <ol>
-      <li>
-        <p>I want to be able to create graphical applications and games, that can run on as many platforms as possible,
-          with
-          live coding capabilities</p>
-      </li>
-      <li>
-        <p>To fulfill this, I created <a href="http://github.com/saikyun/freja">Freja</a>, a code editor that can be
-          modified withing itself, and therefore create GUIs and games without ever closing the applications</p>
-        <p>2.1. Well, that was the idea anyway, but I still have problems like ending up in an infinite loop and needing
-          to
-          restart</p>
-        <p>2.2. The bigger issue however, is that the GUI lib I wrote doesn't work well enough. Tons of tiny bugs that
-          pop
-          up whenever I try to create new GUI</p>
-        <p>2.3. I also don't quite agree with the language I use, <a href="https://janet-lang.org">Janet</a>, which is a
-          super cozy lisp, but has some other ideas about live coding / redefining functions during runtime, which are
-          not
-          hopeless to overcome, but often a bit in the way. This is in no way the fault of the language, it just has
-          slightly different goals than I have.</p>
-      </li>
-      <li>
-        <p>Despair</p>
-      </li>
-      <li>
-        <p>I've tried Unity and Godot, and while I dislike the former (extremely sluggish, and the minor point that C#
-          feels
-          like a nice, safe car but sooo boring -- where is my meta programming!?), I can withstand the latter. It's
-          snappy
-          and nice, has basic hot reload, but I personally feel the OOPiness (specifically no interfaces and tons of
-          inheritance) makes for a less cozy environment for me.</p>
-      </li>
-      <li>
-        <p>Now I'm standing here, wondering what to do with my situation. I feel like I don't have a cozy place to code,
-          but
-          I'm not sure I'm ready to rewrite the GUI library. I'm also thinking about writing it in C, a language which
-          I've
-          gotten a lot more love for, since learning that hot reloading DLLs is surprisingly viable. But C lacks some
-          things
-          I want (multiple dispatch, dynamic arrays). I've tried to remedy this with macros, but it still feels a bit
-          icky.
-          Like I'm trying to make the language be something it's not.</p>
-      </li>
-    </ol>
-    <p>So here I am. I've experimented a lot, e.g. making C more dynamic (changing structs during runtime), compiling
-      lisp
-      to C, playing around with type unification. But I have no clue where to go.</p>
-    <p>#100DaysToOffload</p>
+      <a href="#thought-loops">
+        <h1 id="thought-loops">Thought loops</h1>
+      </a>
+      <p>
+        Inspired by <a href="https://bjoreman.com">Fredrik Björeman</a> I
+        decided to create my own blog. In his podcast
+        <a href="https://kodsnack.se/508/">Kodsnack</a> he and
+        <a href="https://6510.nu/@krig">Kristoffer</a> talks about getting stuff
+        out without thinking too much.
+      </p>
+      <p>
+        I felt this very hard, as I've been stuck in some thought loops lately.
+        If I were to describe it as shortly as I could, this would be my
+        attempt:
+      </p>
+      <ol>
+        <li>
+          <p>
+            I want to be able to create graphical applications and games, that
+            can run on as many platforms as possible, with live coding
+            capabilities
+          </p>
+        </li>
+        <li>
+          <p>
+            To fulfill this, I created
+            <a href="http://github.com/saikyun/freja">Freja</a>, a code editor
+            that can be modified withing itself, and therefore create GUIs and
+            games without ever closing the applications
+          </p>
+          <p>
+            2.1. Well, that was the idea anyway, but I still have problems like
+            ending up in an infinite loop and needing to restart
+          </p>
+          <p>
+            2.2. The bigger issue however, is that the GUI lib I wrote doesn't
+            work well enough. Tons of tiny bugs that pop up whenever I try to
+            create new GUI
+          </p>
+          <p>
+            2.3. I also don't quite agree with the language I use,
+            <a href="https://janet-lang.org">Janet</a>, which is a super cozy
+            lisp, but has some other ideas about live coding / redefining
+            functions during runtime, which are not hopeless to overcome, but
+            often a bit in the way. This is in no way the fault of the language,
+            it just has slightly different goals than I have.
+          </p>
+        </li>
+        <li>
+          <p>Despair</p>
+        </li>
+        <li>
+          <p>
+            I've tried Unity and Godot, and while I dislike the former
+            (extremely sluggish, and the minor point that C# feels like a nice,
+            safe car but sooo boring -- where is my meta programming!?), I can
+            withstand the latter. It's snappy and nice, has basic hot reload,
+            but I personally feel the OOPiness (specifically no interfaces and
+            tons of inheritance) makes for a less cozy environment for me.
+          </p>
+        </li>
+        <li>
+          <p>
+            Now I'm standing here, wondering what to do with my situation. I
+            feel like I don't have a cozy place to code, but I'm not sure I'm
+            ready to rewrite the GUI library. I'm also thinking about writing it
+            in C, a language which I've gotten a lot more love for, since
+            learning that hot reloading DLLs is surprisingly viable. But C lacks
+            some things I want (multiple dispatch, dynamic arrays). I've tried
+            to remedy this with macros, but it still feels a bit icky. Like I'm
+            trying to make the language be something it's not.
+          </p>
+        </li>
+      </ol>
+      <p>
+        So here I am. I've experimented a lot, e.g. making C more dynamic
+        (changing structs during runtime), compiling lisp to C, playing around
+        with type unification. But I have no clue where to go.
+      </p>
+      <p>#100DaysToOffload</p>
 
-    <p>Please say hi on <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>. :)</p>
-
-  </div>
-
-</body>
-
+      <p>
+        Please say hi on
+        <a href="https://mastodon.social/@saikyun">mastodon.social/@saikyun</a>.
+        :)
+      </p>
+    </div>
+  </body>
 </html>
