@@ -1,4 +1,4 @@
-#
+# [I rest very well, but only when I get sick](#i-rest-very-well-but-only-when-i-get-sick)
 
 It seems that I always must get sick in order to stand still and think. I don't think that's very healthy.
 
